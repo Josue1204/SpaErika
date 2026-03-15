@@ -255,43 +255,54 @@
             const response = await fetch('data/config.json');
             const data = await response.json();
 
-            // Actualizar textos y precios (se mantiene igual)
+            // (Mantén tus líneas de títulos y precios igual)
             document.querySelector('nav h2').innerText = data.titulo;
             document.querySelector('#about p').innerText = data.sobre_mi;
             const etiquetasPrecios = document.querySelectorAll('.price-tag');
             if(etiquetasPrecios[0]) etiquetasPrecios[0].innerHTML = `$${data.precio_basico}`;
             if(etiquetasPrecios[1]) etiquetasPrecios[1].innerHTML = `$${data.precio_premium}`;
 
-            // --- LÓGICA DE VIDEOS MEJORADA ---
             const contenedorVideos = document.querySelector('.video-grid');
             if (data.videos && data.videos.length > 0) {
-                
-                contenedorVideos.innerHTML = data.videos.map(input => {
-                    // Esta función extrae el ID sin importar qué tipo de enlace pegues
-                    let videoId = "";
-                    const url = input.trim();
+                contenedorVideos.innerHTML = data.videos.map(url => {
+                    const link = url.trim();
                     
-                    if (url.includes("v=")) {
-                        videoId = url.split("v=")[1].split("&")[0];
-                    } else if (url.includes("youtu.be/")) {
-                        videoId = url.split("youtu.be/")[1].split("?")[0];
-                    } else if (url.includes("embed/")) {
-                        videoId = url.split("embed/")[1].split("?")[0];
-                    } else {
-                        videoId = url; // Si ya era solo el ID
+                    // --- DETECTOR DE PLATAFORMA ---
+                    
+                    // 1. Si es TikTok
+                    if (link.includes("tiktok.com")) {
+                        const videoId = link.split("/video/")[1]?.split("?")[0];
+                        return `
+                            <div class="video-wrapper" style="padding-bottom: 177%; border: 4px solid #000;">
+                                <iframe src="https://www.tiktok.com/embed/v2/${videoId}" allowfullscreen></iframe>
+                            </div>`;
+                    } 
+                    
+                    // 2. Si es Facebook
+                    else if (link.includes("facebook.com") || link.includes("fb.watch")) {
+                        return `
+                            <div class="video-wrapper" style="border: 4px solid #000;">
+                                <iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(link)}&show_text=0" allowfullscreen></iframe>
+                            </div>`;
+                    } 
+                    
+                    // 3. Si es YouTube (Lógica anterior mejorada)
+                    else {
+                        let yid = "";
+                        if (link.includes("v=")) yid = link.split("v=")[1].split("&")[0];
+                        else if (link.includes("youtu.be/")) yid = link.split("youtu.be/")[1].split("?")[0];
+                        else yid = link;
+                        
+                        return `
+                            <div class="video-wrapper" data-aos="fade-up">
+                                <iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen></iframe>
+                            </div>`;
                     }
-
-                    return `
-                        <div class="video-wrapper" data-aos="fade-up">
-                            <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
-                        </div>
-                    `;
                 }).join('');
-                
                 AOS.refresh();
             }
         } catch (error) {
-            console.log("Error cargando configuración:", error);
+            console.log("Error en galería:", error);
         }
     }
     window.addEventListener('load', aplicarCambiosAdmin);
