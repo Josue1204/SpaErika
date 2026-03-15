@@ -1,21 +1,22 @@
 backend:
   name: github
-  repo: Josue1204/SpaErika # CAMBIA ESTO
-  branch: main
+  repo: josue1204/SpaErika  # Debe ser exactamente tu usuario/repositorio
+  branch: main # Verifica si tu rama se llama main o master
+  base_url: https://josue1204.github.io/SpaErika/
 
-media_folder: "assets/img"
-public_folder: "/assets/img"
+media_folder: "assets"
+public_folder: "assets"
 
 collections:
   - name: "configuracion"
-    label: "Configuración Web"
+    label: "Panel de Control Erika"
     files:
       - file: "data/config.json"
-        label: "Contenido General"
+        label: "Editar Contenido de la Web"
         name: "general"
         fields:
-          - {label: "Nombre del Spa", name: "titulo", widget: "string"}
+          - {label: "Nombre en el Menú", name: "titulo", widget: "string"}
           - {label: "Texto Sobre Mí", name: "sobre_mi", widget: "text"}
-          - {label: "Precio Básico", name: "precio_basico", widget: "number"}
-          - {label: "Precio Premium", name: "precio_premium", widget: "number"}
-          - {label: "IDs de Videos (separados por coma)", name: "videos", widget: "list"}
+          - {label: "Precio Masaje Básico", name: "precio_basico", widget: "number"}
+          - {label: "Precio Acomodación Matriz", name: "precio_premium", widget: "number"}
+          - {label: "IDs de Videos de YouTube", name: "videos", widget: "list"}
