@@ -10,107 +10,81 @@
 
     <style>
         :root {
-            /* Paleta de Alto Contraste para Modo Claro */
-            --primary: #1a8c54; /* Verde Esmeralda más profundo para resaltar */
-            --bg-perla: #fdfcf0; /* Fondo Crema suave para la vista */
-            --card-white: #ffffff; /* Tarjetas Blanco Puro para contrastar */
-            --text-black: #000000; /* Negro Puro para máxima legibilidad */
-            --border-soft: rgba(0,0,0,0.1);
+            --primary: #1a8c54; 
+            --bg-body: #e5e7eb; /* Gris claro definido, no se ve blanco */
+            --card-white: #ffffff;
+            --text-main: #000000; /* Negro puro para máximo contraste */
+            --accent-soft: #d1fae5; /* Verde muy suave para fondos de tarjetas */
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
         body { 
-            background: var(--bg-perla); 
-            color: var(--text-black); /* Todo el texto base en negro */
+            background: var(--bg-body); 
+            color: var(--text-main); 
             line-height: 1.6; 
-            overflow-x: hidden; 
         }
 
         header {
             position: fixed; top: 0; width: 100%;
-            background: rgba(253, 252, 240, 0.9); /* Fondo perla con más opacidad */
-            backdrop-filter: blur(12px);
+            background: #ffffff;
             z-index: 100; 
-            border-bottom: 1px solid var(--border-soft);
+            border-bottom: 2px solid var(--primary);
         }
 
         nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        nav h2 { color: var(--primary); font-size: 1.5rem; }
+        nav h2 { color: var(--primary); font-size: 1.8rem; font-weight: 800; }
         nav ul { display: flex; list-style: none; gap: 20px; }
-        nav a { text-decoration: none; color: var(--text-black); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: var(--primary); }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 700; transition: 0.3s; }
 
         .hero {
-            height: 100vh;
-            /* Overlay suave para resaltar el texto negro sobre la imagen */
-            background: linear-gradient(rgba(253, 252, 240, 0.5), rgba(253, 252, 240, 0.5)), 
+            height: 80vh;
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
                         url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
-        .hero h1 { font-size: clamp(40px, 8vw, 72px); margin-bottom: 20px; color: var(--text-black); font-weight: 600; }
-        .hero p { color: var(--text-black); font-size: 1.3rem; font-weight: 400; }
+        .hero h1 { font-size: 4rem; color: #000; text-shadow: 2px 2px 10px rgba(255,255,255,0.8); }
 
         .btn {
-            background: var(--primary); color: white; padding: 16px 40px; border-radius: 50px;
-            text-decoration: none; font-weight: 600; transition: 0.4s; display: inline-block;
-            box-shadow: 0 4px 10px rgba(26, 140, 84, 0.2);
+            background: var(--primary); color: white; padding: 18px 45px; border-radius: 10px;
+            text-decoration: none; font-weight: 800; display: inline-block;
+            box-shadow: 4px 4px 0px #000; /* Estilo moderno con sombra sólida */
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(26, 140, 84, 0.3); }
 
         section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-        h2.section-title { font-size: 2.8rem; margin-bottom: 50px; text-align: center; color: var(--text-black); font-weight: 600; }
-        h2.section-title::after { content: ''; display: block; width: 70px; height: 5px; background: var(--primary); margin: 15px auto; border-radius: 2px; }
+        h2.section-title { font-size: 3rem; margin-bottom: 40px; text-align: center; font-weight: 800; color: #000; }
 
-        .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; }
-        .about-text p { color: var(--text-black); font-size: 1.1rem; }
-        .about-img { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        .about-img img { width: 100%; display: block; }
-
-        .services, .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .services, .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .card {
-            background: var(--card-white); /* Tarjetas Blancas resaltan sobre fondo Crema */
-            border: 1px solid var(--border-soft);
-            border-radius: 20px; padding: 40px; transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Sombra para resaltar */
+            background: var(--card-white);
+            border: 3px solid #000; /* Borde negro grueso para máximo resalte */
+            border-radius: 0px; /* Estilo cuadrado moderno */
+            padding: 40px;
+            box-shadow: 8px 8px 0px var(--primary); /* Sombra de color sólida */
+            transition: 0.2s;
         }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; font-weight: 600; }
-        .card p { color: var(--text-black); font-size: 1rem; }
+        .card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px #000; }
 
-        .price-tag { font-size: 2.8rem; font-weight: 600; margin: 15px 0; color: var(--text-black); }
-        .price-tag span { font-size: 1.1rem; color: #444; font-weight: 400; } /* Gris muy oscuro para el tiempo */
+        .card h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; font-weight: 800; }
+        .card p { font-weight: 600; font-size: 1.1rem; }
 
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .price-tag { font-size: 3.5rem; font-weight: 900; color: #000; margin: 20px 0; }
+
         .video-grid iframe { 
-            width: 100%; height: 250px; border-radius: 20px; 
-            border: 1px solid var(--border-soft); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .map-container { 
-            border-radius: 20px; overflow: hidden; margin-top: 30px; 
-            border: 1px solid var(--border-soft); 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            width: 100%; height: 300px; border: 4px solid #000;
         }
 
         .whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white;
-            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; text-decoration: none; font-size: 35px; z-index: 1000;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            width: 70px; height: 70px; border-radius: 15px; display: flex; align-items: center;
+            justify-content: center; text-decoration: none; font-size: 40px; z-index: 1000;
+            border: 3px solid #000;
         }
 
-        footer { 
-            border-top: 1px solid var(--border-soft); 
-            padding: 60px 20px; text-align: center; 
-            background: #ffffff; /* Footer blanco para contrastar con el fondo crema */
-        }
-        footer p { color: var(--text-black); font-weight: 600; }
+        footer { background: #000; color: #fff; padding: 50px; text-align: center; }
     </style>
 </head>
 <body>
@@ -122,109 +96,73 @@
             <li><a href="#about">Sobre Mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#precios">Precios</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
         </ul>
     </nav>
 </header>
 
 <section class="hero">
-    <div data-aos="fade-up">
-        <h1>Tu bienestar <br><span style="color: var(--primary);">empieza aquí.</span></h1>
-        <p>Masajes profesionales y cuidado personal en Los Ángeles.</p>
-        <br><br>
-        <a class="btn" href="https://wa.me/13237932528">Reservar Cita</a>
-    </div>
-</section>
-
-<section id="about">
-    <div class="about-container">
-        <div class="about-text" data-aos="fade-right">
-            <h2 style="text-align: left; margin-bottom: 20px;">Sobre Mí</h2>
-            <p>Soy Erika, especialista en terapias corporales enfocadas en la salud integral. Mi misión es brindar un espacio de sanación y alivio para el cuerpo y la mente.</p>
-            <br>
-            <p>Con técnicas que van desde el masaje profundo hasta tratamientos especializados como la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural y bienestar.</p>
-        </div>
-        <div class="about-img" data-aos="fade-left">
-            <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80" alt="Erika">
-        </div>
+    <div data-aos="zoom-in">
+        <h1>Tu bienestar <br><b>empieza aquí.</b></h1>
+        <br>
+        <a class="btn" href="https://wa.me/13237932528">RESERVAR AHORA</a>
     </div>
 </section>
 
 <section id="servicios">
-    <h2 class="section-title" data-aos="fade-up">Servicios</h2>
+    <h2 class="section-title">SERVICIOS</h2>
     <div class="services">
         <div class="card" data-aos="fade-up">
             <h3>Masaje Profundo</h3>
-            <p>Elimina nudos y tensión acumulada por el trabajo o el ejercicio.</p>
+            <p>Elimina nudos y tensión acumulada. Resalta tu salud física.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Acomodación de Matriz </h3>
-            <p>Tratamiento de acomodación de matriz ideal para mujeres que buscan una mejor fertilidad.</p>
+            <h3>Matriz</h3>
+            <p>Acomodación especializada para mejorar la fertilidad y salud femenina.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="200">
             <h3>Reflexología</h3>
-            <p>Equilibrio total presionando puntos estratégicos en todo el cuerpo.</p>
+            <p>Puntos de presión para equilibrio orgánico total.</p>
         </div>
     </div>
 </section>
 
-<section id="precios" style="background: rgba(26, 140, 84, 0.05)">
-    <h2 class="section-title" data-aos="fade-up">Nuestras Tarifas</h2>
+<section id="precios">
+    <h2 class="section-title">TARIFAS</h2>
     <div class="pricing">
-        <div class="card" data-aos="zoom-in">
+        <div class="card" data-aos="flip-left">
             <h3>Básico</h3>
-            <p>Masaje Relajante</p>
-            <div class="price-tag">$90 <span>/ 60 min</span></div>
-            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan básico" style="padding: 10px 20px; font-size: 0.8rem;">Elegir este</a>
+            <div class="price-tag">$90</div>
+            <p>60 MINUTOS</p>
+            <br>
+            <a class="btn" href="https://wa.me/13237932528">ELEGIR</a>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="100" style="border: 2px solid var(--primary);">
+        <div class="card" data-aos="flip-left" data-aos-delay="100">
             <h3>Premium</h3>
-            <p>Acomodación de matriz</p>
-            <div class="price-tag">$110 <span>/ 60 min</span></div>
-            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan premium" style="padding: 10px 20px; font-size: 0.8rem;">Elegir este</a>
-        </div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="200">
-            <h3>Dúo</h3>
-            <p>Masaje para parejas</p>
-            <div class="price-tag">$150 <span>/ 60 min</span></div>
-            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan dúo" style="padding: 10px 20px; font-size: 0.8rem;">Elegir este</a>
+            <div class="price-tag">$110</div>
+            <p>60 MINUTOS</p>
+            <br>
+            <a class="btn" href="https://wa.me/13237932528">ELEGIR</a>
         </div>
     </div>
 </section>
 
 <section id="videos">
-    <h2 class="section-title" data-aos="fade-up">Videos</h2>
+    <h2 class="section-title">VIDEOS</h2>
     <div class="video-grid">
-        <iframe src="https://www.youtube.com/embed/Bp_IIDkKIwg" allowfullscreen data-aos="fade-right"></iframe>
-        <iframe src="https://www.youtube.com/embed/4LDQceHxmKk" allowfullscreen data-aos="fade-left"></iframe>
-    </div>
-</section>
-
-<section id="ubicacion">
-    <h2 class="section-title" data-aos="fade-up">Ubicación</h2>
-    <div style="text-align: center; margin-bottom: 20px;">
-        <p style="color: var(--text-black); font-weight: 600;">📍 4712 Lomita St, Los Angeles, CA 90019</p>
-    </div>
-    <div class="map-container" data-aos="zoom-in">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.823901416961!2d-118.3392471!3d34.0483842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8ee0812b191%3A0xdca5cc7cc5ed1f24!2s4712%20Lomita%20St%2C%20Los%20Angeles%2C%20CA%2090019!5e0!3m2!1ses!2sus!4v1710450000000!5m2!1ses!2sus" 
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <a class="btn" href="https://www.google.com/maps/dir//4712+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" style="background: #4285F4;">Ver en Google Maps</a>
+        <iframe src="https://www.youtube.com/embed/Bp_IIDkKIwg"></iframe>
+        <iframe src="https://www.youtube.com/embed/4LDQceHxmKk"></iframe>
     </div>
 </section>
 
 <a class="whatsapp" href="https://wa.me/13237932528">💬</a>
 
 <footer>
-    <p>© 2026 Erika Spa Terapéutico</p>
-    <p style="font-size: 0.9rem; margin-top: 10px;">Lunes a Domingo: 9 AM - 8 PM</p>
+    <p>© 2026 ERIKA SPA TERAPÉUTICO</p>
+    <p>LUNES A DOMINGO: 9 AM - 8 PM</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></script>
-<script>AOS.init({duration: 1000, once: true});</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init();</script>
 
 </body>
 </html>
