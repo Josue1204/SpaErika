@@ -3,22 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel de Administración | Erika Spa</title>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+  <title>Admin Erika Spa | Control Panel</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+  <style>
+    /* Personalización del Panel de Administración */
+    /* Cambiamos el color de los botones de Guardar y Publicar */
+    [class*="ControlPaneContainer"] button, 
+    [class*="EditorToolbar"] button {
+        background-color: #1a8c54 !important; /* Tu verde esmeralda */
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        transition: 0.3s !important;
+        border: 2px solid #000 !important;
+        box-shadow: 4px 4px 0px #000 !important;
+    }
+
+    [class*="EditorToolbar"] button:hover {
+        transform: translate(-2px, -2px) !important;
+        box-shadow: 6px 6px 0px #000 !important;
+    }
+
+    /* Estilo para las etiquetas de los campos */
+    [class*="ControlLabel"] {
+        color: #000 !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        font-size: 12px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Estilo para los cuadros de texto */
+    [class*="ControlContainer"] input, 
+    [class*="ControlContainer"] textarea {
+        border: 2px solid #000 !important;
+        border-radius: 0px !important;
+        padding: 12px !important;
+        font-size: 16px !important;
+    }
+
+    /* Fondo del panel */
+    body {
+        background-color: #e5e7eb !important;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // Script para que el login sea más fluido
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
