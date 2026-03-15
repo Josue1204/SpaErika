@@ -186,11 +186,15 @@
 <script>
     AOS.init({duration: 1000, once: true});
 
-    async function cargarConfiguracion() {
+   async function cargarConfiguracion() {
         try {
-            // Usamos un número aleatorio para que el navegador no guarde la versión vieja del JSON
-            const res = await fetch('data/config.json?v=' + Date.now());
-            const data = await res.json();
+            // Este truco obliga a Netlify a ignorar la versión guardada y bajar la nueva
+            const respuesta = await fetch('data/config.json?nocache=' + new Date().getTime(), {
+                cache: 'no-store' 
+            });
+            
+            if (!respuesta.ok) return;
+            const data = await respuesta.json();
 
             // Sincronizar textos
             document.getElementById('nav-title').innerText = data.titulo;
@@ -198,11 +202,12 @@
             document.getElementById('price-1').innerText = `$${data.precio_basico}`;
             document.getElementById('price-2').innerText = `$${data.precio_premium}`;
 
-            // Sincronizar Galería Multiformato
+            // Sincronizar Galería
             const container = document.getElementById('video-container');
-            if (data.videos && data.videos.length > 0) {
+            if (data.videos && container) {
                 container.innerHTML = data.videos.map(url => {
                     const link = url.trim();
+                    if (!link) return '';
                     if (link.includes("tiktok.com")) {
                         const videoId = link.match(/\/video\/(\d+)/)?.[1];
                         return `<div class="video-wrapper" style="padding-bottom: 177%;"><iframe src="https://www.tiktok.com/embed/v2/${videoId}" allowfullscreen></iframe></div>`;
@@ -214,7 +219,6 @@
                         return `<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen></iframe></div>`;
                     }
                 }).join('');
-                AOS.refresh();
             }
         } catch (e) { console.error("Error cargando configuración:", e); }
     }
