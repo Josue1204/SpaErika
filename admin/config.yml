@@ -1,27 +1,30 @@
 backend:
   name: git-gateway
-  branch: main # Asegúrate de que tu rama principal se llame main o master
+  branch: main
 
-media_folder: "images" # Donde se guardarán las fotos si decides subir alguna
+media_folder: "images" # Aquí se guardarán las fotos que subas
 public_folder: "/images"
 
 collections:
   - name: "configuracion"
     label: "Configuración de la Web"
-    delete: false # No queremos borrar el archivo de configuración
+    delete: false
     editor:
       preview: false
     files:
       - name: "general"
         label: "Contenido General"
-        file: "data/config.json" # Este es el archivo que lee tu index.html
+        file: "data/config.json"
         fields:
           - {label: "🏨 Nombre del Spa", name: "titulo", widget: "string"}
           - {label: "👤 Biografía (Sobre Mí)", name: "sobre_mi", widget: "text"}
-          - {label: "💵 Precio Masaje Básico", name: "precio_basico", widget: "number", value_type: "int"}
-          - {label: "💎 Precio Masaje Premium", name: "precio_premium", widget: "number", value_type: "int"}
+          - {label: "💵 Precio Masaje Básico", name: "precio_basico", widget: "number"}
+          - {label: "💎 Precio Masaje Premium", name: "precio_premium", widget: "number"}
           - label: "🎥 Galería de Videos"
             name: "videos"
             widget: "list"
-            summary: "Video: {{fields.video}}"
-            field: {label: "Pega el link de YouTube, TikTok o Facebook", name: "video", widget: "string"}
+            field: {label: "Link de YouTube o TikTok", name: "video", widget: "string"}
+          - label: "📸 Galería de Fotos"
+            name: "fotos"
+            widget: "list"
+            field: {label: "Subir Imagen", name: "imagen", widget: "image"}
