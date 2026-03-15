@@ -10,26 +10,26 @@
 
     <style>
         :root {
-            --primary: #2bb673; /* Verde Spa original */
-            --bg-perla: #fdfcf0; /* Blanco Perla suave */
-            --card-light: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border-soft: rgba(0,0,0,0.05);
+            /* Paleta de Alto Contraste para Modo Claro */
+            --primary: #1a8c54; /* Verde Esmeralda más profundo para resaltar */
+            --bg-perla: #fdfcf0; /* Fondo Crema suave para la vista */
+            --card-white: #ffffff; /* Tarjetas Blanco Puro para contrastar */
+            --text-black: #000000; /* Negro Puro para máxima legibilidad */
+            --border-soft: rgba(0,0,0,0.1);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
         body { 
             background: var(--bg-perla); 
-            color: var(--text-dark); 
+            color: var(--text-black); /* Todo el texto base en negro */
             line-height: 1.6; 
             overflow-x: hidden; 
         }
 
         header {
             position: fixed; top: 0; width: 100%;
-            background: rgba(253, 252, 240, 0.85); /* Fondo perla con transparencia */
+            background: rgba(253, 252, 240, 0.9); /* Fondo perla con más opacidad */
             backdrop-filter: blur(12px);
             z-index: 100; 
             border-bottom: 1px solid var(--border-soft);
@@ -38,78 +38,79 @@
         nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         nav h2 { color: var(--primary); font-size: 1.5rem; }
         nav ul { display: flex; list-style: none; gap: 20px; }
-        nav a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+        nav a { text-decoration: none; color: var(--text-black); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: var(--primary); }
 
         .hero {
             height: 100vh;
-            /* Overlay más suave para el modo claro */
-            background: linear-gradient(rgba(253, 252, 240, 0.4), rgba(253, 252, 240, 0.4)), 
+            /* Overlay suave para resaltar el texto negro sobre la imagen */
+            background: linear-gradient(rgba(253, 252, 240, 0.5), rgba(253, 252, 240, 0.5)), 
                         url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
             background-size: cover; background-position: center; background-attachment: fixed;
             display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
         }
 
-        .hero h1 { font-size: clamp(40px, 8vw, 72px); margin-bottom: 20px; color: var(--text-dark); }
-        .hero p { color: var(--text-muted); font-size: 1.2rem; }
+        .hero h1 { font-size: clamp(40px, 8vw, 72px); margin-bottom: 20px; color: var(--text-black); font-weight: 600; }
+        .hero p { color: var(--text-black); font-size: 1.3rem; font-weight: 400; }
 
         .btn {
             background: var(--primary); color: white; padding: 16px 40px; border-radius: 50px;
             text-decoration: none; font-weight: 600; transition: 0.4s; display: inline-block;
+            box-shadow: 0 4px 10px rgba(26, 140, 84, 0.2);
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(43, 182, 115, 0.2); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(26, 140, 84, 0.3); }
 
         section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-        h2.section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: var(--text-dark); }
-        h2.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 15px auto; border-radius: 2px; }
+        h2.section-title { font-size: 2.8rem; margin-bottom: 50px; text-align: center; color: var(--text-black); font-weight: 600; }
+        h2.section-title::after { content: ''; display: block; width: 70px; height: 5px; background: var(--primary); margin: 15px auto; border-radius: 2px; }
 
         .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
         .about-text { flex: 1; min-width: 300px; }
-        .about-text p { color: var(--text-muted); }
-        .about-img { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .about-text p { color: var(--text-black); font-size: 1.1rem; }
+        .about-img { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
         .about-img img { width: 100%; display: block; }
 
         .services, .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
         .card {
-            background: var(--card-light); 
+            background: var(--card-white); /* Tarjetas Blancas resaltan sobre fondo Crema */
             border: 1px solid var(--border-soft);
             border-radius: 20px; padding: 40px; transition: 0.4s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Sombra para resaltar */
         }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .card h3 { color: var(--primary); margin-bottom: 15px; }
-        .card p { color: var(--text-muted); }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; font-weight: 600; }
+        .card p { color: var(--text-black); font-size: 1rem; }
 
-        .price-tag { font-size: 2.2rem; font-weight: 600; margin: 15px 0; color: var(--text-dark); }
-        .price-tag span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        .price-tag { font-size: 2.8rem; font-weight: 600; margin: 15px 0; color: var(--text-black); }
+        .price-tag span { font-size: 1.1rem; color: #444; font-weight: 400; } /* Gris muy oscuro para el tiempo */
 
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .video-grid iframe { 
             width: 100%; height: 250px; border-radius: 20px; 
             border: 1px solid var(--border-soft); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .map-container { 
             border-radius: 20px; overflow: hidden; margin-top: 30px; 
             border: 1px solid var(--border-soft); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white;
-            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; text-decoration: none; font-size: 30px; z-index: 1000;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; text-decoration: none; font-size: 35px; z-index: 1000;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
         }
 
         footer { 
             border-top: 1px solid var(--border-soft); 
             padding: 60px 20px; text-align: center; 
-            background: #f8f9fa;
+            background: #ffffff; /* Footer blanco para contrastar con el fondo crema */
         }
-        footer p { color: var(--text-muted); }
+        footer p { color: var(--text-black); font-weight: 600; }
     </style>
 </head>
 <body>
@@ -167,7 +168,7 @@
     </div>
 </section>
 
-<section id="precios" style="background: rgba(43, 182, 115, 0.03)">
+<section id="precios" style="background: rgba(26, 140, 84, 0.05)">
     <h2 class="section-title" data-aos="fade-up">Nuestras Tarifas</h2>
     <div class="pricing">
         <div class="card" data-aos="zoom-in">
@@ -176,7 +177,7 @@
             <div class="price-tag">$90 <span>/ 60 min</span></div>
             <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan básico" style="padding: 10px 20px; font-size: 0.8rem;">Elegir este</a>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="100" style="border: 1px solid var(--primary);">
+        <div class="card" data-aos="zoom-in" data-aos-delay="100" style="border: 2px solid var(--primary);">
             <h3>Premium</h3>
             <p>Acomodación de matriz</p>
             <div class="price-tag">$110 <span>/ 60 min</span></div>
@@ -202,7 +203,7 @@
 <section id="ubicacion">
     <h2 class="section-title" data-aos="fade-up">Ubicación</h2>
     <div style="text-align: center; margin-bottom: 20px;">
-        <p style="color: var(--text-muted);">📍 4712 Lomita St, Los Angeles, CA 90019</p>
+        <p style="color: var(--text-black); font-weight: 600;">📍 4712 Lomita St, Los Angeles, CA 90019</p>
     </div>
     <div class="map-container" data-aos="zoom-in">
         <iframe 
@@ -219,10 +220,10 @@
 
 <footer>
     <p>© 2026 Erika Spa Terapéutico</p>
-    <p style="font-size: 0.8rem; margin-top: 10px;">Lunes a Domingo: 9 AM - 8 PM</p>
+    <p style="font-size: 0.9rem; margin-top: 10px;">Lunes a Domingo: 9 AM - 8 PM</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></script>
 <script>AOS.init({duration: 1000, once: true});</script>
 
 </body>
