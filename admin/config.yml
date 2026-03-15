@@ -15,12 +15,13 @@ collections:
         label: "Editar Contenido de la Web"
         name: "general"
         fields:
-          - {label: "Nombre en el Menú", name: "titulo", widget: "string"}
-          - {label: "Texto Sobre Mí", name: "sobre_mi", widget: "text"}
-          - {label: "Precio Masaje Básico", name: "precio_basico", widget: "number"}
-          - {label: "Precio Acomodación Matriz", name: "precio_premium", widget: "number"}
-          - label: "Lista de Videos"
+          - {label: "🏨 Nombre de la Web", name: "titulo", widget: "string", hint: "El nombre que aparece arriba en el menú."}
+          - {label: "👤 Biografía (Sobre Mí)", name: "sobre_mi", widget: "text", hint: "Escribe una descripción breve sobre ti."}
+          - {label: "💵 Precio Masaje Básico", name: "precio_basico", widget: "number", value_type: "int"}
+          - {label: "💎 Precio Matriz / Premium", name: "precio_premium", widget: "number", value_type: "int"}
+          - label: "🎥 Galería de Videos de YouTube"
             name: "videos"
             widget: "list"
-            summary: "Video: {{fields.videos}}"
-            field: {label: "Enlace o ID de YouTube", name: "video", widget: "string"}
+            summary: "Video: {{fields.video}}"
+            add_to_top: true
+            field: {label: "Pega el link de YouTube aquí", name: "video", widget: "string"}
