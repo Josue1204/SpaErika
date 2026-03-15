@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
         :root {
@@ -29,8 +30,7 @@
         nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         nav h2 { color: var(--primary); font-size: 2rem; font-weight: 800; text-transform: uppercase; }
         nav ul { display: flex; list-style: none; gap: 20px; }
-        nav a { text-decoration: none; color: var(--text-main); font-weight: 800; transition: 0.2s; font-size: 0.9rem; }
-        nav a:hover { color: var(--primary); }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 0.9rem; }
 
         .hero {
             height: 90vh;
@@ -46,6 +46,7 @@
             color: #000; font-weight: 800;
             text-shadow: 4px 4px 0px #fff;
             line-height: 1.1;
+            text-transform: uppercase;
         }
 
         .btn {
@@ -68,7 +69,7 @@
         .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; }
         .about-text p { font-weight: 700; font-size: 1.1rem; color: #000; margin-bottom: 15px; }
         .about-img { flex: 1; min-width: 300px; border: 4px solid #000; }
-        .about-img img { width: 100%; display: block; filter: grayscale(20%); }
+        .about-img img { width: 100%; display: block; }
 
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         
@@ -82,19 +83,22 @@
 
         .price-tag { font-size: 4rem; font-weight: 900; color: #000; margin: 15px 0; }
 
+        /* GALERÍA */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start; }
         .video-wrapper {
             position: relative; padding-bottom: 56.25%; height: 0;
             border: 4px solid #000; box-shadow: 10px 10px 0px var(--primary);
-            background: #000; margin-bottom: 20px;
+            background: #000; margin-bottom: 20px; overflow: hidden;
         }
+        .video-wrapper.tiktok { padding-bottom: 177%; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-        .map-container { border: 4px solid #000; box-shadow: 12px 12px 0px var(--primary); overflow: hidden; }
+        /* UBICACIÓN */
+        .map-container { border: 4px solid #000; box-shadow: 12px 12px 0px var(--primary); overflow: hidden; height: 450px; }
 
         .whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white;
-            width: 75px; height: 75px; border-radius: 0px; display: flex; align-items: center;
+            width: 75px; height: 75px; display: flex; align-items: center;
             justify-content: center; text-decoration: none; font-size: 45px; z-index: 1000;
             border: 4px solid #000; box-shadow: 6px 6px 0px #000;
         }
@@ -102,7 +106,6 @@
         footer { background: #000; color: #fff; padding: 60px 20px; text-align: center; }
         footer p { font-weight: 800; font-size: 1.2rem; text-transform: uppercase; }
     </style>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -111,8 +114,9 @@
         <h2 id="nav-title">Erika</h2>
         <ul>
             <li><a href="#about">Sobre Mí</a></li>
-            <li><a href="#servicios">Servicios</a></li>
             <li><a href="#precios">Tarifas</a></li>
+            <li><a href="#videos">Galería</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
         </ul>
     </nav>
 </header>
@@ -129,7 +133,7 @@
     <div class="about-container" data-aos="fade-up">
         <div class="about-text">
             <h2>SOBRE MÍ</h2>
-            <p id="about-text-p">Cargando información...</p>
+            <p id="about-text-p">Cargando biografía...</p>
         </div>
         <div class="about-img">
             <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80" alt="Erika">
@@ -145,20 +149,20 @@
             <div class="price-tag" id="price-1">$0</div>
             <p><span>/ 60 MINUTOS</span></p>
             <br>
-            <a class="btn" href="https://wa.me/13237932528">Elegir</a>
+            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan básico">Elegir</a>
         </div>
         <div class="card" data-aos="flip-left" data-aos-delay="100" style="background: #f0fdf4;">
             <h3>Premium</h3>
             <div class="price-tag" id="price-2">$0</div>
             <p><span>/ 60 MINUTOS</span></p>
             <br>
-            <a class="btn" href="https://wa.me/13237932528">Elegir</a>
+            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan premium">Elegir</a>
         </div>
     </div>
 </section>
 
 <section id="videos">
-    <h2 class="section-title">Videos</h2>
+    <h2 class="section-title">Galería</h2>
     <div class="video-grid" id="video-container">
         </div>
 </section>
@@ -166,63 +170,75 @@
 <section id="ubicacion">
     <h2 class="section-title">Ubicación</h2>
     <div style="text-align: center; margin-bottom: 20px;">
-        <p>📍 4716 Lomita st. Los Angeles CA, 90019</p>
+        <p style="font-weight: 800; font-size: 1.2rem;">📍 4716 Lomita St, Los Angeles, CA 90019</p>
     </div>
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed/v1/place?key=REEMPLAZAR_CON_TU_API_KEY&q=4716+Lomita+st+Los+Angeles+CA+900191" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="map-container" data-aos="zoom-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.8647573030386!2d-118.3391784!3d34.0473489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b904944f2d37%3A0xc479e00ec6f9479b!2s4716%20Lomita%20St%2C%20Los%20Angeles%2C%20CA%2090019!5e0!3m2!1ses!2sus!4v1710500000000!5m2!1ses!2sus" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <a class="btn" href="https://www.google.com/maps/embed/v1/place?key=REEMPLAZAR_CON_TU_API_KEY&q=4716+Lomita+st+Los+Angeles+CA+900192" target="_blank" style="background: #4285F4;">Ver en Google Maps</a>
+    <div style="text-align: center; margin-top: 30px;">
+        <a class="btn" href="https://maps.app.goo.gl/35C3fM8P98fBqK676" target="_blank" style="background: #4285F4;">Ver en Google Maps</a>
     </div>
 </section>
 
 <a class="whatsapp" href="https://wa.me/13237932528">💬</a>
 
 <footer>
-    <p>© 2026 ERIKA SPA TERAPÉUTICO</p>
+    <p id="footer-text">© 2026 Spa Terapéutico</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
     AOS.init({duration: 1000, once: true});
 
-   async function cargarConfiguracion() {
+    async function cargarContenido() {
         try {
-            // Este truco obliga a Netlify a ignorar la versión guardada y bajar la nueva
-            const respuesta = await fetch('data/config.json?nocache=' + new Date().getTime(), {
-                cache: 'no-store' 
-            });
-            
+            // Forzar carga de datos frescos
+            const respuesta = await fetch('data/config.json?v=' + Date.now());
             if (!respuesta.ok) return;
             const data = await respuesta.json();
 
-            // Sincronizar textos
-            document.getElementById('nav-title').innerText = data.titulo;
+            // 1. Aplicar Textos
+            document.getElementById('nav-title').innerText = data.titulo || "ERIKA";
             document.getElementById('about-text-p').innerText = data.sobre_mi;
             document.getElementById('price-1').innerText = `$${data.precio_basico}`;
             document.getElementById('price-2').innerText = `$${data.precio_premium}`;
+            document.getElementById('footer-text').innerText = `© 2026 ${data.titulo}`;
 
-            // Sincronizar Galería
-            const container = document.getElementById('video-container');
-            if (data.videos && container) {
-                container.innerHTML = data.videos.map(url => {
-                    const link = url.trim();
+            // 2. Galería de Videos Inteligente (PC y Celular)
+            const contenedor = document.getElementById('video-container');
+            if (data.videos) {
+                contenedor.innerHTML = data.videos.map(url => {
+                    let link = url.trim();
                     if (!link) return '';
+
+                    // CASO TIKTOK
                     if (link.includes("tiktok.com")) {
-                        const videoId = link.match(/\/video\/(\d+)/)?.[1];
-                        return `<div class="video-wrapper" style="padding-bottom: 177%;"><iframe src="https://www.tiktok.com/embed/v2/${videoId}" allowfullscreen></iframe></div>`;
-                    } else if (link.includes("facebook.com") || link.includes("fb.watch")) {
-                        return `<div class="video-wrapper"><iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(link)}&show_text=0" allowfullscreen></iframe></div>`;
-                    } else {
-                        let yid = link.includes("v=") ? link.split("v=")[1].split("&")[0] : 
-                                  link.includes("youtu.be/") ? link.split("youtu.be/")[1].split("?")[0] : link;
+                        const matchId = link.match(/\/video\/(\d+)/);
+                        if (matchId) {
+                            return `<div class="video-wrapper tiktok"><iframe src="https://www.tiktok.com/embed/v2/${matchId[1]}" allowfullscreen></iframe></div>`;
+                        } else {
+                            // Link de celular o corto
+                            return `<div class="card" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:280px; border:4px dashed var(--primary);">
+                                        <p style="font-weight:800; margin-bottom:15px;">📱 VIDEO DE TIKTOK</p>
+                                        <a href="${link}" target="_blank" class="btn" style="padding:10px 20px; font-size:12px;">VER TRATAMIENTO</a>
+                                    </div>`;
+                        }
+                    } 
+                    // CASO YOUTUBE
+                    else {
+                        let yid = "";
+                        if (link.includes("v=")) yid = link.split("v=")[1].split("&")[0];
+                        else if (link.includes("youtu.be/")) yid = link.split("youtu.be/")[1].split("?")[0];
+                        else yid = link;
                         return `<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen></iframe></div>`;
                     }
                 }).join('');
+                AOS.refresh();
             }
-        } catch (e) { console.error("Error cargando configuración:", e); }
+        } catch (e) { console.error("Error cargando panel:", e); }
     }
-    window.addEventListener('load', cargarConfiguracion);
+    window.addEventListener('load', cargarContenido);
 </script>
 </body>
 </html>
