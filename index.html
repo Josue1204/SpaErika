@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erika | Spa Terapéutico Profesional</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
         :root {
             --primary: #1a8c54; 
-            --bg-body: #e5e7eb; /* Gris claro definido, no se ve blanco */
+            --bg-body: #e5e7eb; /* Gris piedra que resalta las tarjetas */
             --card-white: #ffffff;
-            --text-main: #000000; /* Negro puro para máximo contraste */
-            --accent-soft: #d1fae5; /* Verde muy suave para fondos de tarjetas */
+            --text-main: #000000;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
@@ -29,62 +28,99 @@
             position: fixed; top: 0; width: 100%;
             background: #ffffff;
             z-index: 100; 
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 4px solid #000;
         }
 
         nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        nav h2 { color: var(--primary); font-size: 1.8rem; font-weight: 800; }
+        nav h2 { color: var(--primary); font-size: 2rem; font-weight: 800; text-transform: uppercase; }
         nav ul { display: flex; list-style: none; gap: 20px; }
-        nav a { text-decoration: none; color: var(--text-main); font-weight: 700; transition: 0.3s; }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 800; transition: 0.2s; font-size: 0.9rem; }
+        nav a:hover { color: var(--primary); }
 
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
+            height: 90vh;
+            background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), 
                         url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center; text-align: center;
+            border-bottom: 4px solid #000;
         }
 
-        .hero h1 { font-size: 4rem; color: #000; text-shadow: 2px 2px 10px rgba(255,255,255,0.8); }
+        .hero h1 { 
+            font-size: clamp(40px, 10vw, 80px); 
+            color: #000; 
+            font-weight: 800;
+            text-shadow: 4px 4px 0px #fff;
+            line-height: 1.1;
+        }
 
         .btn {
-            background: var(--primary); color: white; padding: 18px 45px; border-radius: 10px;
+            background: var(--primary); color: white; padding: 20px 45px; border-radius: 0px;
             text-decoration: none; font-weight: 800; display: inline-block;
-            box-shadow: 4px 4px 0px #000; /* Estilo moderno con sombra sólida */
+            border: 4px solid #000;
+            box-shadow: 6px 6px 0px #000;
+            transition: 0.2s;
+            cursor: pointer;
+            text-transform: uppercase;
         }
+        .btn:hover { transform: translate(-2px, -2px); box-shadow: 9px 9px 0px #000; }
 
-        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-        h2.section-title { font-size: 3rem; margin-bottom: 40px; text-align: center; font-weight: 800; color: #000; }
+        section { padding: 100px 20px; max-width: 1200px; margin: auto; }
+        h2.section-title { font-size: 3.5rem; margin-bottom: 60px; text-align: center; font-weight: 800; color: #000; text-transform: uppercase; }
 
-        .services, .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* Estilos Sobre Mí (Modificado) */
+        .about-container { 
+            display: flex; align-items: center; gap: 40px; flex-wrap: wrap; 
+            background: var(--card-white); border: 4px solid #000; padding: 40px;
+            box-shadow: 12px 12px 0px var(--primary);
+        }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; }
+        .about-text p { font-weight: 700; font-size: 1.1rem; color: #000; margin-bottom: 15px; }
+        .about-img { flex: 1; min-width: 300px; border: 4px solid #000; }
+        .about-img img { width: 100%; display: block; filter: grayscale(20%); }
+
+        /* Servicios y Precios */
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         
         .card {
             background: var(--card-white);
-            border: 3px solid #000; /* Borde negro grueso para máximo resalte */
-            border-radius: 0px; /* Estilo cuadrado moderno */
+            border: 4px solid #000;
+            border-radius: 0px;
             padding: 40px;
-            box-shadow: 8px 8px 0px var(--primary); /* Sombra de color sólida */
+            box-shadow: 10px 10px 0px var(--primary);
             transition: 0.2s;
         }
-        .card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px #000; }
+        .card:hover { transform: translate(-4px, -4px); box-shadow: 14px 14px 0px #000; }
+        .card h3 { color: var(--primary); font-size: 2rem; margin-bottom: 15px; font-weight: 800; text-transform: uppercase; }
+        .card p { font-weight: 700; font-size: 1.1rem; }
 
-        .card h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; font-weight: 800; }
-        .card p { font-weight: 600; font-size: 1.1rem; }
+        .price-tag { font-size: 4rem; font-weight: 900; color: #000; margin: 15px 0; }
+        .price-tag span { font-size: 1.2rem; text-transform: uppercase; }
 
-        .price-tag { font-size: 3.5rem; font-weight: 900; color: #000; margin: 20px 0; }
-
-        .video-grid iframe { 
-            width: 100%; height: 300px; border: 4px solid #000;
+        /* Videos con Proporción Corregida */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación 16:9 */
+            height: 0;
+            border: 4px solid #000;
+            box-shadow: 10px 10px 0px var(--primary);
+            background: #000;
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         }
 
         .whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white;
-            width: 70px; height: 70px; border-radius: 15px; display: flex; align-items: center;
-            justify-content: center; text-decoration: none; font-size: 40px; z-index: 1000;
-            border: 3px solid #000;
+            width: 75px; height: 75px; border-radius: 0px; display: flex; align-items: center;
+            justify-content: center; text-decoration: none; font-size: 45px; z-index: 1000;
+            border: 4px solid #000; box-shadow: 6px 6px 0px #000;
         }
 
-        footer { background: #000; color: #fff; padding: 50px; text-align: center; }
+        footer { background: #000; color: #fff; padding: 60px 20px; text-align: center; }
+        footer p { font-weight: 800; font-size: 1.2rem; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -95,62 +131,81 @@
         <ul>
             <li><a href="#about">Sobre Mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#precios">Precios</a></li>
+            <li><a href="#precios">Tarifas</a></li>
         </ul>
     </nav>
 </header>
 
 <section class="hero">
     <div data-aos="zoom-in">
-        <h1>Tu bienestar <br><b>empieza aquí.</b></h1>
-        <br>
-        <a class="btn" href="https://wa.me/13237932528">RESERVAR AHORA</a>
+        <h1>TU BIENESTAR<br>EMPIEZA AQUÍ</h1>
+        <br><br>
+        <a class="btn" href="https://wa.me/13237932528">Reserva tu cita</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-container" data-aos="fade-up">
+        <div class="about-text">
+            <h2>SOBRE MÍ</h2>
+            <p>Soy Erika, especialista en terapias corporales enfocadas en la salud integral.</p>
+            <p>Con técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.</p>
+        </div>
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80" alt="Erika">
+        </div>
     </div>
 </section>
 
 <section id="servicios">
-    <h2 class="section-title">SERVICIOS</h2>
-    <div class="services">
+    <h2 class="section-title">Servicios</h2>
+    <div class="grid-layout">
         <div class="card" data-aos="fade-up">
             <h3>Masaje Profundo</h3>
-            <p>Elimina nudos y tensión acumulada. Resalta tu salud física.</p>
+            <p>Elimina nudos y tensión acumulada por el trabajo o el ejercicio.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="100">
             <h3>Matriz</h3>
-            <p>Acomodación especializada para mejorar la fertilidad y salud femenina.</p>
+            <p>Tratamiento de acomodación ideal para mejorar la fertilidad y salud femenina.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="200">
             <h3>Reflexología</h3>
-            <p>Puntos de presión para equilibrio orgánico total.</p>
+            <p>Equilibrio total presionando puntos estratégicos en todo el cuerpo.</p>
         </div>
     </div>
 </section>
 
 <section id="precios">
-    <h2 class="section-title">TARIFAS</h2>
-    <div class="pricing">
+    <h2 class="section-title">Tarifas</h2>
+    <div class="grid-layout">
         <div class="card" data-aos="flip-left">
             <h3>Básico</h3>
+            <p>Masaje Relajante</p>
             <div class="price-tag">$90</div>
-            <p>60 MINUTOS</p>
+            <p><span>/ 60 MINUTOS</span></p>
             <br>
-            <a class="btn" href="https://wa.me/13237932528">ELEGIR</a>
+            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan básico" style="padding: 12px 25px;">Elegir</a>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="100">
+        <div class="card" data-aos="flip-left" data-aos-delay="100" style="background: #f0fdf4;">
             <h3>Premium</h3>
+            <p>Acomodación de Matriz</p>
             <div class="price-tag">$110</div>
-            <p>60 MINUTOS</p>
+            <p><span>/ 60 MINUTOS</span></p>
             <br>
-            <a class="btn" href="https://wa.me/13237932528">ELEGIR</a>
+            <a class="btn" href="https://wa.me/13237932528?text=Hola, quiero el plan premium" style="padding: 12px 25px;">Elegir</a>
         </div>
     </div>
 </section>
 
 <section id="videos">
-    <h2 class="section-title">VIDEOS</h2>
+    <h2 class="section-title">Videos</h2>
     <div class="video-grid">
-        <iframe src="https://www.youtube.com/embed/Bp_IIDkKIwg"></iframe>
-        <iframe src="https://www.youtube.com/embed/4LDQceHxmKk"></iframe>
+        <div class="video-wrapper" data-aos="fade-up">
+            <iframe src="https://www.youtube.com/embed/Bp_IIDkKIwg" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <iframe src="https://www.youtube.com/embed/4LDQceHxmKk" allowfullscreen></iframe>
+        </div>
     </div>
 </section>
 
@@ -158,11 +213,12 @@
 
 <footer>
     <p>© 2026 ERIKA SPA TERAPÉUTICO</p>
+    <br>
     <p>LUNES A DOMINGO: 9 AM - 8 PM</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>AOS.init();</script>
+<script>AOS.init({duration: 1000, once: true});</script>
 
 </body>
 </html>
