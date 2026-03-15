@@ -199,54 +199,48 @@
 <script>
     AOS.init({duration: 1000, once: true});
 
-    async function cargarContenido() {
-        try {
-            // Forzar carga de datos frescos
-            const respuesta = await fetch('data/config.json?v=' + Date.now());
-            if (!respuesta.ok) return;
-            const data = await respuesta.json();
+   async function actualizarWeb() {
+    try {
+        const res = await fetch('data/config.json?v=' + Date.now());
+        if (!res.ok) return;
+        const data = await res.json();
 
-            // 1. Aplicar Textos
-            document.getElementById('nav-title').innerText = data.titulo || "ERIKA";
-            document.getElementById('about-text-p').innerText = data.sobre_mi;
-            document.getElementById('price-1').innerText = `$${data.precio_basico}`;
-            document.getElementById('price-2').innerText = `$${data.precio_premium}`;
-            document.getElementById('footer-text').innerText = `© 2026 ${data.titulo}`;
+        // 1. Textos y Precios
+        document.getElementById('nav-title').innerText = data.titulo || "Erika";
+        document.getElementById('about-text-p').innerText = data.sobre_mi;
+        document.getElementById('price-1').innerText = `$${data.precio_basico}`;
+        document.getElementById('price-2').innerText = `$${data.precio_premium}`;
 
-            // 2. Galería de Videos Inteligente (PC y Celular)
-            const contenedor = document.getElementById('video-container');
-            if (data.videos) {
-                contenedor.innerHTML = data.videos.map(url => {
-                    let link = url.trim();
-                    if (!link) return '';
+        // 2. Galería de FOTOS (Nueva lógica)
+        const fotoContainer = document.querySelector('.gallery'); // Seleccionamos tu contenedor de fotos
+        if (data.fotos && data.fotos.length > 0) {
+            fotoContainer.innerHTML = data.fotos.map(imgUrl => {
+                // Si la imagen viene de la carpeta images, le ponemos la ruta correcta
+                const path = imgUrl.startsWith('http') ? imgUrl : imgUrl; 
+                return `<img src="${path}" alt="Tratamiento Spa" data-aos="zoom-in">`;
+            }).join('');
+        }
 
-                    // CASO TIKTOK
-                    if (link.includes("tiktok.com")) {
-                        const matchId = link.match(/\/video\/(\d+)/);
-                        if (matchId) {
-                            return `<div class="video-wrapper tiktok"><iframe src="https://www.tiktok.com/embed/v2/${matchId[1]}" allowfullscreen></iframe></div>`;
-                        } else {
-                            // Link de celular o corto
-                            return `<div class="card" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:280px; border:4px dashed var(--primary);">
-                                        <p style="font-weight:800; margin-bottom:15px;">📱 VIDEO DE TIKTOK</p>
-                                        <a href="${link}" target="_blank" class="btn" style="padding:10px 20px; font-size:12px;">VER TRATAMIENTO</a>
-                                    </div>`;
-                        }
-                    } 
-                    // CASO YOUTUBE
-                    else {
-                        let yid = "";
-                        if (link.includes("v=")) yid = link.split("v=")[1].split("&")[0];
-                        else if (link.includes("youtu.be/")) yid = link.split("youtu.be/")[1].split("?")[0];
-                        else yid = link;
-                        return `<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen></iframe></div>`;
-                    }
-                }).join('');
-                AOS.refresh();
-            }
-        } catch (e) { console.error("Error cargando panel:", e); }
-    }
-    window.addEventListener('load', cargarContenido);
+        // 3. Galería de VIDEOS
+        const videoContainer = document.getElementById('video-container');
+        if (data.videos) {
+            videoContainer.innerHTML = data.videos.map(url => {
+                const link = url.trim();
+                if (!link) return '';
+                if (link.includes("tiktok.com")) {
+                    const videoId = link.match(/\/video\/(\d+)/)?.[1];
+                    return videoId ? `<div class="video-wrapper tiktok"><iframe src="https://www.tiktok.com/embed/v2/${videoId}" allowfullscreen></iframe></div>` : '';
+                } else {
+                    let yid = link.includes("v=") ? link.split("v=")[1].split("&")[0] : 
+                              link.includes("youtu.be/") ? link.split("youtu.be/")[1].split("?")[0] : link;
+                    return `<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen></iframe></div>`;
+                }
+            }).join('');
+        }
+        if (window.AOS) AOS.refresh();
+    } catch (e) { console.error("Error:", e); }
+}
+window.addEventListener('load', actualizarWeb);
 </script>
 </body>
 </html>
