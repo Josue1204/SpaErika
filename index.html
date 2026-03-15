@@ -219,6 +219,30 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>AOS.init({duration: 1000, once: true});</script>
+    <script>
+  async function cargarConfiguracion() {
+    const res = await fetch('data/config.json');
+    const data = await res.json();
+
+    // Actualizar Textos
+    document.querySelector('nav h2').innerText = data.titulo;
+    document.querySelector('#about p').innerText = data.sobre_mi;
+    
+    // Actualizar Precios
+    document.querySelectorAll('.price-tag')[0].innerText = `$${data.precio_basico}`;
+    document.querySelectorAll('.price-tag')[1].innerText = `$${data.precio_premium}`;
+
+    // Actualizar Videos
+    const contenedorVideos = document.querySelector('.video-grid');
+    contenedorVideos.innerHTML = data.videos.map(id => `
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>
+      </div>
+    `).join('');
+  }
+  
+  cargarConfiguracion();
+</script>
 
 </body>
 </html>
