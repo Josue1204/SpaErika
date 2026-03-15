@@ -248,30 +248,43 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>AOS.init({duration: 1000, once: true});</script>
-    <script>
-  async function cargarConfiguracion() {
-    const res = await fetch('data/config.json');
-    const data = await res.json();
+<script>
+    async function aplicarCambiosAdmin() {
+        try {
+            // Buscamos el archivo de configuración que edita el panel
+            const response = await fetch('data/config.json');
+            const data = await response.json();
 
-    // Actualizar Textos
-    document.querySelector('nav h2').innerText = data.titulo;
-    document.querySelector('#about p').innerText = data.sobre_mi;
-    
-    // Actualizar Precios
-    document.querySelectorAll('.price-tag')[0].innerText = `$${data.precio_basico}`;
-    document.querySelectorAll('.price-tag')[1].innerText = `$${data.precio_premium}`;
+            // 1. Cambiar el nombre en el Header
+            document.querySelector('nav h2').innerText = data.titulo;
 
-    // Actualizar Videos
-    const contenedorVideos = document.querySelector('.video-grid');
-    contenedorVideos.innerHTML = data.videos.map(id => `
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>
-      </div>
-    `).join('');
-  }
-  
-  cargarConfiguracion();
+            // 2. Cambiar el texto de "Sobre Mí"
+            document.querySelector('#about p').innerText = data.sobre_mi;
+
+            // 3. Cambiar los Precios
+            // Asumiendo que el primero es Básico y el segundo Premium
+            const etiquetasPrecios = document.querySelectorAll('.price-tag');
+            if(etiquetasPrecios[0]) etiquetasPrecios[0].innerHTML = `$${data.precio_basico}`;
+            if(etiquetasPrecios[1]) etiquetasPrecios[1].innerHTML = `$${data.precio_premium}`;
+
+            // 4. Cargar los Videos dinámicamente
+            const contenedorVideos = document.querySelector('.video-grid');
+            if (data.videos && data.videos.length > 0) {
+                contenedorVideos.innerHTML = data.videos.map(id => `
+                    <div class="video-wrapper" data-aos="fade-up">
+                        <iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>
+                    </div>
+                `).join('');
+                // Refrescamos las animaciones para los nuevos videos
+                AOS.refresh();
+            }
+        } catch (error) {
+            console.log("Aún no hay configuración personalizada o hubo un error:", error);
+        }
+    }
+
+    // Llamamos a la función al cargar la página
+    window.addEventListener('load', aplicarCambiosAdmin);
 </script>
-
 </body>
 </html>
