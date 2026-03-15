@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: josue1204/SpaErika  # Debe ser exactamente tu usuario/repositorio
   branch: main # Verifica si tu rama se llama main o master
   base_url: https://josue1204.github.io/SpaErika/
