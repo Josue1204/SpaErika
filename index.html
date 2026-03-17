@@ -14,9 +14,12 @@
     <style>
         :root {
             --primary: #1a8c54;
+            --primary-dark: #146c41;
             --bg-body: #e5e7eb;
             --card-white: #ffffff;
             --text-main: #000000;
+            --shadow-main: 10px 10px 0px var(--primary);
+            --border-main: 4px solid #000;
         }
 
         * {
@@ -43,7 +46,7 @@
             top: 0;
             width: 100%;
             background: #ffffff;
-            z-index: 100;
+            z-index: 1000;
             border-bottom: 4px solid #000;
         }
 
@@ -55,28 +58,38 @@
             align-items: center;
             padding: 15px 20px;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
-        nav h2 {
+        .nav-brand {
             color: var(--primary);
             font-size: 2rem;
             font-weight: 800;
             text-transform: uppercase;
         }
 
-        nav ul {
+        .nav-toggle {
+            display: none;
+            background: #fff;
+            border: 3px solid #000;
+            padding: 10px 14px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        .nav-menu {
             display: flex;
             list-style: none;
             gap: 20px;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
-        nav a {
+        .nav-menu a {
             text-decoration: none;
             color: var(--text-main);
             font-weight: 800;
             font-size: 0.95rem;
+            text-transform: uppercase;
         }
 
         .hero {
@@ -158,7 +171,7 @@
             gap: 40px;
             flex-wrap: wrap;
             background: var(--card-white);
-            border: 4px solid #000;
+            border: var(--border-main);
             padding: 40px;
             box-shadow: 12px 12px 0px var(--primary);
         }
@@ -185,7 +198,7 @@
         .about-img {
             flex: 1;
             min-width: 300px;
-            border: 4px solid #000;
+            border: var(--border-main);
             overflow: hidden;
             background: #ddd;
         }
@@ -205,9 +218,9 @@
 
         .card {
             background: var(--card-white);
-            border: 4px solid #000;
+            border: var(--border-main);
             padding: 40px;
-            box-shadow: 10px 10px 0px var(--primary);
+            box-shadow: var(--shadow-main);
             transition: 0.2s;
         }
 
@@ -228,24 +241,40 @@
             font-size: 3.2rem;
             font-weight: 900;
             color: #000;
-            margin: 15px 0;
+            margin: 10px 0 4px;
         }
 
-        .price-note {
+        .price-duration {
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .price-description {
             font-weight: 700;
-            font-size: 0.95rem;
+            margin-bottom: 25px;
+            min-height: 80px;
+            white-space: pre-line;
         }
 
         .service-list {
             display: grid;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
 
         .service-item {
-            background: var(--card-white);
-            border: 4px solid #000;
+            background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
+            border: var(--border-main);
             padding: 25px;
             box-shadow: 8px 8px 0px var(--primary);
+            transition: 0.2s;
+        }
+
+        .service-item:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 12px 12px 0px #000;
         }
 
         .service-item h3 {
@@ -264,7 +293,7 @@
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            gap: 30px;
             align-items: start;
         }
 
@@ -272,10 +301,17 @@
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
-            border: 4px solid #000;
-            box-shadow: 10px 10px 0px var(--primary);
+            border: var(--border-main);
+            box-shadow: var(--shadow-main);
             background: #000;
             overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .video-wrapper:hover,
+        .photo-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 14px 14px 0px #000;
         }
 
         .video-wrapper.tiktok {
@@ -293,9 +329,10 @@
 
         .photo-card {
             background: var(--card-white);
-            border: 4px solid #000;
-            box-shadow: 10px 10px 0px var(--primary);
+            border: var(--border-main);
+            box-shadow: var(--shadow-main);
             overflow: hidden;
+            transition: 0.2s;
         }
 
         .photo-card img {
@@ -315,7 +352,7 @@
         }
 
         .map-container {
-            border: 4px solid #000;
+            border: var(--border-main);
             box-shadow: 12px 12px 0px var(--primary);
             overflow: hidden;
             height: 450px;
@@ -366,21 +403,40 @@
             text-transform: uppercase;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                justify-content: center;
+        @media (max-width: 900px) {
+            .nav-toggle {
+                display: inline-block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-bottom: 4px solid #000;
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                padding: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
                 text-align: center;
             }
 
-            nav ul {
-                justify-content: center;
-                gap: 12px;
+            .nav-menu a {
+                display: block;
+                padding: 14px 20px;
             }
+        }
 
-            nav a {
-                font-size: 0.85rem;
-            }
-
+        @media (max-width: 768px) {
             h2.section-title {
                 font-size: 2.2rem;
                 margin-bottom: 40px;
@@ -396,7 +452,8 @@
             }
 
             .video-grid,
-            .photo-grid {
+            .photo-grid,
+            .service-list {
                 grid-template-columns: 1fr;
             }
 
@@ -436,6 +493,10 @@
             .map-address p {
                 font-size: 1rem;
             }
+
+            .nav-brand {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -443,8 +504,13 @@
 
 <header>
     <nav>
-        <h2 id="nav-title">Erika</h2>
-        <ul>
+        <h2 class="nav-brand" id="nav-title">Erika</h2>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="#about">Sobre Mí</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#precios">Tarifas</a></li>
@@ -477,8 +543,7 @@
             <img
                 id="about-image"
                 src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80"
-                alt="Especialista en masajes terapéuticos"
-            >
+                alt="Especialista en masajes terapéuticos">
         </div>
     </div>
 </section>
@@ -494,20 +559,20 @@
     <h2 class="section-title">Tarifas</h2>
     <div class="grid-layout">
         <div class="card" data-aos="flip-left">
-            <h3>Básico</h3>
+            <h3 id="plan-basic-title">Básico</h3>
             <div class="price-tag" id="price-1">Consultar</div>
-            <p class="price-note"><span>/ 60 minutos</span></p>
-            <br>
+            <div class="price-duration" id="duration-1">60 minutos</div>
+            <p class="price-description" id="desc-1">Consulta para conocer lo que incluye este servicio.</p>
             <a class="btn" id="basic-whatsapp-btn" href="https://wa.me/13237932528?text=Hola, quiero información del plan básico" target="_blank" rel="noopener noreferrer">
                 Elegir
             </a>
         </div>
 
         <div class="card" data-aos="flip-left" data-aos-delay="100" style="background: #f0fdf4;">
-            <h3>Premium</h3>
+            <h3 id="plan-premium-title">Premium</h3>
             <div class="price-tag" id="price-2">Consultar</div>
-            <p class="price-note"><span>/ 60 minutos</span></p>
-            <br>
+            <div class="price-duration" id="duration-2">60 minutos</div>
+            <p class="price-description" id="desc-2">Consulta para conocer lo que incluye este servicio.</p>
             <a class="btn" id="premium-whatsapp-btn" href="https://wa.me/13237932528?text=Hola, quiero información del plan premium" target="_blank" rel="noopener noreferrer">
                 Elegir
             </a>
@@ -575,10 +640,19 @@
         hero_subtitulo: "Atención profesional y personalizada",
         whatsapp: "13237932528",
         sobre_mi: "Soy especialista en masajes terapéuticos y bienestar integral.",
-        precio_basico: 0,
-        precio_premium: 0,
         imagen_hero: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
         imagen_sobre_mi: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
+
+        plan_basico_titulo: "Básico",
+        precio_basico: 0,
+        duracion_basico: "60 minutos",
+        descripcion_basico: "Consulta para conocer lo que incluye este servicio.",
+
+        plan_premium_titulo: "Premium",
+        precio_premium: 0,
+        duracion_premium: "60 minutos",
+        descripcion_premium: "Consulta para conocer lo que incluye este servicio.",
+
         ubicacion_texto: "4716 Lomita St, Los Angeles, CA 90019",
         ubicacion_mapa_query: "4716 Lomita St, Los Angeles, CA 90019",
         videos: [],
@@ -599,15 +673,9 @@
 
     function obtenerYouTubeId(link) {
         try {
-            if (link.includes("youtu.be/")) {
-                return link.split("youtu.be/")[1].split("?")[0];
-            }
-            if (link.includes("youtube.com/watch?v=")) {
-                return link.split("v=")[1].split("&")[0];
-            }
-            if (link.includes("youtube.com/embed/")) {
-                return link.split("embed/")[1].split("?")[0];
-            }
+            if (link.includes("youtu.be/")) return link.split("youtu.be/")[1].split("?")[0];
+            if (link.includes("youtube.com/watch?v=")) return link.split("v=")[1].split("&")[0];
+            if (link.includes("youtube.com/embed/")) return link.split("embed/")[1].split("?")[0];
             return "";
         } catch {
             return "";
@@ -642,17 +710,15 @@
             return;
         }
 
-        contenedor.innerHTML = fotos
-            .map(foto => {
-                const url = typeof foto === "string" ? foto : foto?.imagen;
-                if (!url) return "";
-                return `
-                    <div class="photo-card" data-aos="zoom-in">
-                        <img src="${url}" alt="Foto de ${tituloSpa}" loading="lazy">
-                    </div>
-                `;
-            })
-            .join("") || `<div class="empty-state">Aún no hay fotos disponibles.</div>`;
+        contenedor.innerHTML = fotos.map(foto => {
+            const url = typeof foto === "string" ? foto : foto?.imagen;
+            if (!url) return "";
+            return `
+                <div class="photo-card" data-aos="zoom-in">
+                    <img src="${url}" alt="Foto de ${tituloSpa}" loading="lazy">
+                </div>
+            `;
+        }).join("") || `<div class="empty-state">Aún no hay fotos disponibles.</div>`;
     }
 
     function renderVideos(videos) {
@@ -722,6 +788,7 @@
         const year = new Date().getFullYear();
 
         document.title = `${contenido.titulo} | Spa Terapéutico Profesional`;
+
         document.querySelector('meta[name="description"]').setAttribute(
             "content",
             contenido.meta_descripcion || `${contenido.titulo} | Spa terapéutico profesional con atención personalizada.`
@@ -732,8 +799,15 @@
         document.getElementById("hero-subtitle").innerText = contenido.hero_subtitulo || "Atención profesional y personalizada";
         document.getElementById("about-text-p").innerText = contenido.sobre_mi || FALLBACK_DATA.sobre_mi;
 
+        document.getElementById("plan-basic-title").innerText = contenido.plan_basico_titulo || "Básico";
         document.getElementById("price-1").innerText = formatearPrecio(contenido.precio_basico);
+        document.getElementById("duration-1").innerText = contenido.duracion_basico || "60 minutos";
+        document.getElementById("desc-1").innerText = contenido.descripcion_basico || "Consulta para conocer lo que incluye este servicio.";
+
+        document.getElementById("plan-premium-title").innerText = contenido.plan_premium_titulo || "Premium";
         document.getElementById("price-2").innerText = formatearPrecio(contenido.precio_premium);
+        document.getElementById("duration-2").innerText = contenido.duracion_premium || "60 minutos";
+        document.getElementById("desc-2").innerText = contenido.descripcion_premium || "Consulta para conocer lo que incluye este servicio.";
 
         document.getElementById("footer-text").innerText = `© ${year} ${contenido.titulo}`;
 
@@ -754,12 +828,12 @@
 
         document.getElementById("basic-whatsapp-btn").href = crearLinkWhatsApp(
             contenido.whatsapp,
-            "Hola, quiero información del plan básico"
+            `Hola, quiero información del plan ${contenido.plan_basico_titulo || "básico"}`
         );
 
         document.getElementById("premium-whatsapp-btn").href = crearLinkWhatsApp(
             contenido.whatsapp,
-            "Hola, quiero información del plan premium"
+            `Hola, quiero información del plan ${contenido.plan_premium_titulo || "premium"}`
         );
 
         const direccionTexto = contenido.ubicacion_texto || FALLBACK_DATA.ubicacion_texto;
@@ -788,7 +862,23 @@
         }
     }
 
-    document.addEventListener("DOMContentLoaded", cargarContenido);
+    document.addEventListener("DOMContentLoaded", () => {
+        cargarContenido();
+
+        const navToggle = document.getElementById("nav-toggle");
+        const navMenu = document.getElementById("nav-menu");
+        const navLinks = navMenu.querySelectorAll("a");
+
+        navToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+            });
+        });
+    });
 </script>
 </body>
 </html>
