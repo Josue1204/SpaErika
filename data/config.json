@@ -23,7 +23,7 @@
     }
   ],
   "titulo": "Sobadora",
-  "precio_basico": 0,
+  "precio_basico": 100,
   "servicios": [
     {
       "titulo": "Masaje terapéutico",
@@ -38,6 +38,6 @@
       "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
     }
   ],
-  "precio_premium": 0,
+  "precio_premium": 120,
   "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ"
 }
