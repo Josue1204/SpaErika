@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images" # Aquí se guardarán las fotos que subas
+media_folder: "images"
 public_folder: "/images"
 
 collections:
@@ -16,15 +16,48 @@ collections:
         label: "Contenido General"
         file: "data/config.json"
         fields:
-          - {label: "🏨 Nombre del Spa", name: "titulo", widget: "string"}
-          - {label: "👤 Biografía (Sobre Mí)", name: "sobre_mi", widget: "text"}
-          - {label: "💵 Precio Masaje Básico", name: "precio_basico", widget: "number"}
-          - {label: "💎 Precio Masaje Premium", name: "precio_premium", widget: "number"}
+          - { label: "🏨 Nombre del Spa", name: "titulo", widget: "string" }
+
+          - { label: "🔎 Meta descripción SEO", name: "meta_descripcion", widget: "text", required: false }
+
+          - { label: "🦸 Título Principal Hero", name: "hero_titulo", widget: "text", required: false }
+
+          - { label: "📝 Subtítulo Hero", name: "hero_subtitulo", widget: "string", required: false }
+
+          - { label: "📱 Número de WhatsApp", name: "whatsapp", widget: "string", hint: "Ejemplo: 13237932528" }
+
+          - { label: "👤 Biografía (Sobre Mí)", name: "sobre_mi", widget: "text" }
+
+          - { label: "🖼️ Imagen principal del Hero", name: "imagen_hero", widget: "image", required: false }
+
+          - { label: "📸 Imagen de Sobre Mí", name: "imagen_sobre_mi", widget: "image", required: false }
+
+          - { label: "💵 Precio Masaje Básico", name: "precio_basico", widget: "number", required: false, value_type: "int" }
+
+          - { label: "💎 Precio Masaje Premium", name: "precio_premium", widget: "number", required: false, value_type: "int" }
+
+          - label: "🛎️ Servicios"
+            name: "servicios"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título del servicio", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+
           - label: "🎥 Galería de Videos"
             name: "videos"
             widget: "list"
-            field: {label: "Link de YouTube o TikTok", name: "video", widget: "string"}
+            required: false
+            field:
+              { label: "Link de YouTube o TikTok", name: "video", widget: "string" }
+
           - label: "📸 Galería de Fotos"
             name: "fotos"
             widget: "list"
-            field: {label: "Subir Imagen", name: "imagen", widget: "image"}
+            required: false
+            field:
+              { label: "Subir Imagen", name: "imagen", widget: "image" }
+
+          - { label: "📍 Texto de ubicación", name: "ubicacion_texto", widget: "string", required: false }
+
+          - { label: "🗺️ Query para Google Maps", name: "ubicacion_mapa_query", widget: "string", required: false, hint: "Ejemplo: 4716 Lomita St, Los Angeles, CA 90019" }
