@@ -1,31 +1,23 @@
 {
-  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
-  "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
-  "imagen_hero": "https://thumbs.dreamstime.com/b/masajista-profesional-de-vista-lateral-con-masaje-manos-la-joven-cliente-en-el-centro-bienestar-wellness-foto-belleza-y-atr%C3%A1s-177856410.jpg",
-  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-  "fotos": [
-    "/images/mc_mdemc_marriott_medellin_spa_1920x1080.jpg"
-  ],
-  "whatsapp": "13237932528",
+  "titulo": "Sobadora",
   "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
+  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
   "hero_subtitulo": "Atención profesional y personalizada",
-  "videos": [
-    {
-      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
-    },
-    {
-      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
-    },
-    {
-      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
-    },
-    {
-      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
-    }
-  ],
-  "titulo": "Sobadora 1",
-  "precio_basico": 100,
+  "whatsapp": "13237932528",
+  "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
+  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
+  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
+
+  "plan_basico_titulo": "Básico",
+  "precio_basico": 0,
+  "duracion_basico": "60 minutos",
+  "descripcion_basico": "Masaje terapéutico básico.\nIncluye atención personalizada y evaluación inicial.",
+
+  "plan_premium_titulo": "Premium",
+  "precio_premium": 0,
+  "duracion_premium": "90 minutos",
+  "descripcion_premium": "Sesión más completa.\nIncluye trabajo profundo en zonas de mayor tensión y atención extendida.",
+
   "servicios": [
     {
       "titulo": "Masaje terapéutico",
@@ -40,6 +32,21 @@
       "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
     }
   ],
-  "precio_premium": 120,
-  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ"
+  "videos": [
+    {
+      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
+    },
+    {
+      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
+    },
+    {
+      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+    },
+    {
+      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
+    }
+  ],
+  "fotos": [],
+  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019"
 }
