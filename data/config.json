@@ -1,13 +1,43 @@
 {
   "titulo": "Sobadora",
-  "sobre_mi": "Soy Erika, especialista en masajes Terapeuticos\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
+  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
+  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
+  "hero_subtitulo": "Atención profesional y personalizada",
+  "whatsapp": "13237932528",
+  "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
+  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
+  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
   "precio_basico": 0,
   "precio_premium": 0,
-  "videos": [
-    "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN",
-    "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL",
-    "https://vt.tiktok.com/ZSuaU2KUH/",
-    "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
+  "servicios": [
+    {
+      "titulo": "Masaje terapéutico",
+      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado."
+    },
+    {
+      "titulo": "Masaje profundo",
+      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular."
+    },
+    {
+      "titulo": "Acomodación de matriz",
+      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
+    }
   ],
-  "fotos": []
+  "videos": [
+    {
+      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
+    },
+    {
+      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
+    },
+    {
+      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+    },
+    {
+      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
+    }
+  ],
+  "fotos": [],
+  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019"
 }
