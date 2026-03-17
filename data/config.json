@@ -4,7 +4,9 @@
   "imagen_hero": "https://thumbs.dreamstime.com/b/masajista-profesional-de-vista-lateral-con-masaje-manos-la-joven-cliente-en-el-centro-bienestar-wellness-foto-belleza-y-atr%C3%A1s-177856410.jpg",
   "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
   "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-  "fotos": [],
+  "fotos": [
+    "/images/mc_mdemc_marriott_medellin_spa_1920x1080.jpg"
+  ],
   "whatsapp": "13237932528",
   "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
   "hero_subtitulo": "Atención profesional y personalizada",
