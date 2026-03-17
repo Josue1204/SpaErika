@@ -32,9 +32,15 @@ collections:
 
           - { label: "📸 Imagen de Sobre Mí", name: "imagen_sobre_mi", widget: "image", required: false }
 
-          - { label: "💵 Precio Masaje Básico", name: "precio_basico", widget: "number", required: false, value_type: "int" }
+          - { label: "💳 Título del Plan Básico", name: "plan_basico_titulo", widget: "string", required: false, default: "Básico" }
+          - { label: "💵 Precio Plan Básico", name: "precio_basico", widget: "number", required: false, value_type: "int" }
+          - { label: "⏱️ Duración Plan Básico", name: "duracion_basico", widget: "string", required: false, default: "60 minutos" }
+          - { label: "📝 Qué incluye el Plan Básico", name: "descripcion_basico", widget: "text", required: false }
 
-          - { label: "💎 Precio Masaje Premium", name: "precio_premium", widget: "number", required: false, value_type: "int" }
+          - { label: "💎 Título del Plan Premium", name: "plan_premium_titulo", widget: "string", required: false, default: "Premium" }
+          - { label: "💰 Precio Plan Premium", name: "precio_premium", widget: "number", required: false, value_type: "int" }
+          - { label: "⏱️ Duración Plan Premium", name: "duracion_premium", widget: "string", required: false, default: "60 minutos" }
+          - { label: "📝 Qué incluye el Plan Premium", name: "descripcion_premium", widget: "text", required: false }
 
           - label: "🛎️ Servicios"
             name: "servicios"
