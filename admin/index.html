@@ -14,7 +14,8 @@
     [class*="ControlPaneContainer"] button,
     [class*="EditorToolbar"] button,
     [class*="ToolbarContainer"] button,
-    [class*="CollectionTopNewButton"] {
+    [class*="CollectionTopNewButton"],
+    [class*="Button"] {
       background: #ffffff !important;
       color: #1a8c54 !important;
       border: 1.5px solid #c7d2cc !important;
@@ -24,12 +25,14 @@
       letter-spacing: 0.2px !important;
       transition: 0.2s ease !important;
       box-shadow: none !important;
+      min-height: 42px !important;
     }
 
     [class*="ControlPaneContainer"] button:hover,
     [class*="EditorToolbar"] button:hover,
     [class*="ToolbarContainer"] button:hover,
-    [class*="CollectionTopNewButton"]:hover {
+    [class*="CollectionTopNewButton"]:hover,
+    [class*="Button"]:hover {
       background: #f3fbf6 !important;
       border-color: #1a8c54 !important;
       color: #146c41 !important;
@@ -43,6 +46,7 @@
       text-transform: uppercase !important;
       font-size: 12px !important;
       margin-bottom: 8px !important;
+      line-height: 1.4 !important;
     }
 
     [class*="ControlContainer"] input,
@@ -51,9 +55,10 @@
       border: 1.5px solid #cbd5d1 !important;
       border-radius: 10px !important;
       padding: 12px !important;
-      font-size: 15px !important;
+      font-size: 16px !important;
       background: #fff !important;
       box-shadow: none !important;
+      width: 100% !important;
     }
 
     [class*="ControlContainer"] input:focus,
@@ -62,6 +67,113 @@
       outline: none !important;
       border-color: #1a8c54 !important;
       box-shadow: 0 0 0 2px rgba(26, 140, 84, 0.12) !important;
+    }
+
+    [class*="ControlContainer"] textarea {
+      min-height: 120px !important;
+      resize: vertical !important;
+    }
+
+    [class*="PaneContainer"],
+    [class*="EditorContainer"],
+    [class*="CollectionMain"] {
+      max-width: 100% !important;
+    }
+
+    [class*="ToolbarContainer"] {
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+    }
+
+    [class*="EditorToolbar"] {
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+    }
+
+    [class*="EditorToolbar"] button,
+    [class*="ToolbarContainer"] button {
+      white-space: normal !important;
+    }
+
+    [class*="ListControl"] [class*="Button"],
+    [class*="ObjectControl"] [class*="Button"] {
+      width: 100% !important;
+      margin-top: 8px !important;
+    }
+
+    [class*="PreviewPane"] {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px !important;
+      }
+
+      [class*="ControlPaneContainer"],
+      [class*="EditorContainer"],
+      [class*="CollectionMain"],
+      [class*="PaneContainer"] {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+
+      [class*="ControlPaneContainer"] button,
+      [class*="EditorToolbar"] button,
+      [class*="ToolbarContainer"] button,
+      [class*="CollectionTopNewButton"],
+      [class*="Button"] {
+        width: 100% !important;
+        min-height: 44px !important;
+        font-size: 14px !important;
+      }
+
+      [class*="EditorToolbar"],
+      [class*="ToolbarContainer"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+
+      [class*="Card"],
+      [class*="ListControlItem"],
+      [class*="ObjectControl"] {
+        padding: 10px !important;
+      }
+
+      [class*="ControlLabel"] {
+        font-size: 11px !important;
+      }
+
+      [class*="ControlContainer"] input,
+      [class*="ControlContainer"] textarea,
+      [class*="ControlContainer"] select {
+        font-size: 16px !important;
+        padding: 11px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      [class*="ControlPaneContainer"],
+      [class*="EditorContainer"],
+      [class*="CollectionMain"],
+      [class*="PaneContainer"] {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+
+      [class*="ControlPaneContainer"] button,
+      [class*="EditorToolbar"] button,
+      [class*="ToolbarContainer"] button,
+      [class*="CollectionTopNewButton"],
+      [class*="Button"] {
+        border-radius: 8px !important;
+        font-size: 13px !important;
+      }
+
+      [class*="ControlContainer"] textarea {
+        min-height: 100px !important;
+      }
     }
   </style>
 </head>
