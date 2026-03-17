@@ -7,46 +7,61 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
-    /* Personalización del Panel de Administración */
-    /* Cambiamos el color de los botones de Guardar y Publicar */
-    [class*="ControlPaneContainer"] button, 
-    [class*="EditorToolbar"] button {
-        background-color: #1a8c54 !important; /* Tu verde esmeralda */
-        border-radius: 8px !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        transition: 0.3s !important;
-        border: 2px solid #000 !important;
-        box-shadow: 4px 4px 0px #000 !important;
-    }
-
-    [class*="EditorToolbar"] button:hover {
-        transform: translate(-2px, -2px) !important;
-        box-shadow: 6px 6px 0px #000 !important;
-    }
-
-    /* Estilo para las etiquetas de los campos */
-    [class*="ControlLabel"] {
-        color: #000 !important;
-        font-weight: 800 !important;
-        text-transform: uppercase !important;
-        font-size: 12px !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* Estilo para los cuadros de texto */
-    [class*="ControlContainer"] input, 
-    [class*="ControlContainer"] textarea {
-        border: 2px solid #000 !important;
-        border-radius: 0px !important;
-        padding: 12px !important;
-        font-size: 16px !important;
-    }
-
-    /* Fondo del panel */
     body {
-        background-color: #e5e7eb !important;
+      background-color: #eef2ef !important;
+    }
+
+    [class*="ControlPaneContainer"] button,
+    [class*="EditorToolbar"] button,
+    [class*="ToolbarContainer"] button,
+    [class*="CollectionTopNewButton"] {
+      background: #ffffff !important;
+      color: #1a8c54 !important;
+      border: 1.5px solid #c7d2cc !important;
+      border-radius: 10px !important;
+      font-weight: 700 !important;
+      text-transform: none !important;
+      letter-spacing: 0.2px !important;
+      transition: 0.2s ease !important;
+      box-shadow: none !important;
+    }
+
+    [class*="ControlPaneContainer"] button:hover,
+    [class*="EditorToolbar"] button:hover,
+    [class*="ToolbarContainer"] button:hover,
+    [class*="CollectionTopNewButton"]:hover {
+      background: #f3fbf6 !important;
+      border-color: #1a8c54 !important;
+      color: #146c41 !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    [class*="ControlLabel"] {
+      color: #000 !important;
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      font-size: 12px !important;
+      margin-bottom: 8px !important;
+    }
+
+    [class*="ControlContainer"] input,
+    [class*="ControlContainer"] textarea,
+    [class*="ControlContainer"] select {
+      border: 1.5px solid #cbd5d1 !important;
+      border-radius: 10px !important;
+      padding: 12px !important;
+      font-size: 15px !important;
+      background: #fff !important;
+      box-shadow: none !important;
+    }
+
+    [class*="ControlContainer"] input:focus,
+    [class*="ControlContainer"] textarea:focus,
+    [class*="ControlContainer"] select:focus {
+      outline: none !important;
+      border-color: #1a8c54 !important;
+      box-shadow: 0 0 0 2px rgba(26, 140, 84, 0.12) !important;
     }
   </style>
 </head>
@@ -54,7 +69,6 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
-    // Script para que el login sea más fluido
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
