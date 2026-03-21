@@ -304,48 +304,76 @@
     }
 
     .service-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
 
-.hours-list {
-  display: grid;
-  gap: 16px;
-  width: 100%;
-}
+    .hours-list {
+      display: grid;
+      gap: 16px;
+      width: 100%;
+    }
 
-.hour-item {
-  display: grid;
-  grid-template-columns: minmax(180px, 260px) 1fr;
-  align-items: center;
-  gap: 18px;
-  width: 100%;
-  background: #ffffff;
-  border: var(--border-main);
-  padding: 18px 22px;
-  box-shadow: 8px 8px 0px var(--primary);
-  transition: 0.2s;
-}
+    .service-item {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
+      border: var(--border-main);
+      padding: 25px;
+      box-shadow: 8px 8px 0px var(--primary);
+      transition: 0.2s;
+    }
 
-.hour-item:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 12px 12px 0px #000;
-}
+    .service-item:hover,
+    .video-wrapper:hover,
+    .photo-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px #000;
+    }
 
-.hour-item h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--primary);
-}
+    .service-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
 
-.hour-item p {
-  margin: 0;
-  font-weight: 700;
-  white-space: pre-line;
-}
+    .service-item p {
+      font-weight: 700;
+      white-space: pre-line;
+    }
+
+    .hour-item {
+      display: grid;
+      grid-template-columns: minmax(180px, 260px) 1fr;
+      align-items: center;
+      gap: 18px;
+      width: 100%;
+      background: #ffffff;
+      border: var(--border-main);
+      padding: 18px 22px;
+      box-shadow: 8px 8px 0px var(--primary);
+      transition: 0.2s;
+    }
+
+    .hour-item:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px #000;
+    }
+
+    .hour-item h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .hour-item p {
+      margin: 0;
+      font-weight: 700;
+      white-space: pre-line;
+    }
 
     .video-grid,
     .photo-grid {
@@ -579,11 +607,10 @@
     }
 
     @media (max-width: 768px) {
-     .hour-item {
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-      
+      h2.section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+      }
 
       .about-container,
       .hours-box,
@@ -598,9 +625,13 @@
 
       .video-grid,
       .photo-grid,
-      .service-list,
-      .hours-list {
+      .service-list {
         grid-template-columns: 1fr;
+      }
+
+      .hour-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       .floating-link,
@@ -812,7 +843,7 @@ EMPIEZA AQUÍ</h1>
   </div>
 
   <footer>
-    <p id="footer-text">© 2026 Sobadora Tradicional</p>
+    <p id="footer-text">© 2026 Spa Terapéutico</p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
