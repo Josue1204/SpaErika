@@ -46,15 +46,15 @@
   "hero_subtitulo": "Atención profesional y personalizada",
   "planes": [
     {
-      "titulo": "Masaje terapéutico",
-      "precio": 0,
+      "titulo": "Masaje terapéutico (Promocion)",
+      "precio": 90,
       "duracion": "60 minutos",
       "descripcion": "Atención personalizada enfocada en aliviar tensión muscular y molestias físicas.",
       "texto_boton": "Reservar"
     },
     {
       "titulo": "Masaje profundo",
-      "precio": 0,
+      "precio": 120,
       "duracion": "90 minutos",
       "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
       "texto_boton": "Consultar"
