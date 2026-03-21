@@ -11,32 +11,16 @@
   "fotos": [],
   "horarios": [
     {
-      "dia": "Lunes ",
-      "horario": "9:00 AM - 7:00 PM"
-    },
-    {
-      "dia": "Martes",
-      "horario": "9:00 AM - 7:00 PM"
-    },
-    {
-      "dia": "Miércoles",
-      "horario": "9:00 AM - 7:00 PM"
-    },
-    {
-      "dia": "Jueves",
-      "horario": "9:00 AM - 7:00 PM"
-    },
-    {
-      "dia": "Viernes",
-      "horario": "9:00 AM - 7:00 PM"
+      "dia": "Lunes-Viernes",
+      "horario": "10:00 AM - 8:00 PM"
     },
     {
       "dia": "Sábado",
-      "horario": "10:00 AM - 5:00 PM"
+      "horario": "8:00 AM - 5:00 PM"
     },
     {
       "dia": "Domingo",
-      "horario": "Solo con cita previa"
+      "horario": "8:00 AM - 5:00 PM"
     }
   ],
   "contacto_texto": "Escríbeme o llamame para más información sobre disponibilidad, servicios y atención personalizada.",
