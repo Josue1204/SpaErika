@@ -1,884 +1,1145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spa Terapéutico Profesional</title>
-    <meta name="description" content="Spa terapéutico profesional con atención personalizada, masajes y bienestar integral. Reserva tu cita por WhatsApp.">
-    <meta name="theme-color" content="#1a8c54">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <style>
-        :root {
-            --primary: #1a8c54;
-            --primary-dark: #146c41;
-            --bg-body: #e5e7eb;
-            --card-white: #ffffff;
-            --text-main: #000000;
-            --shadow-main: 10px 10px 0px var(--primary);
-            --border-main: 4px solid #000;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ffffff;
-            z-index: 1000;
-            border-bottom: 4px solid #000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            gap: 20px;
-        }
-
-        .nav-brand {
-            color: var(--primary);
-            font-size: 2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: #fff;
-            border: 3px solid #000;
-            padding: 10px 14px;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 4px 4px 0px #000;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 800;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-        }
-
-        .hero {
-            min-height: 90vh;
-            background:
-                linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
-                url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            border-bottom: 4px solid #000;
-            padding: 120px 20px 60px;
-        }
-
-        .hero h1 {
-            font-size: clamp(38px, 9vw, 80px);
-            color: #000;
-            font-weight: 800;
-            text-shadow: 4px 4px 0px #fff;
-            line-height: 1.1;
-            text-transform: uppercase;
-        }
-
-        .hero p {
-            margin-top: 20px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            background: rgba(255,255,255,0.85);
-            display: inline-block;
-            padding: 10px 16px;
-            border: 3px solid #000;
-        }
-
-        .hero-actions {
-            margin-top: 28px;
-        }
-
-        .btn {
-            background: var(--primary);
-            color: white;
-            padding: 18px 38px;
-            border-radius: 0;
-            text-decoration: none;
-            font-weight: 800;
-            display: inline-block;
-            border: 4px solid #000;
-            box-shadow: 6px 6px 0px #000;
-            transition: 0.2s;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .btn:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 9px 9px 0px #000;
-        }
-
-        section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h2.section-title {
-            font-size: 3rem;
-            margin-bottom: 60px;
-            text-align: center;
-            font-weight: 800;
-            color: #000;
-            text-transform: uppercase;
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            background: var(--card-white);
-            border: var(--border-main);
-            padding: 40px;
-            box-shadow: 12px 12px 0px var(--primary);
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .about-text p {
-            font-weight: 700;
-            font-size: 1.08rem;
-            color: #000;
-            margin-bottom: 15px;
-            white-space: pre-line;
-        }
-
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-            border: var(--border-main);
-            overflow: hidden;
-            background: #ddd;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            min-height: 350px;
-            object-fit: cover;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            background: var(--card-white);
-            border: var(--border-main);
-            padding: 40px;
-            box-shadow: var(--shadow-main);
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 14px 14px 0px #000;
-        }
-
-        .card h3 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        .price-tag {
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: #000;
-            margin: 10px 0 4px;
-        }
-
-        .price-duration {
-            font-weight: 800;
-            font-size: 1rem;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-        }
-
-        .price-description {
-            font-weight: 700;
-            margin-bottom: 25px;
-            min-height: 80px;
-            white-space: pre-line;
-        }
-
-        .service-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .service-item {
-            background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
-            border: var(--border-main);
-            padding: 25px;
-            box-shadow: 8px 8px 0px var(--primary);
-            transition: 0.2s;
-        }
-
-        .service-item:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 12px 12px 0px #000;
-        }
-
-        .service-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: var(--primary);
-        }
-
-        .service-item p {
-            font-weight: 700;
-        }
-
-        .video-grid,
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            align-items: start;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border: var(--border-main);
-            box-shadow: var(--shadow-main);
-            background: #000;
-            overflow: hidden;
-            transition: 0.2s;
-        }
-
-        .video-wrapper:hover,
-        .photo-card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 14px 14px 0px #000;
-        }
-
-        .video-wrapper.tiktok {
-            padding-bottom: 177%;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .photo-card {
-            background: var(--card-white);
-            border: var(--border-main);
-            box-shadow: var(--shadow-main);
-            overflow: hidden;
-            transition: 0.2s;
-        }
-
-        .photo-card img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-        }
-
-        .map-address {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .map-address p {
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        .map-container {
-            border: var(--border-main);
-            box-shadow: 12px 12px 0px var(--primary);
-            overflow: hidden;
-            height: 450px;
-        }
-
-        .map-actions {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .empty-state {
-            background: var(--card-white);
-            border: 4px dashed var(--primary);
-            padding: 30px;
-            text-align: center;
-            font-weight: 800;
-            box-shadow: 8px 8px 0px #000;
-        }
-
-        .whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 75px;
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 40px;
-            z-index: 1000;
-            border: 4px solid #000;
-            box-shadow: 6px 6px 0px #000;
-        }
-
-        footer {
-            background: #000;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 900px) {
-            .nav-toggle {
-                display: inline-block;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #fff;
-                border-bottom: 4px solid #000;
-                flex-direction: column;
-                gap: 0;
-                display: none;
-                padding: 10px 0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li {
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-menu a {
-                display: block;
-                padding: 14px 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h2.section-title {
-                font-size: 2.2rem;
-                margin-bottom: 40px;
-            }
-
-            .about-container,
-            .card {
-                padding: 25px;
-            }
-
-            .price-tag {
-                font-size: 2.5rem;
-            }
-
-            .video-grid,
-            .photo-grid,
-            .service-list {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp {
-                width: 65px;
-                height: 65px;
-                font-size: 34px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                min-height: 85vh;
-                padding-top: 140px;
-            }
-
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 320px;
-                padding: 16px 20px;
-            }
-
-            .about-text h2 {
-                font-size: 2rem;
-            }
-
-            .map-address p {
-                font-size: 1rem;
-            }
-
-            .nav-brand {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spa Terapéutico Profesional</title>
+  <meta name="description" content="Spa terapéutico profesional con atención personalizada, masajes y bienestar integral. Reserva tu cita por WhatsApp." />
+  <meta name="theme-color" content="#1a8c54" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    :root {
+      --primary: #1a8c54;
+      --primary-dark: #146c41;
+      --bg-body: #e5e7eb;
+      --card-white: #ffffff;
+      --text-main: #000000;
+      --border-main: 4px solid #000;
+      --shadow-main: 10px 10px 0px var(--primary);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    body {
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a, button, input, textarea {
+      font: inherit;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #ffffff;
+      z-index: 1000;
+      border-bottom: 4px solid #000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      gap: 20px;
+      position: relative;
+    }
+
+    .nav-brand {
+      color: var(--primary);
+      font-size: 2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: #fff;
+      border: 3px solid #000;
+      padding: 10px 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #000;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      min-height: 90vh;
+      background:
+        linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
+        url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: 4px solid #000;
+      padding: 120px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 9vw, 80px);
+      color: #000;
+      font-weight: 800;
+      text-shadow: 4px 4px 0px #fff;
+      line-height: 1.1;
+      text-transform: uppercase;
+      white-space: pre-line;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.85);
+      display: inline-block;
+      padding: 10px 16px;
+      border: 3px solid #000;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 18px 38px;
+      border-radius: 0;
+      text-decoration: none;
+      font-weight: 800;
+      display: inline-block;
+      border: 4px solid #000;
+      box-shadow: 6px 6px 0px #000;
+      transition: 0.2s;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 9px 9px 0px #000;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #000;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2.section-title {
+      font-size: 3rem;
+      margin-bottom: 60px;
+      text-align: center;
+      font-weight: 800;
+      color: #000;
+      text-transform: uppercase;
+    }
+
+    .banner {
+      max-width: 1200px;
+      margin: 110px auto 0;
+      padding: 0 20px;
+    }
+
+    .banner-box {
+      background: #fff7d6;
+      border: var(--border-main);
+      box-shadow: 8px 8px 0px #000;
+      padding: 18px 22px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .about-container,
+    .hours-box,
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: var(--card-white);
+      border: var(--border-main);
+      padding: 40px;
+      box-shadow: 12px 12px 0px var(--primary);
+    }
+
+    .about-text,
+    .contact-form,
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2,
+    .contact-info h3 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .about-text p,
+    .contact-info p {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: #000;
+      margin-bottom: 15px;
+      white-space: pre-line;
+    }
+
+    .about-img {
+      flex: 1;
+      min-width: 300px;
+      border: var(--border-main);
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+    }
+
+    .grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card-white);
+      border: var(--border-main);
+      padding: 32px;
+      box-shadow: var(--shadow-main);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 14px 14px 0px #000;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .price-tag {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #000;
+      margin: 10px 0 4px;
+    }
+
+    .price-duration {
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .price-description {
+      font-weight: 700;
+      margin-bottom: 25px;
+      min-height: 72px;
+      white-space: pre-line;
+    }
+
+    .service-list,
+    .hours-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item,
+    .hour-item {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
+      border: var(--border-main);
+      padding: 25px;
+      box-shadow: 8px 8px 0px var(--primary);
+      transition: 0.2s;
+    }
+
+    .service-item:hover,
+    .hour-item:hover,
+    .video-wrapper:hover,
+    .photo-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 12px 12px 0px #000;
+    }
+
+    .service-item h3,
+    .hour-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .service-item p,
+    .hour-item p {
+      font-weight: 700;
+      white-space: pre-line;
+    }
+
+    .video-grid,
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      align-items: start;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border: var(--border-main);
+      box-shadow: var(--shadow-main);
+      background: #000;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .video-wrapper.tiktok {
+      padding-bottom: 177%;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .photo-card {
+      background: var(--card-white);
+      border: var(--border-main);
+      box-shadow: var(--shadow-main);
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .map-address {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .map-address p {
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .map-container {
+      border: var(--border-main);
+      box-shadow: 12px 12px 0px var(--primary);
+      overflow: hidden;
+      height: 450px;
+    }
+
+    .map-actions {
+      text-align: center;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 3px solid #000;
+      padding: 14px;
+      background: #fff;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-mini-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .empty-state {
+      background: var(--card-white);
+      border: 4px dashed var(--primary);
+      padding: 30px;
+      text-align: center;
+      font-weight: 800;
+      box-shadow: 8px 8px 0px #000;
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, #d8dadd 25%, #eceef0 50%, #d8dadd 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite linear;
+      border: var(--border-main);
+      box-shadow: var(--shadow-main);
+      min-height: 180px;
+    }
+
+    .skeleton.large {
+      min-height: 260px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .floating-actions {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .floating-list {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .floating-list.active {
+      display: flex;
+    }
+
+    .floating-link,
+    .floating-toggle {
+      min-width: 60px;
+      min-height: 60px;
+      border-radius: 999px;
+      border: 4px solid #000;
+      box-shadow: 6px 6px 0px #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      text-decoration: none;
+      color: #000;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 0 18px;
+    }
+
+    .floating-link.whatsapp-btn {
+      background: #25D366;
+      color: #fff;
+    }
+
+    .floating-link.call-btn {
+      background: #ffffff;
+      color: #000;
+    }
+
+    .floating-link.map-btn {
+      background: #4285F4;
+      color: #fff;
+    }
+
+    .floating-toggle {
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: inline-block;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-bottom: 4px solid #000;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+        padding: 10px 0;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-menu a {
+        display: block;
+        padding: 14px 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h2.section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+      }
+
+      .about-container,
+      .hours-box,
+      .contact-box,
+      .card {
+        padding: 25px;
+      }
+
+      .price-tag {
+        font-size: 2.4rem;
+      }
+
+      .video-grid,
+      .photo-grid,
+      .service-list,
+      .hours-list {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-link,
+      .floating-toggle {
+        min-width: 56px;
+        min-height: 56px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 85vh;
+        padding-top: 140px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 20px;
+      }
+
+      .nav-brand {
+        font-size: 1.55rem;
+      }
+
+      .map-address p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <div class="banner hidden" id="banner-section">
+    <div class="banner-box" id="banner-text"></div>
+  </div>
+
+  <header>
     <nav>
-        <h2 class="nav-brand" id="nav-title">Erika</h2>
+      <h2 class="nav-brand" id="nav-title">Erika</h2>
 
-        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-            ☰
-        </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        ☰
+      </button>
 
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="#about">Sobre Mí</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#precios">Tarifas</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#fotos">Fotos</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
-        </ul>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about">Sobre Mí</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#fotos">Fotos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<section class="hero" id="inicio">
+  <section class="hero" id="inicio">
     <div data-aos="zoom-in">
-        <h1 id="hero-title">TU BIENESTAR<br>EMPIEZA AQUÍ</h1>
-        <p id="hero-subtitle">Atención profesional y personalizada</p>
-        <div class="hero-actions">
-            <a class="btn" id="hero-whatsapp-btn" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer">
-                Reserva tu cita
-            </a>
-        </div>
-    </div>
-</section>
+      <h1 id="hero-title">TU BIENESTAR
+EMPIEZA AQUÍ</h1>
+      <p id="hero-subtitle">Atención profesional y personalizada</p>
 
-<section id="about">
+      <div class="hero-actions">
+        <a class="btn" id="hero-whatsapp-btn" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer">
+          Reserva tu cita
+        </a>
+        <a class="btn btn-secondary" id="hero-call-btn" href="tel:+13237932528">
+          Llamar ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
     <div class="about-container" data-aos="fade-up">
-        <div class="about-text">
-            <h2>SOBRE MÍ</h2>
-            <p id="about-text-p">Cargando biografía...</p>
-        </div>
-        <div class="about-img">
-            <img
-                id="about-image"
-                src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80"
-                alt="Especialista en masajes terapéuticos">
-        </div>
+      <div class="about-text">
+        <h2>SOBRE MÍ</h2>
+        <p id="about-text-p">Cargando biografía...</p>
+      </div>
+      <div class="about-img">
+        <img
+          id="about-image"
+          src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80"
+          alt="Especialista en masajes terapéuticos" />
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="servicios">
+  <section id="horarios">
+    <h2 class="section-title">Horarios</h2>
+    <div class="hours-box">
+      <div class="hours-list" id="hours-container">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
     <h2 class="section-title">Servicios</h2>
     <div class="service-list" id="services-container">
-        <div class="empty-state">Próximamente se mostrarán los servicios disponibles.</div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
     </div>
-</section>
+  </section>
 
-<section id="precios">
-    <h2 class="section-title">Tarifas</h2>
-    <div class="grid-layout">
-        <div class="card" data-aos="flip-left">
-            <h3 id="plan-basic-title">Básico</h3>
-            <div class="price-tag" id="price-1">Consultar</div>
-            <div class="price-duration" id="duration-1">60 minutos</div>
-            <p class="price-description" id="desc-1">Consulta para conocer lo que incluye este servicio.</p>
-            <a class="btn" id="basic-whatsapp-btn" href="https://wa.me/13237932528?text=Hola, quiero información del plan básico" target="_blank" rel="noopener noreferrer">
-                Elegir
-            </a>
-        </div>
-
-        <div class="card" data-aos="flip-left" data-aos-delay="100" style="background: #f0fdf4;">
-            <h3 id="plan-premium-title">Premium</h3>
-            <div class="price-tag" id="price-2">Consultar</div>
-            <div class="price-duration" id="duration-2">60 minutos</div>
-            <p class="price-description" id="desc-2">Consulta para conocer lo que incluye este servicio.</p>
-            <a class="btn" id="premium-whatsapp-btn" href="https://wa.me/13237932528?text=Hola, quiero información del plan premium" target="_blank" rel="noopener noreferrer">
-                Elegir
-            </a>
-        </div>
+  <section id="planes">
+    <h2 class="section-title">Planes</h2>
+    <div class="grid-layout" id="plans-container">
+      <div class="skeleton large"></div>
+      <div class="skeleton large"></div>
     </div>
-</section>
+  </section>
 
-<section id="videos">
+  <section id="videos">
     <h2 class="section-title">Galería de Videos</h2>
     <div class="video-grid" id="video-container">
-        <div class="empty-state">Aún no hay videos disponibles.</div>
+      <div class="skeleton large"></div>
+      <div class="skeleton large"></div>
     </div>
-</section>
+  </section>
 
-<section id="fotos">
+  <section id="fotos">
     <h2 class="section-title">Galería de Fotos</h2>
     <div class="photo-grid" id="photo-container">
-        <div class="empty-state">Aún no hay fotos disponibles.</div>
+      <div class="skeleton large"></div>
+      <div class="skeleton large"></div>
     </div>
-</section>
+  </section>
 
-<section id="ubicacion">
+  <section id="contacto">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-box">
+      <div class="contact-info">
+        <h3 id="contact-title">Agenda tu cita</h3>
+        <p id="contact-text">Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.</p>
+
+        <div class="contact-mini-actions">
+          <a class="btn" id="contact-whatsapp-btn" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+          <a class="btn btn-secondary" id="contact-call-btn" href="tel:+13237932528">
+            Llamar
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form id="contact-form">
+          <input type="text" id="contact-name" placeholder="Tu nombre" required />
+          <input type="tel" id="contact-phone" placeholder="Tu teléfono" />
+          <input type="text" id="contact-service" placeholder="Servicio o plan de interés" />
+          <textarea id="contact-message" placeholder="Escribe tu mensaje" required></textarea>
+          <button type="submit" class="btn">Enviar por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="ubicacion">
     <h2 class="section-title">Ubicación</h2>
 
     <div class="map-address">
-        <p id="location-text">📍 4716 Lomita St, Los Angeles, CA 90019</p>
+      <p id="location-text">📍 4716 Lomita St, Los Angeles, CA 90019</p>
     </div>
 
     <div class="map-container" data-aos="zoom-in">
-        <iframe
-            id="map-frame"
-            src="https://www.google.com/maps?q=4716+Lomita+St,+Los+Angeles,+CA+90019&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            title="Mapa de ubicación del spa">
-        </iframe>
+      <iframe
+        id="map-frame"
+        src="https://www.google.com/maps?q=4716+Lomita+St,+Los+Angeles,+CA+90019&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        title="Mapa de ubicación del spa">
+      </iframe>
     </div>
 
     <div class="map-actions">
-        <a class="btn" id="maps-link" href="https://www.google.com/maps/search/?api=1&query=4716+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" rel="noopener noreferrer" style="background: #4285F4;">
-            Abrir en Google Maps
-        </a>
+      <a class="btn" id="maps-link" href="https://www.google.com/maps/search/?api=1&query=4716+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" rel="noopener noreferrer" style="background:#4285F4;">
+        Abrir en Google Maps
+      </a>
+      <a class="btn btn-secondary" id="call-link-map" href="tel:+13237932528">
+        Llamar
+      </a>
     </div>
-</section>
+  </section>
 
-<a class="whatsapp" id="floating-whatsapp" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-    💬
-</a>
+  <div class="floating-actions">
+    <div class="floating-list" id="floating-list">
+      <a class="floating-link whatsapp-btn" id="floating-whatsapp" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WA</a>
+      <a class="floating-link call-btn" id="floating-call" href="tel:+13237932528" aria-label="Llamar por teléfono">TEL</a>
+      <a class="floating-link map-btn" id="floating-map" href="https://www.google.com/maps/search/?api=1&query=4716+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">MAP</a>
+    </div>
+    <button class="floating-toggle" id="floating-toggle" aria-label="Abrir accesos rápidos">+</button>
+  </div>
 
-<footer>
+  <footer>
     <p id="footer-text">© 2026 Spa Terapéutico</p>
-</footer>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
     AOS.init({ duration: 1000, once: true });
 
     const FALLBACK_DATA = {
-        titulo: "Erika",
-        meta_descripcion: "Spa terapéutico profesional con atención personalizada.",
-        hero_titulo: "TU BIENESTAR\nEMPIEZA AQUÍ",
-        hero_subtitulo: "Atención profesional y personalizada",
-        whatsapp: "13237932528",
-        sobre_mi: "Soy especialista en masajes terapéuticos y bienestar integral.",
-        imagen_hero: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-        imagen_sobre_mi: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-
-        plan_basico_titulo: "Básico",
-        precio_basico: 0,
-        duracion_basico: "60 minutos",
-        descripcion_basico: "Consulta para conocer lo que incluye este servicio.",
-
-        plan_premium_titulo: "Premium",
-        precio_premium: 0,
-        duracion_premium: "60 minutos",
-        descripcion_premium: "Consulta para conocer lo que incluye este servicio.",
-
-        ubicacion_texto: "4716 Lomita St, Los Angeles, CA 90019",
-        ubicacion_mapa_query: "4716 Lomita St, Los Angeles, CA 90019",
-        videos: [],
-        fotos: [],
-        servicios: []
+      titulo: "Erika",
+      meta_descripcion: "Spa terapéutico profesional con atención personalizada.",
+      hero_titulo: "TU BIENESTAR\nEMPIEZA AQUÍ",
+      hero_subtitulo: "Atención profesional y personalizada",
+      whatsapp: "13237932528",
+      telefono: "13237932528",
+      sobre_mi: "Soy especialista en masajes terapéuticos y bienestar integral.",
+      imagen_hero: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
+      imagen_sobre_mi: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
+      mostrar_banner: false,
+      banner_texto: "",
+      mostrar_precios: true,
+      ubicacion_texto: "4716 Lomita St, Los Angeles, CA 90019",
+      ubicacion_mapa_query: "4716 Lomita St, Los Angeles, CA 90019",
+      contacto_titulo: "Agenda tu cita",
+      contacto_texto: "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
+      servicios: [],
+      horarios: [],
+      planes: [],
+      videos: [],
+      fotos: []
     };
 
     function formatearPrecio(valor) {
-        if (valor === undefined || valor === null || Number(valor) === 0) return "Consultar";
-        return `$${valor}`;
+      if (valor === undefined || valor === null || Number(valor) === 0) return "Consultar";
+      return `$${valor}`;
+    }
+
+    function limpiarTelefono(numero) {
+      return (numero || "").replace(/\D/g, "");
     }
 
     function crearLinkWhatsApp(numero, mensaje = "") {
-        const phone = (numero || FALLBACK_DATA.whatsapp).replace(/\D/g, "");
-        const text = mensaje ? `?text=${encodeURIComponent(mensaje)}` : "";
-        return `https://wa.me/${phone}${text}`;
+      const phone = limpiarTelefono(numero || FALLBACK_DATA.whatsapp);
+      const text = mensaje ? `?text=${encodeURIComponent(mensaje)}` : "";
+      return `https://wa.me/${phone}${text}`;
+    }
+
+    function crearLinkTelefono(numero) {
+      return `tel:+${limpiarTelefono(numero || FALLBACK_DATA.telefono)}`;
     }
 
     function obtenerYouTubeId(link) {
-        try {
-            if (link.includes("youtu.be/")) return link.split("youtu.be/")[1].split("?")[0];
-            if (link.includes("youtube.com/watch?v=")) return link.split("v=")[1].split("&")[0];
-            if (link.includes("youtube.com/embed/")) return link.split("embed/")[1].split("?")[0];
-            return "";
-        } catch {
-            return "";
-        }
+      try {
+        if (link.includes("youtu.be/")) return link.split("youtu.be/")[1].split("?")[0];
+        if (link.includes("youtube.com/watch?v=")) return link.split("v=")[1].split("&")[0];
+        if (link.includes("youtube.com/embed/")) return link.split("embed/")[1].split("?")[0];
+        return "";
+      } catch {
+        return "";
+      }
+    }
+
+    function ocultarSiVacio(sectionId, tieneContenido) {
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      section.classList.toggle("hidden", !tieneContenido);
+    }
+
+    function renderHorarios(horarios) {
+      const contenedor = document.getElementById("hours-container");
+
+      if (!Array.isArray(horarios) || horarios.length === 0) {
+        ocultarSiVacio("horarios", false);
+        return;
+      }
+
+      contenedor.innerHTML = horarios.map(item => `
+        <div class="hour-item" data-aos="fade-up">
+          <h3>${item?.dia || "Horario"}</h3>
+          <p>${item?.horario || ""}</p>
+        </div>
+      `).join("");
+
+      ocultarSiVacio("horarios", true);
     }
 
     function renderServicios(servicios) {
-        const contenedor = document.getElementById("services-container");
+      const contenedor = document.getElementById("services-container");
 
-        if (!Array.isArray(servicios) || servicios.length === 0) {
-            contenedor.innerHTML = `<div class="empty-state">Próximamente se mostrarán los servicios disponibles.</div>`;
-            return;
-        }
+      if (!Array.isArray(servicios) || servicios.length === 0) {
+        ocultarSiVacio("servicios", false);
+        return;
+      }
 
-        contenedor.innerHTML = servicios.map(servicio => {
-            const titulo = servicio?.titulo || "Servicio";
-            const descripcion = servicio?.descripcion || "";
-            return `
-                <div class="service-item" data-aos="fade-up">
-                    <h3>${titulo}</h3>
-                    <p>${descripcion}</p>
-                </div>
-            `;
-        }).join("");
+      contenedor.innerHTML = servicios.map(servicio => `
+        <div class="service-item" data-aos="fade-up">
+          <h3>${servicio?.titulo || "Servicio"}</h3>
+          <p>${servicio?.descripcion || ""}</p>
+        </div>
+      `).join("");
+
+      ocultarSiVacio("servicios", true);
+    }
+
+    function renderPlanes(planes, whatsapp, mostrarPrecios) {
+      const contenedor = document.getElementById("plans-container");
+
+      if (!Array.isArray(planes) || planes.length === 0) {
+        ocultarSiVacio("planes", false);
+        return;
+      }
+
+      contenedor.innerHTML = planes.map((plan, i) => {
+        const titulo = plan?.titulo || `Plan ${i + 1}`;
+        const duracion = plan?.duracion || "60 minutos";
+        const descripcion = plan?.descripcion || "Consulta para conocer lo que incluye este servicio.";
+        const textoBoton = plan?.texto_boton || "Reservar";
+        const precio = mostrarPrecios ? formatearPrecio(plan?.precio) : "Consultar";
+        const mensaje = `Hola, quiero información sobre ${titulo}`;
+
+        return `
+          <div class="card" data-aos="flip-left">
+            <h3>${titulo}</h3>
+            <div class="price-tag">${precio}</div>
+            <div class="price-duration">${duracion}</div>
+            <p class="price-description">${descripcion}</p>
+            <a class="btn" href="${crearLinkWhatsApp(whatsapp, mensaje)}" target="_blank" rel="noopener noreferrer">
+              ${textoBoton}
+            </a>
+          </div>
+        `;
+      }).join("");
+
+      ocultarSiVacio("planes", true);
     }
 
     function renderFotos(fotos, tituloSpa) {
-        const contenedor = document.getElementById("photo-container");
+      const contenedor = document.getElementById("photo-container");
 
-        if (!Array.isArray(fotos) || fotos.length === 0) {
-            contenedor.innerHTML = `<div class="empty-state">Aún no hay fotos disponibles.</div>`;
-            return;
-        }
+      if (!Array.isArray(fotos) || fotos.length === 0) {
+        ocultarSiVacio("fotos", false);
+        return;
+      }
 
-        contenedor.innerHTML = fotos.map(foto => {
-            const url = typeof foto === "string" ? foto : foto?.imagen;
-            if (!url) return "";
-            return `
-                <div class="photo-card" data-aos="zoom-in">
-                    <img src="${url}" alt="Foto de ${tituloSpa}" loading="lazy">
-                </div>
-            `;
-        }).join("") || `<div class="empty-state">Aún no hay fotos disponibles.</div>`;
+      contenedor.innerHTML = fotos.map(foto => {
+        const url = typeof foto === "string" ? foto : foto?.imagen;
+        if (!url) return "";
+        return `
+          <div class="photo-card" data-aos="zoom-in">
+            <img src="${url}" alt="Foto de ${tituloSpa}" loading="lazy">
+          </div>
+        `;
+      }).join("");
+
+      ocultarSiVacio("fotos", contenedor.innerHTML.trim() !== "");
     }
 
     function renderVideos(videos) {
-        const contenedor = document.getElementById("video-container");
+      const contenedor = document.getElementById("video-container");
 
-        if (!Array.isArray(videos) || videos.length === 0) {
-            contenedor.innerHTML = `<div class="empty-state">Aún no hay videos disponibles.</div>`;
-            return;
+      if (!Array.isArray(videos) || videos.length === 0) {
+        ocultarSiVacio("videos", false);
+        return;
+      }
+
+      const html = videos.map(item => {
+        const link = (typeof item === "string" ? item : item?.video || "").trim();
+        if (!link) return "";
+
+        if (link.includes("tiktok.com")) {
+          const matchId = link.match(/\/video\/(\d+)/);
+          if (matchId) {
+            return `
+              <div class="video-wrapper tiktok" data-aos="zoom-in">
+                <iframe src="https://www.tiktok.com/embed/v2/${matchId[1]}" allowfullscreen title="Video de TikTok"></iframe>
+              </div>
+            `;
+          }
+
+          return `
+            <div class="card" data-aos="zoom-in" style="text-align:center;">
+              <h3 style="font-size:1.3rem;">TikTok</h3>
+              <p class="price-description" style="min-height:auto;">Este enlace corto no se puede incrustar directamente, pero puedes verlo aquí.</p>
+              <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn">Ver en TikTok</a>
+            </div>
+          `;
         }
 
-        const html = videos.map(item => {
-            const link = (typeof item === "string" ? item : item?.video || "").trim();
-            if (!link) return "";
+        const youtubeId = obtenerYouTubeId(link);
+        if (youtubeId) {
+          return `
+            <div class="video-wrapper" data-aos="zoom-in">
+              <iframe src="https://www.youtube.com/embed/${youtubeId}" allowfullscreen title="Video de YouTube"></iframe>
+            </div>
+          `;
+        }
 
-            if (link.includes("tiktok.com")) {
-                const matchId = link.match(/\/video\/(\d+)/);
-                if (matchId) {
-                    return `
-                        <div class="video-wrapper tiktok" data-aos="zoom-in">
-                            <iframe
-                                src="https://www.tiktok.com/embed/v2/${matchId[1]}"
-                                allowfullscreen
-                                title="Video de TikTok">
-                            </iframe>
-                        </div>
-                    `;
-                }
+        return `
+          <div class="card" data-aos="zoom-in">
+            <h3 style="font-size:1.3rem;">Video</h3>
+            <p class="price-description" style="min-height:auto;">Este contenido está disponible mediante enlace externo.</p>
+            <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn">Ver video</a>
+          </div>
+        `;
+      }).join("");
 
-                return `
-                    <div class="card" data-aos="zoom-in" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:280px; border:4px dashed var(--primary);">
-                        <p style="font-weight:800; margin-bottom:15px;">📱 Video de TikTok</p>
-                        <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn" style="padding:10px 20px; font-size:12px;">
-                            Ver tratamiento
-                        </a>
-                    </div>
-                `;
-            }
-
-            const youtubeId = obtenerYouTubeId(link);
-            if (youtubeId) {
-                return `
-                    <div class="video-wrapper" data-aos="zoom-in">
-                        <iframe
-                            src="https://www.youtube.com/embed/${youtubeId}"
-                            allowfullscreen
-                            title="Video de YouTube">
-                        </iframe>
-                    </div>
-                `;
-            }
-
-            return `
-                <div class="card" data-aos="zoom-in">
-                    <p style="font-weight:800; margin-bottom:15px;">🎥 Video externo</p>
-                    <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn">
-                        Ver video
-                    </a>
-                </div>
-            `;
-        }).join("");
-
-        contenedor.innerHTML = html || `<div class="empty-state">Aún no hay videos disponibles.</div>`;
+      contenedor.innerHTML = html || `<div class="empty-state">Aún no hay videos disponibles.</div>`;
+      ocultarSiVacio("videos", contenedor.innerHTML.trim() !== "");
     }
 
     function aplicarContenido(data) {
-        const contenido = { ...FALLBACK_DATA, ...data };
-        const year = new Date().getFullYear();
+      const contenido = { ...FALLBACK_DATA, ...data };
+      const year = new Date().getFullYear();
 
-        document.title = `${contenido.titulo} | Spa Terapéutico Profesional`;
+      document.title = `${contenido.titulo} | Spa Terapéutico Profesional`;
+      document.querySelector('meta[name="description"]').setAttribute(
+        "content",
+        contenido.meta_descripcion || `${contenido.titulo} | Spa terapéutico profesional con atención personalizada.`
+      );
 
-        document.querySelector('meta[name="description"]').setAttribute(
-            "content",
-            contenido.meta_descripcion || `${contenido.titulo} | Spa terapéutico profesional con atención personalizada.`
-        );
+      document.getElementById("nav-title").innerText = contenido.titulo || "ERIKA";
+      document.getElementById("hero-title").innerText = contenido.hero_titulo || "TU BIENESTAR\nEMPIEZA AQUÍ";
+      document.getElementById("hero-subtitle").innerText = contenido.hero_subtitulo || "Atención profesional y personalizada";
+      document.getElementById("about-text-p").innerText = contenido.sobre_mi || FALLBACK_DATA.sobre_mi;
+      document.getElementById("footer-text").innerText = `© ${year} ${contenido.titulo}`;
 
-        document.getElementById("nav-title").innerText = contenido.titulo || "ERIKA";
-        document.getElementById("hero-title").innerText = contenido.hero_titulo || "TU BIENESTAR\nEMPIEZA AQUÍ";
-        document.getElementById("hero-subtitle").innerText = contenido.hero_subtitulo || "Atención profesional y personalizada";
-        document.getElementById("about-text-p").innerText = contenido.sobre_mi || FALLBACK_DATA.sobre_mi;
+      document.getElementById("contact-title").innerText = contenido.contacto_titulo || "Agenda tu cita";
+      document.getElementById("contact-text").innerText = contenido.contacto_texto || FALLBACK_DATA.contacto_texto;
 
-        document.getElementById("plan-basic-title").innerText = contenido.plan_basico_titulo || "Básico";
-        document.getElementById("price-1").innerText = formatearPrecio(contenido.precio_basico);
-        document.getElementById("duration-1").innerText = contenido.duracion_basico || "60 minutos";
-        document.getElementById("desc-1").innerText = contenido.descripcion_basico || "Consulta para conocer lo que incluye este servicio.";
+      if (contenido.imagen_hero) {
+        document.querySelector(".hero").style.backgroundImage =
+          `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('${contenido.imagen_hero}')`;
+      }
 
-        document.getElementById("plan-premium-title").innerText = contenido.plan_premium_titulo || "Premium";
-        document.getElementById("price-2").innerText = formatearPrecio(contenido.precio_premium);
-        document.getElementById("duration-2").innerText = contenido.duracion_premium || "60 minutos";
-        document.getElementById("desc-2").innerText = contenido.descripcion_premium || "Consulta para conocer lo que incluye este servicio.";
+      if (contenido.imagen_sobre_mi) {
+        const aboutImage = document.getElementById("about-image");
+        aboutImage.src = contenido.imagen_sobre_mi;
+        aboutImage.alt = `${contenido.titulo} especialista en masajes terapéuticos`;
+      }
 
-        document.getElementById("footer-text").innerText = `© ${year} ${contenido.titulo}`;
+      const whatsappLink = crearLinkWhatsApp(contenido.whatsapp);
+      const telefonoLink = crearLinkTelefono(contenido.telefono);
 
-        if (contenido.imagen_hero) {
-            document.querySelector(".hero").style.backgroundImage =
-                `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('${contenido.imagen_hero}')`;
-        }
+      document.getElementById("hero-whatsapp-btn").href = whatsappLink;
+      document.getElementById("contact-whatsapp-btn").href = whatsappLink;
+      document.getElementById("floating-whatsapp").href = whatsappLink;
 
-        if (contenido.imagen_sobre_mi) {
-            const aboutImage = document.getElementById("about-image");
-            aboutImage.src = contenido.imagen_sobre_mi;
-            aboutImage.alt = `${contenido.titulo} especialista en masajes terapéuticos`;
-        }
+      document.getElementById("hero-call-btn").href = telefonoLink;
+      document.getElementById("contact-call-btn").href = telefonoLink;
+      document.getElementById("call-link-map").href = telefonoLink;
+      document.getElementById("floating-call").href = telefonoLink;
 
-        const whatsappGeneral = crearLinkWhatsApp(contenido.whatsapp);
-        document.getElementById("hero-whatsapp-btn").href = whatsappGeneral;
-        document.getElementById("floating-whatsapp").href = whatsappGeneral;
+      const direccionTexto = contenido.ubicacion_texto || FALLBACK_DATA.ubicacion_texto;
+      const mapaQuery = encodeURIComponent(contenido.ubicacion_mapa_query || FALLBACK_DATA.ubicacion_mapa_query);
 
-        document.getElementById("basic-whatsapp-btn").href = crearLinkWhatsApp(
-            contenido.whatsapp,
-            `Hola, quiero información del plan ${contenido.plan_basico_titulo || "básico"}`
-        );
+      document.getElementById("location-text").innerText = `📍 ${direccionTexto}`;
+      document.getElementById("map-frame").src = `https://www.google.com/maps?q=${mapaQuery}&output=embed`;
+      document.getElementById("maps-link").href = `https://www.google.com/maps/search/?api=1&query=${mapaQuery}`;
+      document.getElementById("floating-map").href = `https://www.google.com/maps/search/?api=1&query=${mapaQuery}`;
 
-        document.getElementById("premium-whatsapp-btn").href = crearLinkWhatsApp(
-            contenido.whatsapp,
-            `Hola, quiero información del plan ${contenido.plan_premium_titulo || "premium"}`
-        );
+      const mostrarBanner = Boolean(contenido.mostrar_banner && contenido.banner_texto);
+      document.getElementById("banner-section").classList.toggle("hidden", !mostrarBanner);
+      document.getElementById("banner-text").innerText = contenido.banner_texto || "";
 
-        const direccionTexto = contenido.ubicacion_texto || FALLBACK_DATA.ubicacion_texto;
-        const mapaQuery = encodeURIComponent(contenido.ubicacion_mapa_query || FALLBACK_DATA.ubicacion_mapa_query);
+      renderHorarios(contenido.horarios);
+      renderServicios(contenido.servicios);
+      renderPlanes(contenido.planes, contenido.whatsapp, contenido.mostrar_precios !== false);
+      renderVideos(contenido.videos);
+      renderFotos(contenido.fotos, contenido.titulo);
 
-        document.getElementById("location-text").innerText = `📍 ${direccionTexto}`;
-        document.getElementById("map-frame").src = `https://www.google.com/maps?q=${mapaQuery}&output=embed`;
-        document.getElementById("maps-link").href = `https://www.google.com/maps/search/?api=1&query=${mapaQuery}`;
-
-        renderServicios(contenido.servicios);
-        renderVideos(contenido.videos);
-        renderFotos(contenido.fotos, contenido.titulo);
-
-        AOS.refresh();
+      AOS.refresh();
     }
 
     async function cargarContenido() {
-        try {
-            const respuesta = await fetch("data/config.json?v=" + Date.now());
-            if (!respuesta.ok) throw new Error("No se pudo cargar config.json");
-            const data = await respuesta.json();
-            aplicarContenido(data);
-        } catch (error) {
-            console.error("Error cargando configuración:", error);
-            aplicarContenido(FALLBACK_DATA);
-        }
+      try {
+        const respuesta = await fetch("data/config.json?v=" + Date.now());
+        if (!respuesta.ok) throw new Error("No se pudo cargar config.json");
+        const data = await respuesta.json();
+        aplicarContenido(data);
+      } catch (error) {
+        console.error("Error cargando configuración:", error);
+        aplicarContenido(FALLBACK_DATA);
+      }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        cargarContenido();
+      cargarContenido();
 
-        const navToggle = document.getElementById("nav-toggle");
-        const navMenu = document.getElementById("nav-menu");
-        const navLinks = navMenu.querySelectorAll("a");
+      const navToggle = document.getElementById("nav-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      const navLinks = navMenu.querySelectorAll("a");
+      const floatingToggle = document.getElementById("floating-toggle");
+      const floatingList = document.getElementById("floating-list");
+      const form = document.getElementById("contact-form");
 
-        navToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
         });
+      });
 
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-            });
-        });
+      floatingToggle.addEventListener("click", () => {
+        floatingList.classList.toggle("active");
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        try {
+          const respuesta = await fetch("data/config.json?v=" + Date.now());
+          const data = await respuesta.json();
+
+          const nombre = document.getElementById("contact-name").value.trim();
+          const telefono = document.getElementById("contact-phone").value.trim();
+          const servicio = document.getElementById("contact-service").value.trim();
+          const mensaje = document.getElementById("contact-message").value.trim();
+
+          const texto = [
+            "Hola, quiero más información.",
+            nombre ? `Nombre: ${nombre}` : "",
+            telefono ? `Teléfono: ${telefono}` : "",
+            servicio ? `Interés: ${servicio}` : "",
+            mensaje ? `Mensaje: ${mensaje}` : ""
+          ].filter(Boolean).join("\n");
+
+          window.open(crearLinkWhatsApp(data.whatsapp || FALLBACK_DATA.whatsapp, texto), "_blank");
+        } catch {
+          window.open(crearLinkWhatsApp(FALLBACK_DATA.whatsapp, "Hola, quiero más información."), "_blank");
+        }
+      });
     });
-</script>
+  </script>
 </body>
 </html>
