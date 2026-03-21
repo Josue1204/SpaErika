@@ -1,19 +1,49 @@
 {
-  "titulo": "Sobadora",
-  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
-  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
-  "hero_subtitulo": "Atención profesional y personalizada",
-  "whatsapp": "13237932528",
-  "telefono": "13237932528",
+  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
   "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
   "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-
+  "contacto_titulo": "Agenda tu cita",
   "mostrar_banner": true,
-  "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
-
+  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
   "mostrar_precios": false,
-
+  "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp oh llamada.",
+  "fotos": [],
+  "horarios": [
+    {
+      "dia": "Lunes ",
+      "horario": "9:00 AM - 7:00 PM"
+    },
+    {
+      "dia": "Martes",
+      "horario": "9:00 AM - 7:00 PM"
+    },
+    {
+      "dia": "Miércoles",
+      "horario": "9:00 AM - 7:00 PM"
+    },
+    {
+      "dia": "Jueves",
+      "horario": "9:00 AM - 7:00 PM"
+    },
+    {
+      "dia": "Viernes",
+      "horario": "9:00 AM - 7:00 PM"
+    },
+    {
+      "dia": "Sábado",
+      "horario": "10:00 AM - 5:00 PM"
+    },
+    {
+      "dia": "Domingo",
+      "horario": "Solo con cita previa"
+    }
+  ],
+  "contacto_texto": "Escríbeme o llamame para más información sobre disponibilidad, servicios y atención personalizada.",
+  "whatsapp": "13237932528",
+  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
+  "telefono": "13237932528",
+  "hero_subtitulo": "Atención profesional y personalizada",
   "planes": [
     {
       "titulo": "Masaje terapéutico",
@@ -28,9 +58,24 @@
       "duracion": "90 minutos",
       "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
       "texto_boton": "Consultar"
+    },
+    {
+      "duracion": "60 minutos",
+      "texto_boton": "Reservar",
+      "titulo": "Acomodación de Matriz",
+      "precio": 120,
+      "descripcion": "Busca reposicionar el útero, mejorar la circulación, aliviar dolores en el vientre/espalda y tratar problemas urinarios."
     }
   ],
-
+  "videos": [
+    {
+      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
+    },
+    {
+      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+    }
+  ],
+  "titulo": "Sobadora tradicional",
   "servicios": [
     {
       "titulo": "Masaje terapéutico",
@@ -42,39 +87,8 @@
     },
     {
       "titulo": "Acomodación de matriz",
-      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
+      "descripcion": "Busca reposicionar el útero, mejorar la circulación, aliviar dolores en el vientre/espalda y tratar problemas urinarios."
     }
   ],
-
-  "horarios": [
-    {
-      "dia": "Lunes a viernes",
-      "horario": "9:00 AM - 7:00 PM"
-    },
-    {
-      "dia": "Sábado",
-      "horario": "10:00 AM - 5:00 PM"
-    },
-    {
-      "dia": "Domingo",
-      "horario": "Solo con cita previa"
-    }
-  ],
-
-  "videos": [
-    {
-      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
-    },
-    {
-      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
-    }
-  ],
-
-  "fotos": [],
-
-  "contacto_titulo": "Agenda tu cita",
-  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
-
-  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019"
+  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ"
 }
