@@ -17,30 +17,35 @@ collections:
         file: "data/config.json"
         fields:
           - { label: "🏨 Nombre del Spa", name: "titulo", widget: "string" }
-
           - { label: "🔎 Meta descripción SEO", name: "meta_descripcion", widget: "text", required: false }
 
           - { label: "🦸 Título Principal Hero", name: "hero_titulo", widget: "text", required: false }
-
           - { label: "📝 Subtítulo Hero", name: "hero_subtitulo", widget: "string", required: false }
 
           - { label: "📱 Número de WhatsApp", name: "whatsapp", widget: "string", hint: "Ejemplo: 13237932528" }
+          - { label: "☎️ Número de teléfono", name: "telefono", widget: "string", required: false, hint: "Ejemplo: 13237932528" }
 
           - { label: "👤 Biografía (Sobre Mí)", name: "sobre_mi", widget: "text" }
 
           - { label: "🖼️ Imagen principal del Hero", name: "imagen_hero", widget: "image", required: false }
-
           - { label: "📸 Imagen de Sobre Mí", name: "imagen_sobre_mi", widget: "image", required: false }
 
-          - { label: "💳 Título del Plan Básico", name: "plan_basico_titulo", widget: "string", required: false, default: "Básico" }
-          - { label: "💵 Precio Plan Básico", name: "precio_basico", widget: "number", required: false, value_type: "int" }
-          - { label: "⏱️ Duración Plan Básico", name: "duracion_basico", widget: "string", required: false, default: "60 minutos" }
-          - { label: "📝 Qué incluye el Plan Básico", name: "descripcion_basico", widget: "text", required: false }
+          - { label: "📢 Mostrar banner", name: "mostrar_banner", widget: "boolean", default: false, required: false }
+          - { label: "🪧 Texto del banner", name: "banner_texto", widget: "string", required: false }
 
-          - { label: "💎 Título del Plan Premium", name: "plan_premium_titulo", widget: "string", required: false, default: "Premium" }
-          - { label: "💰 Precio Plan Premium", name: "precio_premium", widget: "number", required: false, value_type: "int" }
-          - { label: "⏱️ Duración Plan Premium", name: "duracion_premium", widget: "string", required: false, default: "60 minutos" }
-          - { label: "📝 Qué incluye el Plan Premium", name: "descripcion_premium", widget: "text", required: false }
+          - { label: "💲 Mostrar precios", name: "mostrar_precios", widget: "boolean", default: true, required: false }
+
+          - label: "💳 Planes"
+            name: "planes"
+            widget: "list"
+            required: false
+            summary: "{{fields.titulo}} - {{fields.duracion}}"
+            fields:
+              - { label: "Título del plan", name: "titulo", widget: "string" }
+              - { label: "Precio", name: "precio", widget: "number", required: false, value_type: "int" }
+              - { label: "Duración", name: "duracion", widget: "string", required: false, default: "60 minutos" }
+              - { label: "Qué incluye", name: "descripcion", widget: "text", required: false }
+              - { label: "Texto del botón", name: "texto_boton", widget: "string", required: false, default: "Reservar" }
 
           - label: "🛎️ Servicios"
             name: "servicios"
@@ -49,6 +54,15 @@ collections:
             fields:
               - { label: "Título del servicio", name: "titulo", widget: "string" }
               - { label: "Descripción", name: "descripcion", widget: "text" }
+
+          - label: "🕒 Horarios"
+            name: "horarios"
+            widget: "list"
+            required: false
+            summary: "{{fields.dia}} - {{fields.horario}}"
+            fields:
+              - { label: "Día", name: "dia", widget: "string" }
+              - { label: "Horario", name: "horario", widget: "string" }
 
           - label: "🎥 Galería de Videos"
             name: "videos"
@@ -64,6 +78,8 @@ collections:
             field:
               { label: "Subir Imagen", name: "imagen", widget: "image" }
 
-          - { label: "📍 Texto de ubicación", name: "ubicacion_texto", widget: "string", required: false }
+          - { label: "🧾 Título de la sección contacto", name: "contacto_titulo", widget: "string", required: false }
+          - { label: "📝 Texto de la sección contacto", name: "contacto_texto", widget: "text", required: false }
 
+          - { label: "📍 Texto de ubicación", name: "ubicacion_texto", widget: "string", required: false }
           - { label: "🗺️ Query para Google Maps", name: "ubicacion_mapa_query", widget: "string", required: false, hint: "Ejemplo: 4716 Lomita St, Los Angeles, CA 90019" }
