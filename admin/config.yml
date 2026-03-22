@@ -16,85 +16,152 @@ collections:
         label: "Contenido General"
         file: "data/config.json"
         fields:
-          - { label: "🏨 Nombre del Spa", name: "titulo", widget: "string" }
-          - { label: "🔎 Meta descripción SEO", name: "meta_descripcion", widget: "text", required: false }
-
-          - { label: "🦸 Título Principal Hero", name: "hero_titulo", widget: "text", required: false }
-          - { label: "📝 Subtítulo Hero", name: "hero_subtitulo", widget: "string", required: false }
-
-          - { label: "📱 Número de WhatsApp", name: "whatsapp", widget: "string", hint: "Ejemplo: 13237932528" }
-          - { label: "☎️ Número de teléfono", name: "telefono", widget: "string", required: false, hint: "Ejemplo: 13237932528" }
-
-          - { label: "👤 Biografía (Sobre Mí)", name: "sobre_mi", widget: "text" }
-
-          - { label: "🖼️ Imagen principal del Hero", name: "imagen_hero", widget: "image", required: false }
-          - { label: "📸 Imagen de Sobre Mí", name: "imagen_sobre_mi", widget: "image", required: false }
-
-          - { label: "📢 Mostrar banner", name: "mostrar_banner", widget: "boolean", default: false, required: false }
-          - { label: "🪧 Texto del banner", name: "banner_texto", widget: "string", required: false }
-
-          - { label: "💲 Mostrar precios", name: "mostrar_precios", widget: "boolean", default: true, required: false }
-
-          - label: "💳 Planes"
-            name: "planes"
-            widget: "list"
-            required: false
-            summary: "{{fields.titulo}} - {{fields.duracion}}"
+          - label: "1. Información general"
+            name: "general"
+            widget: "object"
             fields:
-              - { label: "Título del plan", name: "titulo", widget: "string" }
-              - { label: "Precio", name: "precio", widget: "number", required: false, value_type: "int" }
-              - { label: "Duración", name: "duracion", widget: "string", required: false, default: "60 minutos" }
-              - { label: "Qué incluye", name: "descripcion", widget: "text", required: false }
-              - { label: "Texto del botón", name: "texto_boton", widget: "string", required: false, default: "Reservar" }
+              - { label: "Nombre del negocio", name: "business_name", widget: "string" }
+              - { label: "Hero eyebrow ES", name: "hero_eyebrow_es", widget: "string", required: false }
+              - { label: "Hero eyebrow EN", name: "hero_eyebrow_en", widget: "string", required: false }
+              - { label: "Hero título ES", name: "hero_title_es", widget: "text" }
+              - { label: "Hero title EN", name: "hero_title_en", widget: "text" }
+              - { label: "Hero subtítulo ES", name: "hero_subtitle_es", widget: "string" }
+              - { label: "Hero subtitle EN", name: "hero_subtitle_en", widget: "string" }
+              - label: "Hero badges ES"
+                name: "hero_badges_es"
+                widget: "list"
+                required: false
+                field: { label: "Badge", name: "badge", widget: "string" }
+              - label: "Hero badges EN"
+                name: "hero_badges_en"
+                widget: "list"
+                required: false
+                field: { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Subtítulo sección sobre mí ES", name: "about_subtitle_es", widget: "string", required: false }
+              - { label: "Subtitle about EN", name: "about_subtitle_en", widget: "string", required: false }
+              - { label: "Encabezado sobre mí ES", name: "about_heading_es", widget: "string" }
+              - { label: "About heading EN", name: "about_heading_en", widget: "string" }
+              - { label: "Texto sobre mí ES", name: "about_text_es", widget: "text" }
+              - { label: "About text EN", name: "about_text_en", widget: "text" }
+              - { label: "Imagen hero", name: "hero_image", widget: "image", required: false }
+              - { label: "Imagen sobre mí", name: "about_image", widget: "image", required: false }
 
-          - label: "🛎️ Servicios"
-            name: "servicios"
+          - label: "2. SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Título SEO ES", name: "title_es", widget: "string" }
+              - { label: "Title SEO EN", name: "title_en", widget: "string" }
+              - { label: "Descripción SEO ES", name: "description_es", widget: "text" }
+              - { label: "Description SEO EN", name: "description_en", widget: "text" }
+
+          - label: "3. Banner"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "Mostrar banner", name: "show", widget: "boolean", default: false, required: false }
+              - { label: "Texto banner ES", name: "text_es", widget: "string", required: false }
+              - { label: "Banner text EN", name: "text_en", widget: "string", required: false }
+
+          - label: "4. Contacto y ubicación"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Teléfono", name: "phone", widget: "string" }
+              - { label: "Título contacto ES", name: "contact_heading_es", widget: "string" }
+              - { label: "Contact heading EN", name: "contact_heading_en", widget: "string" }
+              - { label: "Texto contacto ES", name: "contact_text_es", widget: "text" }
+              - { label: "Contact text EN", name: "contact_text_en", widget: "text" }
+              - { label: "Dirección ES", name: "address_text_es", widget: "string" }
+              - { label: "Address EN", name: "address_text_en", widget: "string" }
+              - { label: "Query Google Maps", name: "map_query", widget: "string" }
+
+          - label: "5. Opciones"
+            name: "options"
+            widget: "object"
+            fields:
+              - { label: "Mostrar precios", name: "show_prices", widget: "boolean", default: true, required: false }
+              - { label: "Mostrar testimonios", name: "show_testimonials", widget: "boolean", default: true, required: false }
+
+          - label: "6. Condiciones tratadas"
+            name: "conditions"
             widget: "list"
             required: false
             fields:
-              - { label: "Título del servicio", name: "titulo", widget: "string" }
-              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Título ES", name: "title_es", widget: "string" }
+              - { label: "Title EN", name: "title_en", widget: "string" }
+              - { label: "Descripción ES", name: "description_es", widget: "text", required: false }
+              - { label: "Description EN", name: "description_en", widget: "text", required: false }
 
-          - label: "🕒 Horarios"
-            name: "horarios"
+          - label: "7. Horarios"
+            name: "schedule"
             widget: "list"
             required: false
-            summary: "{{fields.dia}} - {{fields.horario}}"
             fields:
-              - { label: "Día", name: "dia", widget: "string" }
-              - { label: "Horario", name: "horario", widget: "string" }
+              - { label: "Día ES", name: "day_es", widget: "string" }
+              - { label: "Day EN", name: "day_en", widget: "string" }
+              - { label: "Horario ES", name: "hours_es", widget: "string" }
+              - { label: "Hours EN", name: "hours_en", widget: "string" }
 
-          - { label: "💬 Mostrar testimonios", name: "mostrar_testimonios", widget: "boolean", default: false, required: false }
-
-          - label: "⭐ Testimonios"
-            name: "testimonios"
+          - label: "8. Servicios"
+            name: "services"
             widget: "list"
             required: false
-            summary: "{{fields.nombre}}"
             fields:
-              - { label: "Nombre", name: "nombre", widget: "string" }
-              - { label: "Comentario", name: "comentario", widget: "text" }
-              - { label: "Estrellas (1 a 5)", name: "estrellas", widget: "number", required: false, default: 5, value_type: "int", min: 1, max: 5 }
+              - { label: "Título ES", name: "title_es", widget: "string" }
+              - { label: "Title EN", name: "title_en", widget: "string" }
+              - { label: "Descripción ES", name: "description_es", widget: "text" }
+              - { label: "Description EN", name: "description_en", widget: "text" }
 
-          - label: "🎥 Galería de Videos"
-            name: "videos"
+          - label: "9. Planes"
+            name: "plans"
             widget: "list"
             required: false
-            field:
-              { label: "Link de YouTube o TikTok", name: "video", widget: "string" }
+            summary: "{{fields.title_es}} - {{fields.duration}}"
+            fields:
+              - { label: "Título ES", name: "title_es", widget: "string" }
+              - { label: "Title EN", name: "title_en", widget: "string" }
+              - { label: "Precio", name: "price", widget: "number", required: false, value_type: "int" }
+              - { label: "Duración", name: "duration", widget: "string", required: false, default: "60 minutos" }
+              - { label: "Descripción ES", name: "description_es", widget: "text", required: false }
+              - { label: "Description EN", name: "description_en", widget: "text", required: false }
+              - { label: "Texto botón ES", name: "button_text_es", widget: "string", required: false }
+              - { label: "Button text EN", name: "button_text_en", widget: "string", required: false }
 
-          - label: "📸 Galería de Fotos"
-            name: "fotos"
+          - label: "10. Testimonios"
+            name: "testimonials"
             widget: "list"
             required: false
-            field:
-              { label: "Subir Imagen", name: "imagen", widget: "image" }
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Comentario ES", name: "comment_es", widget: "text" }
+              - { label: "Comment EN", name: "comment_en", widget: "text", required: false }
+              - { label: "Estrellas", name: "stars", widget: "number", value_type: "int", min: 1, max: 5, default: 5, required: false }
 
-          - { label: "🧾 Título de la sección contacto", name: "contacto_titulo", widget: "string", required: false }
-          - { label: "📝 Texto de la sección contacto", name: "contacto_texto", widget: "text", required: false }
+          - label: "11. Galería"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - label: "Fotos"
+                name: "photos"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Imagen", name: "image", widget: "image" }
+                  - { label: "Alt ES", name: "alt_es", widget: "string", required: false }
+                  - { label: "Alt EN", name: "alt_en", widget: "string", required: false }
 
-          - { label: "📍 Texto de ubicación", name: "ubicacion_texto", widget: "string", required: false }
-          - { label: "🗺️ Query para Google Maps", name: "ubicacion_mapa_query", widget: "string", required: false, hint: "Ejemplo: 4716 Lomita St, Los Angeles, CA 90019" }
+              - label: "Videos"
+                name: "videos"
+                widget: "list"
+                required: false
+                field:
+                  { label: "Link de YouTube o TikTok", name: "video", widget: "string" }
 
-          - { label: "📷 Link de Instagram", name: "instagram_url", widget: "string", required: false, hint: "Ejemplo: https://instagram.com/tu_cuenta" }
-          - { label: "📘 Link de Facebook", name: "facebook_url", widget: "string", required: false, hint: "Ejemplo: https://facebook.com/tu_pagina" }
+          - label: "12. Redes sociales"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram URL", name: "instagram_url", widget: "string", required: false }
+              - { label: "Facebook URL", name: "facebook_url", widget: "string", required: false }
