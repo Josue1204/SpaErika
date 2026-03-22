@@ -48,6 +48,10 @@
     "address_text_en": "4716 Lomita St, Los Angeles, CA 90019",
     "map_query": "4716 Lomita St, Los Angeles, CA 90019"
   },
+  "social": {
+    "instagram_url": "https://instagram.com/tu_cuenta",
+    "facebook_url": "https://facebook.com/tu_pagina"
+  },
   "options": {
     "show_prices": false,
     "show_testimonials": true
@@ -57,7 +61,7 @@
       "title_es": "Estrés",
       "title_en": "Stress",
       "description_es": "Atención orientada al bienestar físico y relajación muscular.",
-      "description_en": "Care focused on physical wellness and muscular relaxation."
+      "description_en": "Care focused on physical wellness and muscle relaxation."
     },
     {
       "title_es": "Nervio ciático",
@@ -69,25 +73,13 @@
       "title_es": "Torceduras",
       "title_en": "Sprains",
       "description_es": "Apoyo terapéutico y seguimiento según cada caso.",
-      "description_en": "Therapeutic support and follow-up according to each case."
+      "description_en": "Therapeutic support and follow-up depending on each case."
     },
     {
       "title_es": "Dolores musculares",
       "title_en": "Muscle pain",
       "description_es": "Atención personalizada para zonas de tensión y sobrecarga.",
       "description_en": "Personalized care for tension and overworked areas."
-    },
-    {
-      "title_es": "Terapia con ventosas",
-      "title_en": "Cupping therapy",
-      "description_es": "Complemento terapéutico según necesidad.",
-      "description_en": "Therapeutic complement according to your needs."
-    },
-    {
-      "title_es": "Matriz caída",
-      "title_en": "Postpartum / pelvic support",
-      "description_es": "Atención tradicional y bienestar integral.",
-      "description_en": "Traditional care and holistic wellness."
     },
     {
       "title_es": "Fibromialgia",
@@ -102,7 +94,13 @@
       "description_en": "Work focused on relieving physical discomfort."
     },
     {
-      "title_es": "Empachos",
+      "title_es": "Terapia con ventosas",
+      "title_en": "Cupping therapy",
+      "description_es": "Complemento terapéutico según necesidad.",
+      "description_en": "Therapeutic complement according to your needs."
+    },
+    {
+      "title_es": "Molestias digestivas",
       "title_en": "Digestive discomfort",
       "description_es": "Atención tradicional según cada caso.",
       "description_en": "Traditional care depending on each case."
@@ -133,7 +131,7 @@
       "title_es": "Masaje terapéutico",
       "title_en": "Therapeutic massage",
       "description_es": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado.",
-      "description_en": "Focused on relieving muscle tension, discomfort and accumulated stress."
+      "description_en": "Focused on relieving muscle tension, discomfort, and accumulated stress."
     },
     {
       "title_es": "Masaje profundo",
@@ -197,12 +195,14 @@
         "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
       },
       {
+        "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
+      },
+      {
         "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+      },
+      {
+        "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
       }
     ]
-  },
-  "social": {
-    "instagram_url": "https://instagram.com/tu_cuenta",
-    "facebook_url": "https://facebook.com/tu_pagina"
   }
 }
