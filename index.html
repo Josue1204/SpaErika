@@ -5,31 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobadora Tradicional | Los Angeles</title>
   <meta name="description" content="Sobadora tradicional en Los Angeles. Terapia física, masajes terapéuticos y bienestar integral con atención personalizada." />
-  <meta name="keywords" content="sobadora los angeles, masaje terapéutico los angeles, terapia física los angeles, therapeutic massage los angeles, traditional sobadora therapy" />
-  <meta name="theme-color" content="#1a8c54" />
+  <meta name="theme-color" content="#6da9ff" />
+  <meta name="keywords" content="sobadora los angeles, therapeutic massage los angeles, physical therapy los angeles, sobadora traditional therapy, masaje terapéutico los angeles" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <style>
     :root {
-      --primary: #1a8c54;
-      --primary-dark: #146c41;
-      --bg-body: #e5e7eb;
+      --primary: #6da9ff;
+      --primary-dark: #4f89db;
+      --accent: #edf5ff;
+      --bg-body: #f7f8fb;
       --card-white: #ffffff;
-      --text-main: #000000;
-      --border-main: 4px solid #000;
-      --shadow-main: 10px 10px 0px var(--primary);
+      --text-main: #18212b;
+      --text-soft: #5f6b7a;
+      --border-main: 1px solid #e7ebf0;
+      --shadow-main: 0 12px 30px rgba(14, 30, 55, 0.08);
+      --shadow-soft: 0 8px 20px rgba(14, 30, 55, 0.06);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --maxw: 1200px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: "Inter", sans-serif;
       scroll-behavior: smooth;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     html, body {
@@ -39,7 +43,7 @@
     body {
       background: var(--bg-body);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     img {
@@ -55,345 +59,300 @@
       display: none !important;
     }
 
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      width: 100%;
-      background: #ffffff;
       z-index: 1000;
-      border-bottom: 4px solid #000;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: var(--border-main);
     }
 
     nav {
-      max-width: 1200px;
-      margin: auto;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      justify-content: space-between;
       gap: 20px;
       position: relative;
     }
 
     .nav-brand {
-      color: var(--primary);
-      font-size: 2rem;
+      font-size: 1.55rem;
       font-weight: 800;
-      text-transform: uppercase;
+      color: var(--primary-dark);
+      letter-spacing: 0.3px;
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .language-switch {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       background: #fff;
-      border: 3px solid #000;
+      border: var(--border-main);
       padding: 8px 12px;
-      box-shadow: 4px 4px 0px #000;
-      font-weight: 800;
-      text-transform: uppercase;
+      border-radius: 999px;
+      box-shadow: var(--shadow-soft);
     }
 
     .language-switch a {
       text-decoration: none;
-      color: var(--text-main);
-      opacity: 0.65;
+      color: var(--text-soft);
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
     .language-switch a.active {
-      opacity: 1;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .nav-toggle {
       display: none;
       background: #fff;
-      border: 3px solid #000;
-      padding: 10px 14px;
-      font-weight: 800;
+      border: var(--border-main);
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
       cursor: pointer;
-      box-shadow: 4px 4px 0px #000;
+      color: var(--text-main);
     }
 
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 20px;
       align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .nav-menu a {
       text-decoration: none;
+      color: var(--text-soft);
+      font-weight: 700;
+      font-size: 0.93rem;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary-dark);
+    }
+
+    .banner {
+      padding-top: 16px;
+    }
+
+    .banner-box {
+      background: linear-gradient(135deg, #eef5ff 0%, #f9fbff 100%);
+      border: var(--border-main);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 18px;
+      text-align: center;
       color: var(--text-main);
-      font-weight: 800;
-      font-size: 0.95rem;
-      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .hero {
-      min-height: 90vh;
-      background:
-        linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
-        url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
-      background-size: cover;
-      background-position: center;
+      padding: 70px 20px 40px;
+    }
+
+    .hero-wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .hero-image {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      border: var(--border-main);
+      box-shadow: var(--shadow-main);
+      min-height: 520px;
+    }
+
+    .hero-card {
+      padding: 44px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      text-align: center;
-      border-bottom: 4px solid #000;
-      padding: 120px 20px 60px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .eyebrow {
+      color: var(--primary-dark);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 9vw, 80px);
-      color: #000;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1.04;
       font-weight: 800;
-      text-shadow: 4px 4px 0px #fff;
-      line-height: 1.1;
-      text-transform: uppercase;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
       white-space: pre-line;
     }
 
     .hero p {
-      margin-top: 20px;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      max-width: 55ch;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .hero-badge {
+      background: var(--accent);
+      color: var(--primary-dark);
+      border: 1px solid #d8e6ff;
+      padding: 10px 14px;
+      border-radius: 999px;
       font-weight: 700;
-      background: rgba(255,255,255,0.85);
-      display: inline-block;
-      padding: 10px 16px;
-      border: 3px solid #000;
+      font-size: 0.92rem;
     }
 
     .hero-actions {
       margin-top: 28px;
       display: flex;
       gap: 14px;
-      justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
-      background: var(--primary);
-      color: white;
-      padding: 18px 38px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 800;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      border: 4px solid #000;
-      box-shadow: 6px 6px 0px #000;
-      transition: 0.2s;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 16px 22px;
+      border: 1px solid transparent;
+      font-weight: 800;
       cursor: pointer;
-      text-transform: uppercase;
+      transition: 0.2s ease;
+      box-shadow: var(--shadow-soft);
     }
 
     .btn:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 9px 9px 0px #000;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary-dark);
+      color: white;
     }
 
     .btn-secondary {
-      background: #ffffff;
-      color: #000;
+      background: #fff;
+      color: var(--text-main);
+      border-color: #dde5ee;
+    }
+
+    .hero-image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(24,33,43,0.15), rgba(24,33,43,0.02));
     }
 
     section {
-      padding: 100px 20px;
-      max-width: 1200px;
-      margin: auto;
+      padding: 72px 0;
     }
 
-    h2.section-title {
-      font-size: 3rem;
-      margin-bottom: 60px;
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
       text-align: center;
-      font-weight: 800;
-      color: #000;
-      text-transform: uppercase;
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
     }
 
-    .banner {
-      max-width: 1200px;
-      margin: 110px auto 0;
-      padding: 0 20px;
-    }
-
-    .banner-box {
-      background: #fff7d6;
-      border: var(--border-main);
-      box-shadow: 8px 8px 0px #000;
-      padding: 18px 22px;
+    .section-subtitle {
       text-align: center;
-      font-weight: 800;
-      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 70ch;
+      margin: 0 auto 40px;
     }
 
-    .about-container,
-    .hours-box,
-    .contact-box,
-    .conditions-box {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
+    .panel-card {
       background: var(--card-white);
       border: var(--border-main);
-      padding: 40px;
-      box-shadow: 12px 12px 0px var(--primary);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-main);
+      padding: 34px;
     }
 
-    .about-text,
-    .contact-form,
-    .contact-info {
-      flex: 1;
-      min-width: 300px;
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
     }
 
-    .about-text h2,
+    .about-text h3,
     .contact-info h3 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      font-weight: 800;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
     }
 
     .about-text p,
     .contact-info p {
-      font-weight: 700;
-      font-size: 1.08rem;
-      color: #000;
-      margin-bottom: 15px;
+      color: var(--text-soft);
       white-space: pre-line;
     }
 
-    .about-img {
-      flex: 1;
-      min-width: 300px;
-      border: var(--border-main);
+    .about-image {
+      border-radius: 24px;
       overflow: hidden;
-      background: #ddd;
+      min-height: 380px;
+      border: var(--border-main);
+      background: #f0f2f5;
     }
 
-    .about-img img {
+    .about-image img {
       width: 100%;
       height: 100%;
-      min-height: 350px;
       object-fit: cover;
-    }
-
-    .grid-layout {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .grid-layout.small {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card-white);
-      border: var(--border-main);
-      padding: 32px;
-      box-shadow: var(--shadow-main);
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: 14px 14px 0px #000;
-    }
-
-    .card h3 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .price-tag {
-      font-size: 3rem;
-      font-weight: 900;
-      color: #000;
-      margin: 10px 0 4px;
-    }
-
-    .price-duration {
-      font-weight: 800;
-      font-size: 1rem;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-
-    .price-description {
-      font-weight: 700;
-      margin-bottom: 25px;
-      min-height: 72px;
-      white-space: pre-line;
-    }
-
-    .service-list,
-    .conditions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
     }
 
     .hours-list {
       display: grid;
-      gap: 16px;
-      width: 100%;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .service-item,
-    .condition-item {
-      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
-      border: var(--border-main);
-      padding: 25px;
-      box-shadow: 8px 8px 0px var(--primary);
-      transition: 0.2s;
-    }
-
-    .service-item:hover,
-    .condition-item:hover,
-    .video-wrapper:hover,
-    .photo-card:hover,
-    .testimonial-card:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 12px 12px 0px #000;
-    }
-
-    .service-item h3,
-    .condition-item h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-
-    .service-item p,
-    .condition-item p {
-      font-weight: 700;
-      white-space: pre-line;
+      gap: 12px;
     }
 
     .hour-item {
@@ -401,160 +360,211 @@
       grid-template-columns: minmax(180px, 260px) 1fr;
       gap: 14px;
       align-items: center;
-      border: 2px solid #d9e7ff;
-      border-radius: 20px;
-      padding: 18px 20px;
-      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
-      box-shadow: 0 10px 24px rgba(14, 30, 55, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .hour-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 32px rgba(14, 30, 55, 0.12);
-      border-color: #9fc2ff;
+      border: var(--border-main);
+      border-radius: 18px;
+      padding: 16px 18px;
+      background: #fbfdff;
     }
 
     .hour-item h3 {
-      margin: 0;
-      font-size: 1.1rem;
+      color: var(--primary-dark);
+      font-size: 1rem;
       font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
     }
 
     .hour-item p {
-      margin: 0;
+      color: var(--text-soft);
       font-weight: 700;
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .info-card,
+    .plan-card,
+    .testimonial-card {
+      background: #fff;
+      border: var(--border-main);
+      border-radius: 22px;
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+      transition: 0.2s ease;
+    }
+
+    .info-card:hover,
+    .plan-card:hover,
+    .testimonial-card:hover,
+    .gallery-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .info-card h3,
+    .plan-card h3 {
+      color: var(--text-main);
+      font-size: 1.28rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .info-card p,
+    .plan-card p {
+      color: var(--text-soft);
       white-space: pre-line;
     }
 
-    .testimonial-card {
-      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
-      border: var(--border-main);
-      padding: 26px;
-      box-shadow: 8px 8px 0px var(--primary);
-      transition: 0.2s;
+    .plan-price {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 12px 0 4px;
+      color: var(--primary-dark);
+    }
+
+    .plan-duration {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .testimonial-stars {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
       color: #f4b400;
+      margin-bottom: 10px;
+      font-size: 1rem;
     }
 
     .testimonial-text {
-      font-weight: 700;
+      color: var(--text-soft);
+      margin-bottom: 14px;
       white-space: pre-line;
-      margin-bottom: 16px;
     }
 
     .testimonial-author {
       font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
-    .video-grid,
-    .photo-grid {
+    .gallery-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .gallery-tab {
+      border: 1px solid #dbe5f0;
+      background: #fff;
+      color: var(--text-soft);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .gallery-tab.active {
+      background: var(--primary-dark);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
     }
 
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
+    .gallery-card {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
       border: var(--border-main);
-      box-shadow: var(--shadow-main);
-      background: #000;
-      overflow: hidden;
-      transition: 0.2s;
+      box-shadow: var(--shadow-soft);
+      transition: 0.2s ease;
     }
 
-    .video-wrapper.tiktok {
-      padding-bottom: 177%;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .photo-card {
-      background: var(--card-white);
-      border: 2px solid #d9e7ff;
-      box-shadow: 0 10px 24px rgba(14, 30, 55, 0.08);
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      cursor: zoom-in;
-    }
-
-    .photo-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 34px rgba(14, 30, 55, 0.14);
-      border-color: #9fc2ff;
-    }
-
-    .photo-card img {
+    .gallery-card img {
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      cursor: zoom-in;
     }
 
-    .photo-card:hover img {
-      transform: scale(1.03);
+    .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
     }
 
-    .map-address {
+    .video-card.tiktok iframe {
+      aspect-ratio: 9 / 16;
+    }
+
+    .video-fallback {
+      padding: 24px;
       text-align: center;
-      margin-bottom: 20px;
     }
 
-    .map-address p {
-      font-weight: 800;
-      font-size: 1.2rem;
+    .video-fallback p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
     }
 
-    .map-container {
-      border: var(--border-main);
-      box-shadow: 12px 12px 0px var(--primary);
-      overflow: hidden;
-      height: 450px;
+    .contact-grid {
+      align-items: start;
     }
 
-    .map-actions {
-      text-align: center;
-      margin-top: 30px;
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .contact-list a,
+    .contact-list div {
       display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-soft);
+      font-weight: 700;
+      background: #fbfdff;
+      border: var(--border-main);
+      border-radius: 16px;
+      padding: 14px 16px;
     }
 
     .contact-form form {
       display: grid;
-      gap: 16px;
+      gap: 14px;
     }
 
     .contact-form input,
     .contact-form textarea,
     .contact-form select {
       width: 100%;
-      border: 3px solid #000;
-      padding: 14px;
+      border: 1px solid #dbe3ec;
+      border-radius: 16px;
+      padding: 14px 16px;
       background: #fff;
+      color: var(--text-main);
       outline: none;
     }
 
     .contact-form textarea {
-      min-height: 140px;
+      min-height: 130px;
       resize: vertical;
     }
 
@@ -564,48 +574,34 @@
       gap: 12px;
     }
 
-    .contact-mini-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .empty-state {
-      background: var(--card-white);
-      border: 4px dashed var(--primary);
-      padding: 30px;
-      text-align: center;
-      font-weight: 800;
-      box-shadow: 8px 8px 0px #000;
-    }
-
-    .skeleton {
-      background: linear-gradient(90deg, #d8dadd 25%, #eceef0 50%, #d8dadd 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite linear;
+    .map-box {
+      border-radius: 24px;
+      overflow: hidden;
       border: var(--border-main);
       box-shadow: var(--shadow-main);
-      min-height: 180px;
+      background: #fff;
     }
 
-    .skeleton.large {
-      min-height: 260px;
+    .map-frame {
+      width: 100%;
+      height: 430px;
+      border: 0;
+      display: block;
     }
 
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+    .map-actions {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .floating-actions {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 18px;
+      bottom: 18px;
       z-index: 1200;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
     }
 
     .floating-list {
@@ -616,39 +612,39 @@
     }
 
     .floating-link {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: 18px;
-      border: 4px solid #ffffff;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      border: 3px solid #fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       color: #fff;
-      font-size: 1.8rem;
-      transition: transform 0.2s ease;
+      font-size: 1.55rem;
+      transition: 0.2s ease;
     }
 
     .floating-link:hover {
-      transform: translateY(-2px) scale(1.04);
+      transform: translateY(-1px) scale(1.03);
     }
 
-    .floating-link.whatsapp-btn { background: #25D366; }
-    .floating-link.call-btn { background: #4b5563; }
-    .floating-link.map-btn { background: #4285F4; }
-    .floating-link.instagram-btn { background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); }
-    .floating-link.facebook-btn { background: #1877F2; }
+    .whatsapp-btn { background: #25D366; }
+    .call-btn { background: #5b6472; }
+    .map-btn { background: #4285F4; }
+    .instagram-btn { background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); }
+    .facebook-btn { background: #1877F2; }
 
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.85);
+      background: rgba(10,16,25,0.88);
       display: none;
       align-items: center;
       justify-content: center;
+      z-index: 2000;
       padding: 20px;
-      z-index: 3000;
     }
 
     .lightbox.active {
@@ -658,41 +654,62 @@
     .lightbox img {
       max-width: min(100%, 1100px);
       max-height: 90vh;
-      border: 4px solid #fff;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
 
     .lightbox-close {
       position: absolute;
       top: 18px;
       right: 18px;
-      background: #fff;
-      color: #000;
-      border: 3px solid #000;
       width: 48px;
       height: 48px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      color: #fff;
       font-size: 1.2rem;
-      font-weight: 800;
       cursor: pointer;
-      box-shadow: 4px 4px 0px #000;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: var(--text-soft);
+      border: var(--border-main);
+      background: #fff;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
     }
 
     footer {
-      background: #000;
-      color: #fff;
-      padding: 60px 20px;
+      padding: 48px 20px 80px;
       text-align: center;
+      color: var(--text-soft);
     }
 
     footer p {
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .hero-wrap,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .hero-image {
+        min-height: 420px;
+      }
     }
 
     @media (max-width: 900px) {
       .nav-toggle {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .nav-menu {
@@ -700,12 +717,13 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background: #fff;
-        border-bottom: 4px solid #000;
-        flex-direction: column;
-        gap: 0;
         display: none;
-        padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: #fff;
+        border-bottom: var(--border-main);
+        padding: 10px 20px 16px;
       }
 
       .nav-menu.active {
@@ -714,85 +732,45 @@
 
       .nav-menu li {
         width: 100%;
-        text-align: center;
       }
 
       .nav-menu a {
         display: block;
-        padding: 14px 20px;
+        width: 100%;
+        padding: 12px 0;
       }
     }
 
     @media (max-width: 768px) {
-      h2.section-title {
-        font-size: 2.2rem;
-        margin-bottom: 40px;
+      section {
+        padding: 56px 0;
       }
 
-      .about-container,
-      .hours-box,
-      .contact-box,
-      .conditions-box,
-      .card {
-        padding: 25px;
+      .hero {
+        padding-top: 36px;
       }
 
-      .price-tag {
-        font-size: 2.4rem;
+      .hero-card {
+        padding: 28px;
       }
 
-      .video-grid,
-      .photo-grid,
-      .service-list,
-      .conditions-grid,
-      .testimonials-grid {
-        grid-template-columns: 1fr;
+      .panel-card {
+        padding: 24px;
       }
 
       .hour-item,
       .form-row {
         grid-template-columns: 1fr;
-        gap: 8px;
       }
 
       .floating-link {
-        width: 58px;
-        height: 58px;
-        font-size: 1.55rem;
-        border-radius: 16px;
+        width: 56px;
+        height: 56px;
+        font-size: 1.42rem;
       }
 
       .language-switch {
         display: none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        min-height: 85vh;
-        padding-top: 140px;
-      }
-
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-
-      .hero p {
-        font-size: 0.95rem;
-      }
-
-      .btn {
-        width: 100%;
-        max-width: 320px;
-        padding: 16px 20px;
-      }
-
-      .nav-brand {
-        font-size: 1.55rem;
-      }
-
-      .map-address p {
-        font-size: 1rem;
       }
     }
   </style>
@@ -800,12 +778,14 @@
 <body>
 
   <div class="banner hidden" id="banner-section">
-    <div class="banner-box" id="banner-text"></div>
+    <div class="container">
+      <div class="banner-box" id="banner-text"></div>
+    </div>
   </div>
 
   <header>
     <nav>
-      <h2 class="nav-brand" id="nav-title">Erika</h2>
+      <div class="nav-brand" id="nav-title">Sobadora</div>
 
       <div class="nav-right">
         <div class="language-switch" aria-label="Language switch">
@@ -815,209 +795,222 @@
         </div>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-          ☰
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
 
       <ul class="nav-menu" id="nav-menu">
-        <li data-menu-target="about"><a href="#about" data-i18n="menu_about">Sobre mí</a></li>
-        <li data-menu-target="conditions"><a href="#conditions" data-i18n="menu_conditions">Condiciones</a></li>
-        <li data-menu-target="horarios"><a href="#horarios" data-i18n="menu_schedule">Horarios</a></li>
-        <li data-menu-target="servicios"><a href="#servicios" data-i18n="menu_services">Servicios</a></li>
-        <li data-menu-target="planes"><a href="#planes" data-i18n="menu_plans">Planes</a></li>
-        <li data-menu-target="testimonios"><a href="#testimonios" data-i18n="menu_testimonials">Testimonios</a></li>
-        <li data-menu-target="videos"><a href="#videos" data-i18n="menu_videos">Videos</a></li>
-        <li data-menu-target="fotos"><a href="#fotos" data-i18n="menu_photos">Fotos</a></li>
-        <li data-menu-target="contacto"><a href="#contacto" data-i18n="menu_book">Reservar</a></li>
-        <li data-menu-target="ubicacion"><a href="#ubicacion" data-i18n="menu_location">Ubicación</a></li>
+        <li data-section-link="about"><a href="#about" data-i18n="menu_about">Sobre mí</a></li>
+        <li data-section-link="conditions"><a href="#conditions" data-i18n="menu_conditions">Condiciones</a></li>
+        <li data-section-link="schedule"><a href="#schedule" data-i18n="menu_schedule">Horarios</a></li>
+        <li data-section-link="services"><a href="#services" data-i18n="menu_services">Servicios</a></li>
+        <li data-section-link="plans"><a href="#plans" data-i18n="menu_plans">Planes</a></li>
+        <li data-section-link="testimonials"><a href="#testimonials" data-i18n="menu_testimonials">Testimonios</a></li>
+        <li data-section-link="gallery"><a href="#gallery" data-i18n="menu_gallery">Galería</a></li>
+        <li data-section-link="contact"><a href="#contact" data-i18n="menu_contact">Reservar</a></li>
+        <li data-section-link="location"><a href="#location" data-i18n="menu_location">Ubicación</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" id="inicio">
-    <div data-aos="zoom-in">
-      <h1 id="hero-title">TU BIENESTAR
-EMPIEZA AQUÍ</h1>
-      <p id="hero-subtitle">Atención profesional y personalizada</p>
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="hero-card">
+        <div class="eyebrow" id="hero-eyebrow">Los Angeles, California</div>
+        <h1 id="hero-title">Tu bienestar empieza aquí</h1>
+        <p id="hero-subtitle">Terapia física, masajes terapéuticos y atención personalizada.</p>
 
-      <div class="hero-actions">
-        <a class="btn" id="hero-whatsapp-btn" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span data-i18n="hero_book">Reserva tu cita</span>
-        </a>
-        <a class="btn btn-secondary" id="hero-route-btn" href="#" target="_blank" rel="noopener noreferrer">
-          <i class="fa-solid fa-location-dot"></i>
-          <span data-i18n="hero_route">Cómo llegar</span>
-        </a>
-      </div>
-    </div>
-  </section>
+        <div class="hero-badges" id="hero-badges">
+          <div class="hero-badge" id="hero-badge-1">By appointment</div>
+          <div class="hero-badge" id="hero-badge-2">Los Angeles</div>
+          <div class="hero-badge" id="hero-badge-3">Traditional sobadora therapy</div>
+        </div>
 
-  <section id="about">
-    <div class="about-container" data-aos="fade-up">
-      <div class="about-text">
-        <h2 data-i18n="about_title">Sobre mí</h2>
-        <p id="about-text-p">Cargando biografía...</p>
-      </div>
-      <div class="about-img">
-        <img
-          id="about-image"
-          src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80"
-          alt="Especialista en masajes terapéuticos" />
-      </div>
-    </div>
-  </section>
-
-  <section id="conditions" class="hidden">
-    <h2 class="section-title" data-i18n="conditions_title">Condiciones que trato</h2>
-    <div class="conditions-grid" id="conditions-container"></div>
-  </section>
-
-  <section id="horarios">
-    <h2 class="section-title" data-i18n="schedule_title">Horarios</h2>
-    <div class="hours-box">
-      <div class="hours-list" id="hours-container">
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-        <div class="skeleton"></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <h2 class="section-title" data-i18n="services_title">Servicios</h2>
-    <div class="service-list" id="services-container">
-      <div class="skeleton"></div>
-      <div class="skeleton"></div>
-      <div class="skeleton"></div>
-    </div>
-  </section>
-
-  <section id="planes">
-    <h2 class="section-title" data-i18n="plans_title">Planes</h2>
-    <div class="grid-layout" id="plans-container">
-      <div class="skeleton large"></div>
-      <div class="skeleton large"></div>
-    </div>
-  </section>
-
-  <section id="testimonios">
-    <h2 class="section-title" data-i18n="testimonials_title">Testimonios</h2>
-    <div class="testimonials-grid" id="testimonials-container">
-      <div class="skeleton"></div>
-      <div class="skeleton"></div>
-      <div class="skeleton"></div>
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2 class="section-title" data-i18n="videos_title">Galería de Videos</h2>
-    <div class="video-grid" id="video-container">
-      <div class="skeleton large"></div>
-      <div class="skeleton large"></div>
-    </div>
-  </section>
-
-  <section id="fotos">
-    <h2 class="section-title" data-i18n="photos_title">Galería de Fotos</h2>
-    <div class="photo-grid" id="photo-container">
-      <div class="skeleton large"></div>
-      <div class="skeleton large"></div>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2 class="section-title" data-i18n="book_title">Reserva</h2>
-    <div class="contact-box">
-      <div class="contact-info">
-        <h3 id="contact-title">Agenda tu cita</h3>
-        <p id="contact-text">Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.</p>
-
-        <div class="contact-mini-actions">
-          <a class="btn" id="contact-whatsapp-btn" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer">
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="hero-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp
+            <span data-i18n="hero_book">Reserva por WhatsApp</span>
           </a>
-          <a class="btn btn-secondary" id="contact-call-btn" href="tel:+13237932528">
-            <i class="fa-solid fa-phone"></i>
-            <span data-i18n="call_btn">Llamar</span>
+          <a class="btn btn-secondary" id="hero-route-btn" href="#" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-location-dot"></i>
+            <span data-i18n="hero_route">Cómo llegar</span>
           </a>
         </div>
       </div>
 
-      <div class="contact-form">
-        <form id="booking-form">
-          <div class="form-row">
-            <input type="text" id="contact-name" placeholder="Tu nombre" required />
-            <input type="tel" id="contact-phone" placeholder="Tu teléfono" />
-          </div>
+      <div class="hero-image" id="hero-image"></div>
+    </div>
+  </section>
 
-          <div class="form-row">
-            <select id="contact-plan"></select>
-            <select id="contact-service"></select>
-          </div>
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">Sobre mí</h2>
+      <p class="section-subtitle" id="about-subtitle"></p>
 
-          <div class="form-row">
-            <select id="contact-duration"></select>
-            <input type="date" id="contact-date" />
+      <div class="panel-card">
+        <div class="about-grid">
+          <div class="about-text">
+            <h3 id="about-heading"></h3>
+            <p id="about-text"></p>
           </div>
-
-          <div class="form-row">
-            <input type="time" id="contact-time" />
-            <input type="text" id="contact-note" placeholder="Detalle adicional" />
+          <div class="about-image">
+            <img id="about-image" src="" alt="Sobre mí" loading="lazy" />
           </div>
-
-          <textarea id="contact-message" placeholder="Escribe tu mensaje"></textarea>
-          <button type="submit" class="btn">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span data-i18n="send_request">Enviar por WhatsApp</span>
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="ubicacion">
-    <h2 class="section-title" data-i18n="location_title">Ubicación</h2>
-
-    <div class="map-address">
-      <p id="location-text">📍 4716 Lomita St, Los Angeles, CA 90019</p>
+  <section id="conditions">
+    <div class="container">
+      <h2 class="section-title" data-i18n="conditions_title">Condiciones que trato</h2>
+      <p class="section-subtitle" data-i18n="conditions_subtitle">Algunas molestias y condiciones por las que las personas suelen buscar atención.</p>
+      <div class="grid-3" id="conditions-container"></div>
     </div>
+  </section>
 
-    <div class="map-container" data-aos="zoom-in">
-      <iframe
-        id="map-frame"
-        src="https://www.google.com/maps?q=4716+Lomita+St,+Los+Angeles,+CA+90019&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        title="Mapa de ubicación del spa">
-      </iframe>
+  <section id="schedule">
+    <div class="container">
+      <h2 class="section-title" data-i18n="schedule_title">Horarios</h2>
+      <p class="section-subtitle" data-i18n="schedule_subtitle">Consulta horarios disponibles y agenda con anticipación.</p>
+      <div class="panel-card">
+        <div class="hours-list" id="hours-container"></div>
+      </div>
     </div>
+  </section>
 
-    <div class="map-actions">
-      <a class="btn" id="maps-link" href="https://www.google.com/maps/search/?api=1&query=4716+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" rel="noopener noreferrer" style="background:#4285F4;">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <span data-i18n="get_directions">Cómo llegar</span>
-      </a>
-      <a class="btn btn-secondary" id="call-link-map" href="tel:+13237932528">
-        <i class="fa-solid fa-phone"></i>
-        <span data-i18n="call_btn">Llamar</span>
-      </a>
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title" data-i18n="services_title">Servicios</h2>
+      <p class="section-subtitle" data-i18n="services_subtitle">Tratamientos orientados al bienestar físico y alivio de molestias.</p>
+      <div class="grid-3" id="services-container"></div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="container">
+      <h2 class="section-title" data-i18n="plans_title">Planes</h2>
+      <p class="section-subtitle" data-i18n="plans_subtitle">Elige la opción que más se adapte a lo que buscas.</p>
+      <div class="grid-3" id="plans-container"></div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title" data-i18n="testimonials_title">Testimonios</h2>
+      <p class="section-subtitle" data-i18n="testimonials_subtitle">Experiencias compartidas por clientes.</p>
+      <div class="grid-3" id="testimonials-container"></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title" data-i18n="gallery_title">Galería</h2>
+      <p class="section-subtitle" data-i18n="gallery_subtitle">Conoce imágenes y videos del servicio y el ambiente.</p>
+
+      <div class="gallery-tabs">
+        <button class="gallery-tab active" data-gallery-tab="photos" data-i18n="gallery_photos">Fotos</button>
+        <button class="gallery-tab" data-gallery-tab="videos" data-i18n="gallery_videos">Videos</button>
+      </div>
+
+      <div id="gallery-photos" class="gallery-grid"></div>
+      <div id="gallery-videos" class="gallery-grid hidden"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact_title">Reserva tu cita</h2>
+      <p class="section-subtitle" data-i18n="contact_subtitle">Completa la información y se abrirá WhatsApp con tu solicitud lista para enviar.</p>
+
+      <div class="panel-card">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 id="contact-heading"></h3>
+            <p id="contact-text"></p>
+
+            <div class="contact-list">
+              <a id="contact-phone-link" href="">
+                <i class="fa-solid fa-phone"></i>
+                <span id="contact-phone-text"></span>
+              </a>
+              <a id="contact-whatsapp-link" href="" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span id="contact-whatsapp-text"></span>
+              </a>
+              <a id="contact-route-link" href="" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-i18n="contact_route">Cómo llegar</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="booking-form">
+              <div class="form-row">
+                <input type="text" id="booking-name" data-placeholder-es="Tu nombre" data-placeholder-en="Your name" placeholder="Tu nombre" required />
+                <input type="tel" id="booking-phone" data-placeholder-es="Tu teléfono" data-placeholder-en="Your phone" placeholder="Tu teléfono" />
+              </div>
+
+              <div class="form-row">
+                <select id="booking-plan"></select>
+                <select id="booking-service"></select>
+              </div>
+
+              <div class="form-row">
+                <select id="booking-duration"></select>
+                <input type="date" id="booking-date" />
+              </div>
+
+              <div class="form-row">
+                <input type="time" id="booking-time" />
+                <input type="text" id="booking-location" data-placeholder-es="Horario preferido o detalle adicional" data-placeholder-en="Preferred schedule or extra note" placeholder="Horario preferido o detalle adicional" />
+              </div>
+
+              <textarea id="booking-message" data-placeholder-es="Mensaje adicional" data-placeholder-en="Additional message" placeholder="Mensaje adicional"></textarea>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span data-i18n="contact_send">Enviar solicitud</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="container">
+      <h2 class="section-title" data-i18n="location_title">Ubicación</h2>
+      <p class="section-subtitle" id="location-subtitle"></p>
+
+      <div class="map-box">
+        <iframe class="map-frame" id="map-frame" src="" loading="lazy" title="Mapa"></iframe>
+      </div>
+
+      <div class="map-actions">
+        <a class="btn btn-primary" id="map-route-btn" href="#" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span data-i18n="location_route">Cómo llegar</span>
+        </a>
+        <a class="btn btn-secondary" id="map-call-btn" href="">
+          <i class="fa-solid fa-phone"></i>
+          <span data-i18n="location_call">Llamar</span>
+        </a>
+      </div>
     </div>
   </section>
 
   <div class="floating-actions" aria-label="Accesos rápidos">
     <div class="floating-list">
-      <a class="floating-link whatsapp-btn" id="floating-whatsapp" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <a class="floating-link whatsapp-btn" id="floating-whatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <a class="floating-link call-btn" id="floating-call" href="tel:+13237932528" aria-label="Llamar">
+      <a class="floating-link call-btn" id="floating-call" href="" aria-label="Llamar">
         <i class="fa-solid fa-phone"></i>
       </a>
-      <a class="floating-link map-btn" id="floating-map" href="https://www.google.com/maps/search/?api=1&query=4716+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" rel="noopener noreferrer" aria-label="Google Maps">
+      <a class="floating-link map-btn" id="floating-map" href="#" target="_blank" rel="noopener noreferrer" aria-label="Maps">
         <i class="fa-solid fa-location-dot"></i>
       </a>
       <a class="floating-link instagram-btn hidden" id="floating-instagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -1030,18 +1023,17 @@ EMPIEZA AQUÍ</h1>
   </div>
 
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
     <img id="lightbox-image" src="" alt="Imagen ampliada" />
   </div>
 
   <footer>
-    <p id="footer-text">© 2026 Spa Terapéutico</p>
+    <p id="footer-text">© 2026 Sobadora</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-
     const LANG = new URLSearchParams(window.location.search).get("lang") === "en" ? "en" : "es";
 
     const UI = {
@@ -1052,38 +1044,47 @@ EMPIEZA AQUÍ</h1>
         menu_services: "Servicios",
         menu_plans: "Planes",
         menu_testimonials: "Testimonios",
-        menu_videos: "Videos",
-        menu_photos: "Fotos",
-        menu_book: "Reservar",
+        menu_gallery: "Galería",
+        menu_contact: "Reservar",
         menu_location: "Ubicación",
-        hero_book: "Reserva tu cita",
+        hero_book: "Reserva por WhatsApp",
         hero_route: "Cómo llegar",
         about_title: "Sobre mí",
         conditions_title: "Condiciones que trato",
+        conditions_subtitle: "Algunas molestias y condiciones por las que las personas suelen buscar atención.",
         schedule_title: "Horarios",
+        schedule_subtitle: "Consulta horarios disponibles y agenda con anticipación.",
         services_title: "Servicios",
+        services_subtitle: "Tratamientos orientados al bienestar físico y alivio de molestias.",
         plans_title: "Planes",
+        plans_subtitle: "Elige la opción que más se adapte a lo que buscas.",
         testimonials_title: "Testimonios",
-        videos_title: "Galería de Videos",
-        photos_title: "Galería de Fotos",
-        book_title: "Reserva",
+        testimonials_subtitle: "Experiencias compartidas por clientes.",
+        gallery_title: "Galería",
+        gallery_subtitle: "Conoce imágenes y videos del servicio y el ambiente.",
+        gallery_photos: "Fotos",
+        gallery_videos: "Videos",
+        contact_title: "Reserva tu cita",
+        contact_subtitle: "Completa la información y se abrirá WhatsApp con tu solicitud lista para enviar.",
+        contact_route: "Cómo llegar",
+        contact_send: "Enviar solicitud",
         location_title: "Ubicación",
-        get_directions: "Cómo llegar",
-        send_request: "Enviar por WhatsApp",
-        call_btn: "Llamar",
-        plan_placeholder: "Plan deseado",
-        service_placeholder: "Servicio de interés",
-        duration_placeholder: "Duración",
-        name_placeholder: "Tu nombre",
-        phone_placeholder: "Tu teléfono",
-        note_placeholder: "Detalle adicional",
-        message_placeholder: "Escribe tu mensaje",
+        location_route: "Cómo llegar",
+        location_call: "Llamar",
+        plan_select: "Plan deseado",
+        service_select: "Servicio de interés",
+        duration_select: "Duración",
+        footer_default: "©",
+        photos_empty: "Aún no hay fotos disponibles.",
+        videos_empty: "Aún no hay videos disponibles.",
+        services_empty: "Próximamente se mostrarán los servicios disponibles.",
+        plans_empty: "Próximamente se mostrarán los planes disponibles.",
+        testimonials_empty: "Aún no hay testimonios disponibles.",
+        conditions_empty: "Próximamente se mostrarán más condiciones tratadas.",
+        schedule_empty: "Consulta disponibilidad por WhatsApp.",
         consult: "Consultar",
-        no_photos: "Aún no hay fotos disponibles.",
-        no_videos: "Aún no hay videos disponibles.",
-        no_conditions: "Próximamente se mostrarán más condiciones tratadas.",
-        see_tiktok: "Ver en TikTok",
-        see_video: "Ver video"
+        view_tiktok: "Ver en TikTok",
+        view_video: "Ver video"
       },
       en: {
         menu_about: "About",
@@ -1092,85 +1093,117 @@ EMPIEZA AQUÍ</h1>
         menu_services: "Services",
         menu_plans: "Plans",
         menu_testimonials: "Testimonials",
-        menu_videos: "Videos",
-        menu_photos: "Photos",
-        menu_book: "Book",
+        menu_gallery: "Gallery",
+        menu_contact: "Book",
         menu_location: "Location",
-        hero_book: "Book now",
+        hero_book: "Book on WhatsApp",
         hero_route: "Get directions",
         about_title: "About",
         conditions_title: "Conditions I treat",
+        conditions_subtitle: "Some concerns and conditions people commonly seek care for.",
         schedule_title: "Hours",
+        schedule_subtitle: "Check available hours and schedule ahead.",
         services_title: "Services",
+        services_subtitle: "Treatments focused on physical wellness and relief.",
         plans_title: "Plans",
+        plans_subtitle: "Choose the option that best fits what you need.",
         testimonials_title: "Testimonials",
-        videos_title: "Video Gallery",
-        photos_title: "Photo Gallery",
-        book_title: "Book",
+        testimonials_subtitle: "Experiences shared by clients.",
+        gallery_title: "Gallery",
+        gallery_subtitle: "See photos and videos of the service and environment.",
+        gallery_photos: "Photos",
+        gallery_videos: "Videos",
+        contact_title: "Book your appointment",
+        contact_subtitle: "Fill in the details and WhatsApp will open with your request ready to send.",
+        contact_route: "Get directions",
+        contact_send: "Send request",
         location_title: "Location",
-        get_directions: "Get directions",
-        send_request: "Send on WhatsApp",
-        call_btn: "Call",
-        plan_placeholder: "Desired plan",
-        service_placeholder: "Service of interest",
-        duration_placeholder: "Duration",
-        name_placeholder: "Your name",
-        phone_placeholder: "Your phone",
-        note_placeholder: "Extra note",
-        message_placeholder: "Write your message",
+        location_route: "Get directions",
+        location_call: "Call now",
+        plan_select: "Desired plan",
+        service_select: "Service of interest",
+        duration_select: "Duration",
+        footer_default: "©",
+        photos_empty: "No photos available yet.",
+        videos_empty: "No videos available yet.",
+        services_empty: "Services will be shown soon.",
+        plans_empty: "Plans will be shown soon.",
+        testimonials_empty: "No testimonials available yet.",
+        conditions_empty: "More treated conditions will be shown soon.",
+        schedule_empty: "Ask about availability on WhatsApp.",
         consult: "Ask",
-        no_photos: "No photos available yet.",
-        no_videos: "No videos available yet.",
-        no_conditions: "More treated conditions will be shown soon.",
-        see_tiktok: "View on TikTok",
-        see_video: "View video"
+        view_tiktok: "View on TikTok",
+        view_video: "View video"
       }
     };
 
     const FALLBACK_DATA = {
-      titulo: "Erika",
-      titulo_en: "Erika",
-      meta_descripcion: "Sobadora tradicional en Los Angeles. Terapia física y masajes terapéuticos.",
-      meta_descripcion_en: "Traditional sobadora therapy in Los Angeles. Physical therapy and therapeutic massage.",
-      hero_titulo: "TU BIENESTAR\nEMPIEZA AQUÍ",
-      hero_titulo_en: "YOUR WELL-BEING\nSTARTS HERE",
-      hero_subtitulo: "Atención profesional y personalizada",
-      hero_subtitulo_en: "Professional and personalized care",
-      whatsapp: "13237932528",
-      telefono: "13237932528",
-      sobre_mi: "Soy especialista en masajes terapéuticos y bienestar integral.",
-      sobre_mi_en: "I specialize in therapeutic massage and holistic wellness.",
-      imagen_hero: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-      imagen_sobre_mi: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-      mostrar_banner: false,
-      banner_texto: "",
-      banner_texto_en: "",
-      mostrar_precios: true,
-      mostrar_testimonios: false,
-      instagram_url: "",
-      facebook_url: "",
-      ubicacion_texto: "4716 Lomita St, Los Angeles, CA 90019",
-      ubicacion_texto_en: "4716 Lomita St, Los Angeles, CA 90019",
-      ubicacion_mapa_query: "4716 Lomita St, Los Angeles, CA 90019",
-      contacto_titulo: "Agenda tu cita",
-      contacto_titulo_en: "Book your appointment",
-      contacto_texto: "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
-      contacto_texto_en: "Message me for more information about availability, services, and personalized care.",
-      servicios: [],
-      condiciones: [],
-      horarios: [],
-      planes: [],
-      testimonios: [],
-      videos: [],
-      fotos: []
+      general: {
+        business_name: "Sobadora Tradicional",
+        hero_eyebrow_es: "Los Angeles, California",
+        hero_eyebrow_en: "Los Angeles, California",
+        hero_title_es: "Tu bienestar empieza aquí",
+        hero_title_en: "Traditional Sobadora Therapy",
+        hero_subtitle_es: "Terapia física, masajes terapéuticos y atención personalizada.",
+        hero_subtitle_en: "Physical therapy, therapeutic massage and personalized care.",
+        hero_badges_es: ["Con cita previa", "Los Angeles", "Bienestar integral"],
+        hero_badges_en: ["By appointment", "Los Angeles", "Holistic wellness"],
+        about_heading_es: "Atención cercana y personalizada",
+        about_heading_en: "Personalized and attentive care",
+        about_text_es: "Soy Erika y me especializo en terapia física, masajes terapéuticos y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
+        about_text_en: "I'm Erika and I specialize in physical therapy, therapeutic massage, and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
+        about_subtitle_es: "Conoce un poco más sobre mi atención y enfoque de trabajo.",
+        about_subtitle_en: "Learn more about my care approach and work style.",
+        hero_image: "",
+        about_image: ""
+      },
+      seo: {
+        title_es: "Sobadora Tradicional en Los Angeles | Terapia Física y Masajes",
+        title_en: "Traditional Sobadora Therapy in Los Angeles | Physical Therapy & Massage",
+        description_es: "Sobadora tradicional en Los Angeles. Terapia física, masajes terapéuticos y bienestar integral con atención personalizada.",
+        description_en: "Traditional sobadora therapy in Los Angeles. Physical therapy, therapeutic massage and holistic wellness with personalized care."
+      },
+      contact: {
+        whatsapp: "13237932528",
+        phone: "13106291978",
+        contact_heading_es: "Agenda tu cita",
+        contact_heading_en: "Schedule your appointment",
+        contact_text_es: "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
+        contact_text_en: "Message me for more information about availability, services, and personalized care.",
+        address_text_es: "4716 Lomita St, Los Angeles, CA 90019",
+        address_text_en: "4716 Lomita St, Los Angeles, CA 90019",
+        map_query: "4716 Lomita St, Los Angeles, CA 90019"
+      },
+      banner: {
+        show: false,
+        text_es: "",
+        text_en: ""
+      },
+      social: {
+        instagram_url: "",
+        facebook_url: ""
+      },
+      options: {
+        show_prices: true,
+        show_testimonials: true
+      },
+      conditions: [],
+      schedule: [],
+      services: [],
+      plans: [],
+      testimonials: [],
+      gallery: {
+        photos: [],
+        videos: []
+      }
     };
 
     function t(key) {
       return UI[LANG][key] || key;
     }
 
-    function translated(es, en) {
-      return LANG === "en" ? (en || es || "") : (es || en || "");
+    function pick(esValue, enValue) {
+      return LANG === "en" ? (enValue || esValue || "") : (esValue || enValue || "");
     }
 
     function cleanPhone(value) {
@@ -1203,218 +1236,21 @@ EMPIEZA AQUÍ</h1>
       }
     }
 
-    function hideMenuIfSectionHidden() {
-      document.querySelectorAll("[data-menu-target]").forEach(item => {
-        const sectionId = item.getAttribute("data-menu-target");
+    function hideSection(sectionId, shouldHide) {
+      const el = document.getElementById(sectionId);
+      if (!el) return;
+      el.classList.toggle("hidden", shouldHide);
+    }
+
+    function syncMenuVisibility() {
+      document.querySelectorAll("[data-section-link]").forEach(item => {
+        const sectionId = item.getAttribute("data-section-link");
         const section = document.getElementById(sectionId);
         item.classList.toggle("hidden", !section || section.classList.contains("hidden"));
       });
     }
 
-    function renderConditions(items) {
-      const container = document.getElementById("conditions-container");
-
-      if (!Array.isArray(items) || items.length === 0) {
-        document.getElementById("conditions").classList.add("hidden");
-        return;
-      }
-
-      container.innerHTML = items.map(item => `
-        <div class="condition-item">
-          <h3>${translated(item.titulo || item.title_es, item.titulo_en || item.title_en)}</h3>
-          <p>${translated(item.descripcion || item.description_es, item.descripcion_en || item.description_en)}</p>
-        </div>
-      `).join("");
-
-      document.getElementById("conditions").classList.remove("hidden");
-    }
-
-    function renderSchedule(items) {
-      const container = document.getElementById("hours-container");
-
-      if (!Array.isArray(items) || items.length === 0) {
-        document.getElementById("horarios").classList.add("hidden");
-        return;
-      }
-
-      container.innerHTML = items.map(item => `
-        <div class="hour-item">
-          <h3>${translated(item.dia || item.day_es, item.dia_en || item.day_en)}</h3>
-          <p>${translated(item.horario || item.hours_es, item.horario_en || item.hours_en)}</p>
-        </div>
-      `).join("");
-
-      document.getElementById("horarios").classList.remove("hidden");
-    }
-
-    function renderServices(items) {
-      const container = document.getElementById("services-container");
-
-      if (!Array.isArray(items) || items.length === 0) {
-        document.getElementById("servicios").classList.add("hidden");
-        return;
-      }
-
-      container.innerHTML = items.map(item => `
-        <div class="service-item">
-          <h3>${translated(item.titulo || item.title_es, item.titulo_en || item.title_en)}</h3>
-          <p>${translated(item.descripcion || item.description_es, item.descripcion_en || item.description_en)}</p>
-        </div>
-      `).join("");
-
-      document.getElementById("servicios").classList.remove("hidden");
-    }
-
-    function renderPlans(items, whatsapp, showPrices) {
-      const container = document.getElementById("plans-container");
-      const planSelect = document.getElementById("contact-plan");
-      const durationSelect = document.getElementById("contact-duration");
-
-      if (!Array.isArray(items) || items.length === 0) {
-        document.getElementById("planes").classList.add("hidden");
-        planSelect.innerHTML = `<option value="">${t("plan_placeholder")}</option>`;
-        durationSelect.innerHTML = `<option value="">${t("duration_placeholder")}</option>`;
-        return;
-      }
-
-      container.innerHTML = items.map((item, i) => {
-        const title = translated(item.titulo || item.title_es, item.titulo_en || item.title_en) || `Plan ${i + 1}`;
-        const desc = translated(item.descripcion || item.description_es, item.descripcion_en || item.description_en);
-        const duration = item.duracion || item.duration || "60 min";
-        const buttonText = translated(item.texto_boton || item.button_text_es, item.texto_boton_en || item.button_text_en) || (LANG === "en" ? "Book now" : "Reservar");
-        const price = formatPrice(item.precio ?? item.price, showPrices);
-
-        return `
-          <div class="card">
-            <h3>${title}</h3>
-            <div class="price-tag">${price}</div>
-            <div class="price-duration">${duration}</div>
-            <p class="price-description">${desc}</p>
-            <a class="btn" href="${whatsappLink(whatsapp, LANG === "en" ? `Hello, I want information about ${title}` : `Hola, quiero información sobre ${title}`)}" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp"></i>${buttonText}
-            </a>
-          </div>
-        `;
-      }).join("");
-
-      planSelect.innerHTML = `<option value="">${t("plan_placeholder")}</option>` + items.map(item => {
-        const title = translated(item.titulo || item.title_es, item.titulo_en || item.title_en);
-        return `<option value="${title}">${title}</option>`;
-      }).join("");
-
-      const durations = [...new Set(items.map(i => i.duracion || i.duration).filter(Boolean))];
-      durationSelect.innerHTML = `<option value="">${t("duration_placeholder")}</option>` + durations.map(d => `<option value="${d}">${d}</option>`).join("");
-
-      document.getElementById("planes").classList.remove("hidden");
-    }
-
-    function renderTestimonials(items, show) {
-      const container = document.getElementById("testimonials-container");
-
-      if (!show || !Array.isArray(items) || items.length === 0) {
-        document.getElementById("testimonios").classList.add("hidden");
-        return;
-      }
-
-      container.innerHTML = items.map(item => {
-        const stars = Math.max(1, Math.min(Number(item.estrellas || item.stars || 5), 5));
-        return `
-          <div class="testimonial-card">
-            <div class="testimonial-stars">${"★".repeat(stars)}</div>
-            <p class="testimonial-text">${translated(item.comentario || item.comment_es, item.comentario_en || item.comment_en)}</p>
-            <div class="testimonial-author">${item.nombre || item.name || "Cliente"}</div>
-          </div>
-        `;
-      }).join("");
-
-      document.getElementById("testimonios").classList.remove("hidden");
-    }
-
-    function renderPhotos(items, title) {
-      const container = document.getElementById("photo-container");
-
-      if (!Array.isArray(items) || items.length === 0) {
-        document.getElementById("fotos").classList.add("hidden");
-        return;
-      }
-
-      container.innerHTML = items.map(item => {
-        const url = typeof item === "string" ? item : item?.imagen || item?.image;
-        if (!url) return "";
-        const alt = translated(item?.alt_es || `Foto de ${title}`, item?.alt_en || `Photo of ${title}`);
-        return `
-          <div class="photo-card">
-            <img src="${url}" alt="${alt}" loading="lazy" data-lightbox="${url}">
-          </div>
-        `;
-      }).join("");
-
-      document.getElementById("fotos").classList.toggle("hidden", container.innerHTML.trim() === "");
-    }
-
-    function renderVideos(items) {
-      const container = document.getElementById("video-container");
-
-      if (!Array.isArray(items) || items.length === 0) {
-        document.getElementById("videos").classList.add("hidden");
-        return;
-      }
-
-      const html = items.map(item => {
-        const link = (typeof item === "string" ? item : item?.video || "").trim();
-        if (!link) return "";
-
-        if (link.includes("tiktok.com")) {
-          const match = link.match(/\/video\/(\d+)/);
-          if (match) {
-            return `
-              <div class="video-wrapper tiktok">
-                <iframe src="https://www.tiktok.com/embed/v2/${match[1]}" allowfullscreen title="TikTok video"></iframe>
-              </div>
-            `;
-          }
-
-          return `
-            <div class="card" style="text-align:center;">
-              <h3 style="font-size:1.3rem;">TikTok</h3>
-              <p class="price-description" style="min-height:auto;">${LANG === "en" ? "This short TikTok link cannot be embedded directly." : "Este enlace corto de TikTok no se puede incrustar directamente."}</p>
-              <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn">${t("see_tiktok")}</a>
-            </div>
-          `;
-        }
-
-        const yid = youtubeId(link);
-        if (yid) {
-          return `
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen title="YouTube video"></iframe>
-            </div>
-          `;
-        }
-
-        return `
-          <div class="card" style="text-align:center;">
-            <h3 style="font-size:1.3rem;">Video</h3>
-            <p class="price-description" style="min-height:auto;">${LANG === "en" ? "This content is available through an external link." : "Este contenido está disponible mediante un enlace externo."}</p>
-            <a href="${link}" target="_blank" rel="noopener noreferrer" class="btn">${t("see_video")}</a>
-          </div>
-        `;
-      }).join("");
-
-      container.innerHTML = html;
-      document.getElementById("videos").classList.toggle("hidden", !html.trim());
-    }
-
-    function setupLightbox() {
-      document.querySelectorAll("[data-lightbox]").forEach(img => {
-        img.addEventListener("click", () => {
-          document.getElementById("lightbox-image").src = img.getAttribute("data-lightbox");
-          document.getElementById("lightbox").classList.add("active");
-        });
-      });
-    }
-
-    function applyTranslations() {
+    function applyStaticTexts() {
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         el.textContent = t(key);
@@ -1423,15 +1259,230 @@ EMPIEZA AQUÍ</h1>
       document.getElementById("lang-es").classList.toggle("active", LANG === "es");
       document.getElementById("lang-en").classList.toggle("active", LANG === "en");
 
-      document.getElementById("contact-name").placeholder = t("name_placeholder");
-      document.getElementById("contact-phone").placeholder = t("phone_placeholder");
-      document.getElementById("contact-note").placeholder = t("note_placeholder");
-      document.getElementById("contact-message").placeholder = t("message_placeholder");
+      document.querySelectorAll("[data-placeholder-es]").forEach(el => {
+        el.placeholder = LANG === "en" ? el.dataset.placeholderEn : el.dataset.placeholderEs;
+      });
+    }
+
+    function renderConditions(items) {
+      const container = document.getElementById("conditions-container");
+      if (!Array.isArray(items) || items.length === 0) {
+        hideSection("conditions", true);
+        return;
+      }
+
+      container.innerHTML = items.map(item => `
+        <div class="info-card">
+          <h3>${pick(item.title_es, item.title_en)}</h3>
+          <p>${pick(item.description_es, item.description_en)}</p>
+        </div>
+      `).join("");
+
+      hideSection("conditions", false);
+    }
+
+    function renderSchedule(items) {
+      const container = document.getElementById("hours-container");
+      if (!Array.isArray(items) || items.length === 0) {
+        container.innerHTML = `<div class="empty-state">${t("schedule_empty")}</div>`;
+        hideSection("schedule", false);
+        return;
+      }
+
+      container.innerHTML = items.map(item => `
+        <div class="hour-item">
+          <h3>${pick(item.day_es, item.day_en)}</h3>
+          <p>${pick(item.hours_es, item.hours_en)}</p>
+        </div>
+      `).join("");
+
+      hideSection("schedule", false);
+    }
+
+    function renderServices(items) {
+      const container = document.getElementById("services-container");
+      if (!Array.isArray(items) || items.length === 0) {
+        hideSection("services", true);
+        return;
+      }
+
+      container.innerHTML = items.map(item => `
+        <div class="info-card">
+          <h3>${pick(item.title_es, item.title_en)}</h3>
+          <p>${pick(item.description_es, item.description_en)}</p>
+        </div>
+      `).join("");
+
+      hideSection("services", false);
+    }
+
+    function renderPlans(items, phone, showPrices) {
+      const container = document.getElementById("plans-container");
+      const planSelect = document.getElementById("booking-plan");
+      const durationSelect = document.getElementById("booking-duration");
+
+      if (!Array.isArray(items) || items.length === 0) {
+        hideSection("plans", true);
+        planSelect.innerHTML = `<option value="">${t("plan_select")}</option>`;
+        durationSelect.innerHTML = `<option value="">${t("duration_select")}</option>`;
+        return;
+      }
+
+      container.innerHTML = items.map(item => {
+        const title = pick(item.title_es, item.title_en);
+        const description = pick(item.description_es, item.description_en);
+        const duration = item.duration || "";
+        const buttonText = pick(item.button_text_es, item.button_text_en) || (LANG === "en" ? "Book now" : "Reservar");
+        return `
+          <div class="plan-card">
+            <h3>${title}</h3>
+            <div class="plan-price">${formatPrice(item.price, showPrices)}</div>
+            <div class="plan-duration">${duration}</div>
+            <p class="price-description">${description}</p>
+            <a class="btn btn-primary" href="${whatsappLink(phone, LANG === "en" ? `Hello, I want information about ${title}` : `Hola, quiero información sobre ${title}`)}" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>${buttonText}
+            </a>
+          </div>
+        `;
+      }).join("");
+
+      planSelect.innerHTML = `<option value="">${t("plan_select")}</option>` + items.map(item => {
+        const title = pick(item.title_es, item.title_en);
+        return `<option value="${title}">${title}</option>`;
+      }).join("");
+
+      const durations = [...new Set(items.map(i => i.duration).filter(Boolean))];
+      durationSelect.innerHTML = `<option value="">${t("duration_select")}</option>` + durations.map(d => `<option value="${d}">${d}</option>`).join("");
+
+      hideSection("plans", false);
+    }
+
+    function renderTestimonials(items, show) {
+      const container = document.getElementById("testimonials-container");
+      if (!show || !Array.isArray(items) || items.length === 0) {
+        hideSection("testimonials", true);
+        return;
+      }
+
+      container.innerHTML = items.map(item => {
+        const stars = Math.max(1, Math.min(Number(item.stars || 5), 5));
+        return `
+          <div class="testimonial-card">
+            <div class="testimonial-stars">${"★".repeat(stars)}</div>
+            <p class="testimonial-text">${pick(item.comment_es, item.comment_en)}</p>
+            <div class="testimonial-author">${item.name || "Cliente"}</div>
+          </div>
+        `;
+      }).join("");
+
+      hideSection("testimonials", false);
+    }
+
+    function renderGalleryPhotos(items) {
+      const container = document.getElementById("gallery-photos");
+      if (!Array.isArray(items) || items.length === 0) {
+        container.innerHTML = `<div class="empty-state">${t("photos_empty")}</div>`;
+        return false;
+      }
+
+      container.innerHTML = items.map(item => {
+        const url = typeof item === "string" ? item : item?.image;
+        if (!url) return "";
+        return `
+          <div class="gallery-card">
+            <img src="${url}" alt="${pick(item?.alt_es, item?.alt_en) || "Foto"}" loading="lazy" data-lightbox="${url}">
+          </div>
+        `;
+      }).join("");
+
+      return container.innerHTML.trim() !== "";
+    }
+
+    function renderGalleryVideos(items) {
+      const container = document.getElementById("gallery-videos");
+      if (!Array.isArray(items) || items.length === 0) {
+        container.innerHTML = `<div class="empty-state">${t("videos_empty")}</div>`;
+        return false;
+      }
+
+      container.innerHTML = items.map(item => {
+        const link = (typeof item === "string" ? item : item?.video || "").trim();
+        if (!link) return "";
+
+        if (link.includes("tiktok.com")) {
+          const match = link.match(/\/video\/(\d+)/);
+          if (match) {
+            return `
+              <div class="gallery-card video-card tiktok">
+                <iframe src="https://www.tiktok.com/embed/v2/${match[1]}" allowfullscreen title="TikTok video"></iframe>
+              </div>
+            `;
+          }
+
+          return `
+            <div class="gallery-card">
+              <div class="video-fallback">
+                <p>${LANG === "en" ? "This TikTok short link can't be embedded directly." : "Este enlace corto de TikTok no se puede incrustar directamente."}</p>
+                <a class="btn btn-primary" href="${link}" target="_blank" rel="noopener noreferrer">${t("view_tiktok")}</a>
+              </div>
+            </div>
+          `;
+        }
+
+        const yid = youtubeId(link);
+        if (yid) {
+          return `
+            <div class="gallery-card video-card">
+              <iframe src="https://www.youtube.com/embed/${yid}" allowfullscreen title="YouTube video"></iframe>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="gallery-card">
+            <div class="video-fallback">
+              <p>${LANG === "en" ? "This video is available through an external link." : "Este video está disponible mediante un enlace externo."}</p>
+              <a class="btn btn-primary" href="${link}" target="_blank" rel="noopener noreferrer">${t("view_video")}</a>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      return container.innerHTML.trim() !== "";
+    }
+
+    function setupGalleryTabs(hasPhotos, hasVideos) {
+      const photosTab = document.querySelector('[data-gallery-tab="photos"]');
+      const videosTab = document.querySelector('[data-gallery-tab="videos"]');
+      const photosPanel = document.getElementById("gallery-photos");
+      const videosPanel = document.getElementById("gallery-videos");
+
+      photosTab.classList.toggle("hidden", !hasPhotos);
+      videosTab.classList.toggle("hidden", !hasVideos);
+
+      if (!hasPhotos && !hasVideos) {
+        hideSection("gallery", true);
+        return;
+      }
+
+      hideSection("gallery", false);
+
+      if (!hasPhotos && hasVideos) {
+        photosPanel.classList.add("hidden");
+        videosPanel.classList.remove("hidden");
+        photosTab.classList.remove("active");
+        videosTab.classList.add("active");
+      } else {
+        photosPanel.classList.remove("hidden");
+        videosPanel.classList.add("hidden");
+        photosTab.classList.add("active");
+        videosTab.classList.remove("active");
+      }
     }
 
     function applySEO(data) {
-      const title = translated(data.titulo || data.business_name, data.titulo_en || data.business_name_en) || "Sobadora Tradicional | Los Angeles";
-      const description = translated(data.meta_descripcion, data.meta_descripcion_en) || FALLBACK_DATA.meta_descripcion;
+      const title = pick(data.seo?.title_es, data.seo?.title_en) || FALLBACK_DATA.seo.title_es;
+      const description = pick(data.seo?.description_es, data.seo?.description_en) || FALLBACK_DATA.seo.description_es;
 
       document.title = title;
       document.querySelector('meta[name="description"]').setAttribute("content", description);
@@ -1439,11 +1490,11 @@ EMPIEZA AQUÍ</h1>
       const ld = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": title,
-        "telephone": `+${cleanPhone(data.telefono || FALLBACK_DATA.telefono)}`,
+        "name": data.general?.business_name || FALLBACK_DATA.general.business_name,
+        "telephone": `+${cleanPhone(data.contact?.phone || FALLBACK_DATA.contact.phone)}`,
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": translated(data.ubicacion_texto, data.ubicacion_texto_en) || FALLBACK_DATA.ubicacion_texto,
+          "streetAddress": data.contact?.address_text_es || FALLBACK_DATA.contact.address_text_es,
           "addressLocality": "Los Angeles",
           "addressRegion": "CA",
           "postalCode": "90019",
@@ -1462,50 +1513,69 @@ EMPIEZA AQUÍ</h1>
     }
 
     function applyData(raw) {
-      const data = { ...FALLBACK_DATA, ...raw };
+      const data = {
+        ...FALLBACK_DATA,
+        ...raw,
+        general: { ...FALLBACK_DATA.general, ...(raw.general || {}) },
+        seo: { ...FALLBACK_DATA.seo, ...(raw.seo || {}) },
+        contact: { ...FALLBACK_DATA.contact, ...(raw.contact || {}) },
+        banner: { ...FALLBACK_DATA.banner, ...(raw.banner || {}) },
+        social: { ...FALLBACK_DATA.social, ...(raw.social || {}) },
+        options: { ...FALLBACK_DATA.options, ...(raw.options || {}) },
+        gallery: { ...FALLBACK_DATA.gallery, ...(raw.gallery || {}) }
+      };
 
-      applyTranslations();
+      applyStaticTexts();
       applySEO(data);
 
       document.documentElement.lang = LANG;
-      document.getElementById("nav-title").textContent = translated(data.titulo, data.titulo_en) || data.titulo || "Erika";
-      document.getElementById("hero-title").textContent = translated(data.hero_titulo, data.hero_titulo_en);
-      document.getElementById("hero-subtitle").textContent = translated(data.hero_subtitulo, data.hero_subtitulo_en);
-      document.getElementById("about-text-p").textContent = translated(data.sobre_mi, data.sobre_mi_en);
-      document.getElementById("about-image").src = data.imagen_sobre_mi || FALLBACK_DATA.imagen_sobre_mi;
-      document.getElementById("about-image").alt = translated(data.titulo, data.titulo_en) || "Sobre mí";
+      document.getElementById("nav-title").textContent = data.general.business_name;
+      document.getElementById("hero-eyebrow").textContent = pick(data.general.hero_eyebrow_es, data.general.hero_eyebrow_en);
+      document.getElementById("hero-title").textContent = pick(data.general.hero_title_es, data.general.hero_title_en);
+      document.getElementById("hero-subtitle").textContent = pick(data.general.hero_subtitle_es, data.general.hero_subtitle_en);
 
-      document.querySelector(".hero").style.backgroundImage =
-        `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url('${data.imagen_hero || FALLBACK_DATA.imagen_hero}')`;
+      const badges = pick(data.general.hero_badges_es, data.general.hero_badges_en) || [];
+      for (let i = 0; i < 3; i++) {
+        const el = document.getElementById(`hero-badge-${i + 1}`);
+        if (badges[i]) {
+          el.textContent = badges[i];
+          el.classList.remove("hidden");
+        } else {
+          el.classList.add("hidden");
+        }
+      }
 
-      document.getElementById("contact-title").textContent = translated(data.contacto_titulo, data.contacto_titulo_en);
-      document.getElementById("contact-text").textContent = translated(data.contacto_texto, data.contacto_texto_en);
+      document.getElementById("hero-image").style.backgroundImage = `url('${data.general.hero_image}')`;
+      document.getElementById("hero-route-btn").href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.contact.map_query)}`;
+      document.getElementById("hero-whatsapp-btn").href = whatsappLink(data.contact.whatsapp, LANG === "en" ? "Hello, I want to book an appointment." : "Hola, quiero reservar una cita.");
 
-      const whatsapp = data.whatsapp || FALLBACK_DATA.whatsapp;
-      const telefono = data.telefono || FALLBACK_DATA.telefono;
-      const mapsQuery = encodeURIComponent(data.ubicacion_mapa_query || FALLBACK_DATA.ubicacion_mapa_query);
-      const routeUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+      document.getElementById("about-subtitle").textContent = pick(data.general.about_subtitle_es, data.general.about_subtitle_en);
+      document.getElementById("about-heading").textContent = pick(data.general.about_heading_es, data.general.about_heading_en);
+      document.getElementById("about-text").textContent = pick(data.general.about_text_es, data.general.about_text_en);
+      document.getElementById("about-image").src = data.general.about_image;
+      document.getElementById("about-image").alt = data.general.business_name;
 
-      document.getElementById("hero-whatsapp-btn").href = whatsappLink(whatsapp, LANG === "en" ? "Hello, I want to book an appointment." : "Hola, quiero reservar una cita.");
-      document.getElementById("hero-route-btn").href = routeUrl;
+      document.getElementById("contact-heading").textContent = pick(data.contact.contact_heading_es, data.contact.contact_heading_en);
+      document.getElementById("contact-text").textContent = pick(data.contact.contact_text_es, data.contact.contact_text_en);
+      document.getElementById("contact-phone-text").textContent = data.contact.phone;
+      document.getElementById("contact-whatsapp-text").textContent = data.contact.whatsapp;
+      document.getElementById("contact-phone-link").href = telLink(data.contact.phone);
+      document.getElementById("contact-whatsapp-link").href = whatsappLink(data.contact.whatsapp);
+      document.getElementById("contact-route-link").href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.contact.map_query)}`;
 
-      document.getElementById("contact-whatsapp-btn").href = whatsappLink(whatsapp);
-      document.getElementById("contact-call-btn").href = telLink(telefono);
+      const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(data.contact.map_query)}&output=embed`;
+      const routeUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.contact.map_query)}`;
+      document.getElementById("map-frame").src = mapUrl;
+      document.getElementById("location-subtitle").textContent = pick(data.contact.address_text_es, data.contact.address_text_en);
+      document.getElementById("map-route-btn").href = routeUrl;
+      document.getElementById("map-call-btn").href = telLink(data.contact.phone);
 
-      document.getElementById("floating-whatsapp").href = whatsappLink(whatsapp);
-      document.getElementById("floating-call").href = telLink(telefono);
+      document.getElementById("floating-whatsapp").href = whatsappLink(data.contact.whatsapp);
+      document.getElementById("floating-call").href = telLink(data.contact.phone);
       document.getElementById("floating-map").href = routeUrl;
 
-      document.getElementById("call-link-map").href = telLink(telefono);
-      document.getElementById("maps-link").href = routeUrl;
-      document.getElementById("map-frame").src = `https://www.google.com/maps?q=${mapsQuery}&output=embed`;
-      document.getElementById("location-text").textContent = `📍 ${translated(data.ubicacion_texto, data.ubicacion_texto_en)}`;
-
-      document.getElementById("banner-section").classList.toggle("hidden", !(data.mostrar_banner && translated(data.banner_texto, data.banner_texto_en)));
-      document.getElementById("banner-text").textContent = translated(data.banner_texto, data.banner_texto_en);
-
-      const ig = (data.instagram_url || "").trim();
-      const fb = (data.facebook_url || "").trim();
+      const ig = (data.social.instagram_url || "").trim();
+      const fb = (data.social.facebook_url || "").trim();
       const igBtn = document.getElementById("floating-instagram");
       const fbBtn = document.getElementById("floating-facebook");
       igBtn.classList.toggle("hidden", !ig);
@@ -1513,29 +1583,44 @@ EMPIEZA AQUÍ</h1>
       igBtn.href = ig || "#";
       fbBtn.href = fb || "#";
 
-      renderConditions(data.condiciones);
-      renderSchedule(data.horarios);
-      renderServices(data.servicios);
-      renderPlans(data.planes, whatsapp, data.mostrar_precios !== false);
-      renderTestimonials(data.testimonios, data.mostrar_testimonios === true);
-      renderVideos(data.videos);
-      renderPhotos(data.fotos, translated(data.titulo, data.titulo_en));
+      const bannerShow = Boolean(data.banner.show && pick(data.banner.text_es, data.banner.text_en));
+      document.getElementById("banner-section").classList.toggle("hidden", !bannerShow);
+      document.getElementById("banner-text").textContent = pick(data.banner.text_es, data.banner.text_en);
 
-      document.getElementById("footer-text").textContent = `© ${new Date().getFullYear()} ${translated(data.titulo, data.titulo_en)}`;
+      renderConditions(data.conditions);
+      renderSchedule(data.schedule);
+      renderServices(data.services);
+      renderPlans(data.plans, data.contact.whatsapp, data.options.show_prices !== false);
+      renderTestimonials(data.testimonials, data.options.show_testimonials === true);
 
-      const serviceSelect = document.getElementById("contact-service");
-      if (Array.isArray(data.servicios) && data.servicios.length > 0) {
-        serviceSelect.innerHTML = `<option value="">${t("service_placeholder")}</option>` + data.servicios.map(item => {
-          const title = translated(item.titulo || item.title_es, item.titulo_en || item.title_en);
+      const hasPhotos = renderGalleryPhotos(data.gallery.photos);
+      const hasVideos = renderGalleryVideos(data.gallery.videos);
+      setupGalleryTabs(hasPhotos, hasVideos);
+
+      document.getElementById("footer-text").textContent = `© ${new Date().getFullYear()} ${data.general.business_name}`;
+
+      const serviceSelect = document.getElementById("booking-service");
+      if (Array.isArray(data.services) && data.services.length > 0) {
+        serviceSelect.innerHTML = `<option value="">${t("service_select")}</option>` + data.services.map(item => {
+          const title = pick(item.title_es, item.title_en);
           return `<option value="${title}">${title}</option>`;
         }).join("");
       } else {
-        serviceSelect.innerHTML = `<option value="">${t("service_placeholder")}</option>`;
+        serviceSelect.innerHTML = `<option value="">${t("service_select")}</option>`;
       }
 
-      hideMenuIfSectionHidden();
+      syncMenuVisibility();
       setupLightbox();
       setupBookingForm(data);
+    }
+
+    function setupLightbox() {
+      document.querySelectorAll("[data-lightbox]").forEach(img => {
+        img.addEventListener("click", () => {
+          document.getElementById("lightbox-image").src = img.getAttribute("data-lightbox");
+          document.getElementById("lightbox").classList.add("active");
+        });
+      });
     }
 
     function setupBookingForm(data) {
@@ -1543,27 +1628,27 @@ EMPIEZA AQUÍ</h1>
       form.onsubmit = (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("contact-name").value.trim();
-        const phone = document.getElementById("contact-phone").value.trim();
-        const plan = document.getElementById("contact-plan").value.trim();
-        const service = document.getElementById("contact-service").value.trim();
-        const duration = document.getElementById("contact-duration").value.trim();
-        const date = document.getElementById("contact-date").value.trim();
-        const time = document.getElementById("contact-time").value.trim();
-        const note = document.getElementById("contact-note").value.trim();
-        const message = document.getElementById("contact-message").value.trim();
+        const name = document.getElementById("booking-name").value.trim();
+        const phone = document.getElementById("booking-phone").value.trim();
+        const plan = document.getElementById("booking-plan").value.trim();
+        const service = document.getElementById("booking-service").value.trim();
+        const duration = document.getElementById("booking-duration").value.trim();
+        const date = document.getElementById("booking-date").value.trim();
+        const time = document.getElementById("booking-time").value.trim();
+        const extra = document.getElementById("booking-location").value.trim();
+        const message = document.getElementById("booking-message").value.trim();
 
         const lines = LANG === "en"
           ? [
-              "Hello, I want to book an appointment.",
+              "Hello, I would like to book an appointment.",
               name ? `Name: ${name}` : "",
               phone ? `Phone: ${phone}` : "",
-              plan ? `Desired plan: ${plan}` : "",
+              plan ? `Plan: ${plan}` : "",
               service ? `Service: ${service}` : "",
               duration ? `Duration: ${duration}` : "",
               date ? `Preferred date: ${date}` : "",
               time ? `Preferred time: ${time}` : "",
-              note ? `Extra note: ${note}` : "",
+              extra ? `Preferred schedule / note: ${extra}` : "",
               message ? `Message: ${message}` : ""
             ]
           : [
@@ -1575,11 +1660,11 @@ EMPIEZA AQUÍ</h1>
               duration ? `Duración: ${duration}` : "",
               date ? `Fecha deseada: ${date}` : "",
               time ? `Hora deseada: ${time}` : "",
-              note ? `Detalle adicional: ${note}` : "",
+              extra ? `Horario preferido / detalle: ${extra}` : "",
               message ? `Mensaje: ${message}` : ""
             ];
 
-        window.open(whatsappLink(data.whatsapp || FALLBACK_DATA.whatsapp, lines.filter(Boolean).join("\n")), "_blank");
+        window.open(whatsappLink(data.contact.whatsapp, lines.filter(Boolean).join("\n")), "_blank");
       };
     }
 
@@ -1603,11 +1688,21 @@ EMPIEZA AQUÍ</h1>
       navToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
       navMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navMenu.classList.remove("active")));
 
+      document.querySelectorAll(".gallery-tab").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".gallery-tab").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const tab = btn.dataset.galleryTab;
+          document.getElementById("gallery-photos").classList.toggle("hidden", tab !== "photos");
+          document.getElementById("gallery-videos").classList.toggle("hidden", tab !== "videos");
+        });
+      });
+
       const lightbox = document.getElementById("lightbox");
-      const closeBtn = document.getElementById("lightbox-close");
-      closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
+      const closeLightbox = () => lightbox.classList.remove("active");
+      document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
       lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("active");
+        if (e.target === lightbox) closeLightbox();
       });
     });
   </script>
