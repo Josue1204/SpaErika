@@ -246,8 +246,7 @@
 
     .about-container,
     .hours-box,
-    .contact-box,
-    .conditions-box {
+    .contact-box {
       display: flex;
       align-items: center;
       gap: 40px;
@@ -302,30 +301,59 @@
       gap: 30px;
     }
 
-    .grid-layout.small {
+    .conditions-grid,
+    .service-list,
+    .testimonials-grid {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
 
-    .card {
+    .testimonials-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .hours-list {
+      display: grid;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .card,
+    .service-item,
+    .condition-item,
+    .testimonial-card {
       background: var(--card-white);
       border: 4px solid #000;
-      padding: 32px;
+      padding: 26px;
       box-shadow: 10px 10px 0px var(--primary);
       transition: 0.2s;
     }
 
-    .card:hover {
+    .card:hover,
+    .service-item:hover,
+    .condition-item:hover,
+    .testimonial-card:hover,
+    .video-wrapper:hover,
+    .photo-card:hover {
       transform: translate(-4px, -4px);
       box-shadow: 14px 14px 0px #000;
     }
 
-    .card h3 {
+    .card h3,
+    .service-item h3,
+    .condition-item h3 {
       color: var(--primary);
-      font-size: 2rem;
+      font-size: 1.6rem;
       margin-bottom: 12px;
       font-weight: 800;
       text-transform: uppercase;
+    }
+
+    .service-item p,
+    .condition-item p {
+      font-weight: 700;
+      white-space: pre-line;
     }
 
     .price-tag {
@@ -346,58 +374,6 @@
       font-weight: 700;
       margin-bottom: 25px;
       min-height: 72px;
-      white-space: pre-line;
-    }
-
-    .service-list,
-    .conditions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .hours-list {
-      display: grid;
-      gap: 16px;
-      width: 100%;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .service-item,
-    .condition-item {
-      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
-      border: 4px solid #000;
-      padding: 25px;
-      box-shadow: 8px 8px 0px var(--primary);
-      transition: 0.2s;
-    }
-
-    .service-item:hover,
-    .condition-item:hover,
-    .video-wrapper:hover,
-    .photo-card:hover,
-    .testimonial-card:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 12px 12px 0px #000;
-    }
-
-    .service-item h3,
-    .condition-item h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-
-    .service-item p,
-    .condition-item p {
-      font-weight: 700;
       white-space: pre-line;
     }
 
@@ -430,14 +406,6 @@
       margin: 0;
       font-weight: 700;
       white-space: pre-line;
-    }
-
-    .testimonial-card {
-      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
-      border: 4px solid #000;
-      padding: 26px;
-      box-shadow: 8px 8px 0px var(--primary);
-      transition: 0.2s;
     }
 
     .testimonial-stars {
@@ -496,11 +464,6 @@
       overflow: hidden;
       transition: 0.2s;
       cursor: zoom-in;
-    }
-
-    .photo-card:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 14px 14px 0px #000;
     }
 
     .photo-card img {
@@ -564,6 +527,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
+    }
+
+    .form-note {
+      font-weight: 700;
+      font-size: 14px;
     }
 
     .contact-mini-actions {
@@ -734,7 +702,6 @@
       .about-container,
       .hours-box,
       .contact-box,
-      .conditions-box,
       .card {
         padding: 25px;
       }
@@ -862,10 +829,7 @@ EMPIEZA AQUÍ</h1>
         <p id="about-text-p">Cargando biografía...</p>
       </div>
       <div class="about-img">
-        <img
-          id="about-image"
-          src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80"
-          alt="Especialista en masajes terapéuticos" />
+        <img id="about-image" src="" alt="Sobre mí" />
       </div>
     </div>
   </section>
@@ -881,7 +845,6 @@ EMPIEZA AQUÍ</h1>
       <div class="hours-list" id="hours-container">
         <div class="skeleton"></div>
         <div class="skeleton"></div>
-        <div class="skeleton"></div>
       </div>
     </div>
   </section>
@@ -889,7 +852,6 @@ EMPIEZA AQUÍ</h1>
   <section id="servicios">
     <h2 class="section-title" data-i18n="services_title">SERVICIOS</h2>
     <div class="service-list" id="services-container">
-      <div class="skeleton"></div>
       <div class="skeleton"></div>
       <div class="skeleton"></div>
     </div>
@@ -906,7 +868,6 @@ EMPIEZA AQUÍ</h1>
   <section id="testimonios">
     <h2 class="section-title" data-i18n="testimonials_title">TESTIMONIOS</h2>
     <div class="testimonials-grid" id="testimonials-container">
-      <div class="skeleton"></div>
       <div class="skeleton"></div>
       <div class="skeleton"></div>
     </div>
@@ -961,15 +922,13 @@ EMPIEZA AQUÍ</h1>
 
           <div class="form-row">
             <select id="contact-duration"></select>
-            <input type="date" id="contact-date" />
-          </div>
-
-          <div class="form-row">
-            <input type="time" id="contact-time" />
-            <input type="text" id="contact-note" placeholder="Detalle adicional" />
           </div>
 
           <textarea id="contact-message" placeholder="Escribe tu mensaje"></textarea>
+
+          <p class="form-note" data-i18n="availability_note">
+            La disponibilidad de horario se confirma por WhatsApp.
+          </p>
 
           <button type="submit" class="btn">
             <i class="fa-brands fa-whatsapp"></i>
@@ -996,7 +955,7 @@ EMPIEZA AQUÍ</h1>
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
-        title="Mapa de ubicación del spa">
+        title="Mapa de ubicación">
       </iframe>
     </div>
 
@@ -1074,12 +1033,12 @@ EMPIEZA AQUÍ</h1>
         get_directions: "CÓMO LLEGAR",
         send_request: "ENVIAR POR WHATSAPP",
         call_btn: "LLAMAR",
+        availability_note: "La disponibilidad de horario se confirma por WhatsApp.",
         plan_placeholder: "PLAN DESEADO",
         service_placeholder: "SERVICIO DE INTERÉS",
         duration_placeholder: "DURACIÓN",
         name_placeholder: "Tu nombre",
         phone_placeholder: "Tu teléfono",
-        note_placeholder: "Detalle adicional",
         message_placeholder: "Escribe tu mensaje",
         consult: "CONSULTAR",
         see_tiktok: "VER EN TIKTOK",
@@ -1111,12 +1070,12 @@ EMPIEZA AQUÍ</h1>
         get_directions: "GET DIRECTIONS",
         send_request: "SEND ON WHATSAPP",
         call_btn: "CALL",
+        availability_note: "Available times are confirmed through WhatsApp.",
         plan_placeholder: "DESIRED PLAN",
         service_placeholder: "SERVICE OF INTEREST",
         duration_placeholder: "DURATION",
         name_placeholder: "Your name",
         phone_placeholder: "Your phone",
-        note_placeholder: "Extra note",
         message_placeholder: "Write your message",
         consult: "ASK",
         see_tiktok: "VIEW ON TIKTOK",
@@ -1218,8 +1177,8 @@ EMPIEZA AQUÍ</h1>
 
       container.innerHTML = items.map(item => `
         <div class="condition-item">
-          <h3>${translated(item.titulo || item.title_es, item.titulo_en || item.title_en)}</h3>
-          <p>${translated(item.descripcion || item.description_es, item.descripcion_en || item.description_en)}</p>
+          <h3>${translated(item.titulo, item.titulo_en)}</h3>
+          <p>${translated(item.descripcion, item.descripcion_en)}</p>
         </div>
       `).join("");
 
@@ -1236,8 +1195,8 @@ EMPIEZA AQUÍ</h1>
 
       container.innerHTML = items.map(item => `
         <div class="hour-item">
-          <h3>${translated(item.dia || item.day_es, item.dia_en || item.day_en)}</h3>
-          <p>${translated(item.horario || item.hours_es, item.horario_en || item.hours_en)}</p>
+          <h3>${translated(item.dia, item.dia_en)}</h3>
+          <p>${translated(item.horario, item.horario_en)}</p>
         </div>
       `).join("");
 
@@ -1254,8 +1213,8 @@ EMPIEZA AQUÍ</h1>
 
       container.innerHTML = items.map(item => `
         <div class="service-item">
-          <h3>${translated(item.titulo || item.title_es, item.titulo_en || item.title_en)}</h3>
-          <p>${translated(item.descripcion || item.description_es, item.descripcion_en || item.description_en)}</p>
+          <h3>${translated(item.titulo, item.titulo_en)}</h3>
+          <p>${translated(item.descripcion, item.descripcion_en)}</p>
         </div>
       `).join("");
 
@@ -1275,11 +1234,11 @@ EMPIEZA AQUÍ</h1>
       }
 
       container.innerHTML = items.map((item, i) => {
-        const title = translated(item.titulo || item.title_es, item.titulo_en || item.title_en) || `Plan ${i + 1}`;
-        const desc = translated(item.descripcion || item.description_es, item.descripcion_en || item.description_en);
-        const duration = item.duracion || item.duration || "60 MIN";
-        const buttonText = translated(item.texto_boton || item.button_text_es, item.texto_boton_en || item.button_text_en) || (LANG === "en" ? "BOOK NOW" : "RESERVAR");
-        const price = formatPrice(item.precio ?? item.price, showPrices);
+        const title = translated(item.titulo, item.titulo_en) || `Plan ${i + 1}`;
+        const desc = translated(item.descripcion, item.descripcion_en);
+        const duration = item.duracion || "60 MIN";
+        const buttonText = translated(item.texto_boton, item.texto_boton_en) || (LANG === "en" ? "BOOK NOW" : "RESERVAR");
+        const price = formatPrice(item.precio, showPrices);
 
         return `
           <div class="card">
@@ -1287,7 +1246,7 @@ EMPIEZA AQUÍ</h1>
             <div class="price-tag">${price}</div>
             <div class="price-duration">${duration}</div>
             <p class="price-description">${desc}</p>
-            <a class="btn" href="${whatsappLink(whatsapp, LANG === "en" ? `Hello, I want information about ${title}` : `Hola, quiero información sobre ${title}`)}" target="_blank" rel="noopener noreferrer">
+            <a class="btn" href="${whatsappLink(whatsapp, LANG === "en" ? `Hello, I want to reserve ${title}` : `Hola, quiero reservar ${title}`)}" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-whatsapp"></i>${buttonText}
             </a>
           </div>
@@ -1295,11 +1254,11 @@ EMPIEZA AQUÍ</h1>
       }).join("");
 
       planSelect.innerHTML = `<option value="">${t("plan_placeholder")}</option>` + items.map(item => {
-        const title = translated(item.titulo || item.title_es, item.titulo_en || item.title_en);
+        const title = translated(item.titulo, item.titulo_en);
         return `<option value="${title}">${title}</option>`;
       }).join("");
 
-      const durations = [...new Set(items.map(i => i.duracion || i.duration).filter(Boolean))];
+      const durations = [...new Set(items.map(i => i.duracion).filter(Boolean))];
       durationSelect.innerHTML = `<option value="">${t("duration_placeholder")}</option>` + durations.map(d => `<option value="${d}">${d}</option>`).join("");
 
       document.getElementById("planes").classList.remove("hidden");
@@ -1314,12 +1273,12 @@ EMPIEZA AQUÍ</h1>
       }
 
       container.innerHTML = items.map(item => {
-        const stars = Math.max(1, Math.min(Number(item.estrellas || item.stars || 5), 5));
+        const stars = Math.max(1, Math.min(Number(item.estrellas || 5), 5));
         return `
           <div class="testimonial-card">
             <div class="testimonial-stars">${"★".repeat(stars)}</div>
-            <p class="testimonial-text">${translated(item.comentario || item.comment_es, item.comentario_en || item.comment_en)}</p>
-            <div class="testimonial-author">${item.nombre || item.name || "CLIENTE"}</div>
+            <p class="testimonial-text">${translated(item.comentario, item.comentario_en)}</p>
+            <div class="testimonial-author">${item.nombre || "CLIENTE"}</div>
           </div>
         `;
       }).join("");
@@ -1336,7 +1295,7 @@ EMPIEZA AQUÍ</h1>
       }
 
       container.innerHTML = items.map(item => {
-        const url = typeof item === "string" ? item : item?.imagen || item?.image;
+        const url = typeof item === "string" ? item : item?.imagen;
         if (!url) return "";
         const alt = translated(item?.alt_es || `Foto de ${title}`, item?.alt_en || `Photo of ${title}`);
         return `
@@ -1422,7 +1381,6 @@ EMPIEZA AQUÍ</h1>
 
       document.getElementById("contact-name").placeholder = t("name_placeholder");
       document.getElementById("contact-phone").placeholder = t("phone_placeholder");
-      document.getElementById("contact-note").placeholder = t("note_placeholder");
       document.getElementById("contact-message").placeholder = t("message_placeholder");
     }
 
@@ -1440,7 +1398,7 @@ EMPIEZA AQUÍ</h1>
         "telephone": `+${cleanPhone(data.telefono || FALLBACK_DATA.telefono)}`,
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": translated(data.ubicacion_texto, data.ubicacion_texto_en) || FALLBACK_DATA.ubicacion_texto,
+          "streetAddress": translated(data.ubicacion_texto, data.ubicacion_texto_en),
           "addressLocality": "Los Angeles",
           "addressRegion": "CA",
           "postalCode": "90019",
@@ -1525,7 +1483,7 @@ EMPIEZA AQUÍ</h1>
       const serviceSelect = document.getElementById("contact-service");
       if (Array.isArray(data.servicios) && data.servicios.length > 0) {
         serviceSelect.innerHTML = `<option value="">${t("service_placeholder")}</option>` + data.servicios.map(item => {
-          const title = translated(item.titulo || item.title_es, item.titulo_en || item.title_en);
+          const title = translated(item.titulo, item.titulo_en);
           return `<option value="${title}">${title}</option>`;
         }).join("");
       } else {
@@ -1547,9 +1505,6 @@ EMPIEZA AQUÍ</h1>
         const plan = document.getElementById("contact-plan").value.trim();
         const service = document.getElementById("contact-service").value.trim();
         const duration = document.getElementById("contact-duration").value.trim();
-        const date = document.getElementById("contact-date").value.trim();
-        const time = document.getElementById("contact-time").value.trim();
-        const note = document.getElementById("contact-note").value.trim();
         const message = document.getElementById("contact-message").value.trim();
 
         const lines = LANG === "en"
@@ -1560,9 +1515,6 @@ EMPIEZA AQUÍ</h1>
               plan ? `Desired plan: ${plan}` : "",
               service ? `Service: ${service}` : "",
               duration ? `Duration: ${duration}` : "",
-              date ? `Preferred date: ${date}` : "",
-              time ? `Preferred time: ${time}` : "",
-              note ? `Extra note: ${note}` : "",
               message ? `Message: ${message}` : ""
             ]
           : [
@@ -1572,9 +1524,6 @@ EMPIEZA AQUÍ</h1>
               plan ? `Plan deseado: ${plan}` : "",
               service ? `Servicio: ${service}` : "",
               duration ? `Duración: ${duration}` : "",
-              date ? `Fecha deseada: ${date}` : "",
-              time ? `Hora deseada: ${time}` : "",
-              note ? `Detalle adicional: ${note}` : "",
               message ? `Mensaje: ${message}` : ""
             ];
 
