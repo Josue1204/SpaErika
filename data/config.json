@@ -1,58 +1,15 @@
 {
-  "titulo": "Sobadora",
-  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
-  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
-  "hero_subtitulo": "Atención profesional y personalizada",
-  "whatsapp": "13237932528",
-  "telefono": "13237932528",
+  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
   "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
+  "instagram_url": "https://instagram.com/tu_cuenta",
   "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-
+  "contacto_titulo": "Agenda tu cita",
   "mostrar_banner": true,
-  "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
-
+  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
   "mostrar_precios": false,
-
-  "planes": [
-    {
-      "titulo": "Masaje terapéutico",
-      "precio": 0,
-      "duracion": "60 minutos",
-      "descripcion": "Atención personalizada enfocada en aliviar tensión muscular y molestias físicas.",
-      "texto_boton": "Reservar"
-    },
-    {
-      "titulo": "Masaje profundo",
-      "precio": 0,
-      "duracion": "90 minutos",
-      "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
-      "texto_boton": "Consultar"
-    },
-    {
-      "titulo": "Acomodación de matriz",
-      "precio": 0,
-      "duracion": "60 minutos",
-      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal.",
-      "texto_boton": "Más información"
-    }
-  ],
-
-  "servicios": [
-    {
-      "titulo": "Masaje terapéutico",
-      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado."
-    },
-    {
-      "titulo": "Masaje profundo",
-      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular."
-    },
-    {
-      "titulo": "Acomodación de matriz",
-      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
-    }
-  ],
-
+  "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
+  "fotos": [],
   "horarios": [
     {
       "dia": "Lunes a viernes",
@@ -67,8 +24,28 @@
       "horario": "Solo con cita previa"
     }
   ],
-
-  "mostrar_testimonios": true,
+  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
+  "whatsapp": "13237932528",
+  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
+  "telefono": "13237932528",
+  "hero_subtitulo": "Atención profesional y personalizada",
+  "facebook_url": "https://facebook.com/tu_pagina",
+  "planes": [
+    {
+      "titulo": "Masaje terapéutico",
+      "precio": 0,
+      "duracion": "60 minutos",
+      "descripcion": "Atención personalizada enfocada en aliviar tensión muscular y molestias físicas.",
+      "texto_boton": "Reservar"
+    },
+    {
+      "titulo": "Masaje profundo",
+      "precio": 0,
+      "duracion": "90 minutos",
+      "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
+      "texto_boton": "Consultar"
+    }
+  ],
   "testimonios": [
     {
       "nombre": "María",
@@ -86,30 +63,29 @@
       "estrellas": 4
     }
   ],
-
   "videos": [
     {
       "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
     },
     {
-      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
-    },
-    {
       "video": "https://vt.tiktok.com/ZSuaU2KUH/"
-    },
-    {
-      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
     }
   ],
-
-  "fotos": [],
-
-  "contacto_titulo": "Agenda tu cita",
-  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
-
-  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-
-  "instagram_url": "https://instagram.com/tu_cuenta",
-  "facebook_url": "https://facebook.com/tu_pagina"
+  "mostrar_testimonios": false,
+  "titulo": "Sobadora",
+  "servicios": [
+    {
+      "titulo": "Masaje terapéutico",
+      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado."
+    },
+    {
+      "titulo": "Masaje profundo",
+      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular."
+    },
+    {
+      "titulo": "Acomodación de matriz",
+      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
+    }
+  ],
+  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ"
 }
