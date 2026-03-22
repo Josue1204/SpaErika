@@ -10,7 +10,7 @@
   "mostrar_banner": true,
   "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
   "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-  "mostrar_precios": false,
+  "mostrar_precios": true,
   "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
   "titulo_en": "SOBADORA",
   "fotos": [],
