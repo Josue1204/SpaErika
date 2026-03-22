@@ -316,8 +316,7 @@
       width: 100%;
     }
 
-    .testimonials-grid,
-    .social-grid {
+    .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
@@ -334,8 +333,7 @@
     .service-item:hover,
     .video-wrapper:hover,
     .photo-card:hover,
-    .testimonial-card:hover,
-    .social-card:hover {
+    .testimonial-card:hover {
       transform: translate(-3px, -3px);
       box-shadow: 12px 12px 0px #000;
     }
@@ -408,28 +406,6 @@
       font-weight: 800;
       text-transform: uppercase;
       color: var(--primary);
-    }
-
-    .social-card {
-      background: #ffffff;
-      border: var(--border-main);
-      padding: 28px;
-      box-shadow: 8px 8px 0px var(--primary);
-      transition: 0.2s;
-      text-align: center;
-    }
-
-    .social-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-
-    .social-card p {
-      font-weight: 700;
-      margin-bottom: 18px;
-      word-break: break-word;
     }
 
     .video-grid,
@@ -611,6 +587,16 @@
       color: #fff;
     }
 
+    .floating-link.instagram-btn {
+      background: #E1306C;
+      color: #fff;
+    }
+
+    .floating-link.facebook-btn {
+      background: #1877F2;
+      color: #fff;
+    }
+
     .floating-toggle {
       background: var(--primary);
       color: #fff;
@@ -683,8 +669,7 @@
       .video-grid,
       .photo-grid,
       .service-list,
-      .testimonials-grid,
-      .social-grid {
+      .testimonials-grid {
         grid-template-columns: 1fr;
       }
 
@@ -754,7 +739,6 @@
         <li><a href="#fotos">Fotos</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
-        <li><a href="#redes">Redes</a></li>
       </ul>
     </nav>
   </header>
@@ -903,19 +887,13 @@ EMPIEZA AQUÍ</h1>
     </div>
   </section>
 
-  <section id="redes">
-    <h2 class="section-title">Redes Sociales</h2>
-    <div class="social-grid" id="social-container">
-      <div class="skeleton"></div>
-      <div class="skeleton"></div>
-    </div>
-  </section>
-
   <div class="floating-actions">
     <div class="floating-list" id="floating-list">
       <a class="floating-link whatsapp-btn" id="floating-whatsapp" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WA</a>
       <a class="floating-link call-btn" id="floating-call" href="tel:+13237932528" aria-label="Llamar por teléfono">TEL</a>
       <a class="floating-link map-btn" id="floating-map" href="https://www.google.com/maps/search/?api=1&query=4716+Lomita+St,+Los+Angeles,+CA+90019" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">MAP</a>
+      <a class="floating-link instagram-btn hidden" id="floating-instagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram">IG</a>
+      <a class="floating-link facebook-btn hidden" id="floating-facebook" href="#" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook">FB</a>
     </div>
     <button class="floating-toggle" id="floating-toggle" aria-label="Abrir accesos rápidos">+</button>
   </div>
@@ -1160,43 +1138,6 @@ EMPIEZA AQUÍ</h1>
       ocultarSiVacio("videos", contenedor.innerHTML.trim() !== "");
     }
 
-    function renderRedes(instagramUrl, facebookUrl) {
-      const contenedor = document.getElementById("social-container");
-      const cards = [];
-
-      if (instagramUrl && instagramUrl.trim()) {
-        cards.push(`
-          <div class="social-card" data-aos="fade-up">
-            <h3>Instagram</h3>
-            <p>${instagramUrl}</p>
-            <a class="btn" href="${instagramUrl}" target="_blank" rel="noopener noreferrer">
-              Ver Instagram
-            </a>
-          </div>
-        `);
-      }
-
-      if (facebookUrl && facebookUrl.trim()) {
-        cards.push(`
-          <div class="social-card" data-aos="fade-up">
-            <h3>Facebook</h3>
-            <p>${facebookUrl}</p>
-            <a class="btn" href="${facebookUrl}" target="_blank" rel="noopener noreferrer">
-              Ver Facebook
-            </a>
-          </div>
-        `);
-      }
-
-      if (cards.length === 0) {
-        ocultarSiVacio("redes", false);
-        return;
-      }
-
-      contenedor.innerHTML = cards.join("");
-      ocultarSiVacio("redes", true);
-    }
-
     function aplicarContenido(data) {
       const contenido = { ...FALLBACK_DATA, ...data };
       const year = new Date().getFullYear();
@@ -1239,6 +1180,18 @@ EMPIEZA AQUÍ</h1>
       document.getElementById("call-link-map").href = telefonoLink;
       document.getElementById("floating-call").href = telefonoLink;
 
+      const instagramUrl = contenido.instagram_url?.trim() || "";
+      const facebookUrl = contenido.facebook_url?.trim() || "";
+
+      const instagramBtn = document.getElementById("floating-instagram");
+      const facebookBtn = document.getElementById("floating-facebook");
+
+      instagramBtn.href = instagramUrl || "#";
+      facebookBtn.href = facebookUrl || "#";
+
+      instagramBtn.classList.toggle("hidden", !instagramUrl);
+      facebookBtn.classList.toggle("hidden", !facebookUrl);
+
       const direccionTexto = contenido.ubicacion_texto || FALLBACK_DATA.ubicacion_texto;
       const mapaQuery = encodeURIComponent(contenido.ubicacion_mapa_query || FALLBACK_DATA.ubicacion_mapa_query);
 
@@ -1257,7 +1210,6 @@ EMPIEZA AQUÍ</h1>
       renderTestimonios(contenido.testimonios, contenido.mostrar_testimonios === true);
       renderVideos(contenido.videos);
       renderFotos(contenido.fotos, contenido.titulo);
-      renderRedes(contenido.instagram_url, contenido.facebook_url);
 
       AOS.refresh();
     }
