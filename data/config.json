@@ -55,22 +55,22 @@
       "texto_boton_en": "BOOK THIS TREATMENT"
     },
     {
-      "titulo": "Sobada de Matriz",
-      "titulo_en": "Womb Massage Therapy",
-      "precio": 120,
-      "duracion": "60 MIN",
-      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
-      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance.",
-      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
-      "texto_boton_en": "BOOK THIS TREATMENT"
-    },
-    {
       "titulo": "Ventosa Terapia",
       "titulo_en": "Cupping Therapy",
       "precio": 100,
       "duracion": "60 MIN",
       "descripcion": "Incluye una hora de masaje focalizado en su molestia o relajante.\nVentosas.\nPiedras calientes.",
       "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    },
+    {
+      "titulo": "Sobada de Matriz",
+      "titulo_en": "Womb Massage Therapy",
+      "precio": 120,
+      "duracion": "60 MIN",
+      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
+      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance.",
       "texto_boton": "RESERVAR ESTE TRATAMIENTO",
       "texto_boton_en": "BOOK THIS TREATMENT"
     }
@@ -158,16 +158,16 @@
       "descripcion_en": "Treatment for sciatic nerve discomfort, muscle pain, back, neck, waist, lower back, heel spur, plantar fasciitis and joints."
     },
     {
-      "titulo": "Sobada de Matriz",
-      "titulo_en": "Womb Massage Therapy",
-      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
-      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance."
-    },
-    {
       "titulo": "Ventosa Terapia",
       "titulo_en": "Cupping Therapy",
       "descripcion": "Incluye una hora de masaje focalizado en su molestia o relajante.\nVentosas.\nPiedras calientes.",
       "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones."
+    },
+    {
+      "titulo": "Sobada de Matriz",
+      "titulo_en": "Womb Massage Therapy",
+      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
+      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance."
     }
   ],
   "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
