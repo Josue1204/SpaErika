@@ -95,6 +95,7 @@
       list-style: none;
       gap: 20px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .nav-menu a {
@@ -315,6 +316,13 @@
       width: 100%;
     }
 
+    .testimonials-grid,
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
     .service-item {
       background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
       border: var(--border-main);
@@ -325,7 +333,9 @@
 
     .service-item:hover,
     .video-wrapper:hover,
-    .photo-card:hover {
+    .photo-card:hover,
+    .testimonial-card:hover,
+    .social-card:hover {
       transform: translate(-3px, -3px);
       box-shadow: 12px 12px 0px #000;
     }
@@ -373,6 +383,53 @@
       margin: 0;
       font-weight: 700;
       white-space: pre-line;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fff9 100%);
+      border: var(--border-main);
+      padding: 26px;
+      box-shadow: 8px 8px 0px var(--primary);
+      transition: 0.2s;
+    }
+
+    .testimonial-stars {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      font-weight: 700;
+      white-space: pre-line;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-author {
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .social-card {
+      background: #ffffff;
+      border: var(--border-main);
+      padding: 28px;
+      box-shadow: 8px 8px 0px var(--primary);
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .social-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .social-card p {
+      font-weight: 700;
+      margin-bottom: 18px;
+      word-break: break-word;
     }
 
     .video-grid,
@@ -625,7 +682,9 @@
 
       .video-grid,
       .photo-grid,
-      .service-list {
+      .service-list,
+      .testimonials-grid,
+      .social-grid {
         grid-template-columns: 1fr;
       }
 
@@ -690,10 +749,12 @@
         <li><a href="#horarios">Horarios</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#planes">Planes</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#videos">Videos</a></li>
         <li><a href="#fotos">Fotos</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#redes">Redes</a></li>
       </ul>
     </nav>
   </header>
@@ -755,6 +816,15 @@ EMPIEZA AQUÍ</h1>
     <div class="grid-layout" id="plans-container">
       <div class="skeleton large"></div>
       <div class="skeleton large"></div>
+    </div>
+  </section>
+
+  <section id="testimonios">
+    <h2 class="section-title">Testimonios</h2>
+    <div class="testimonials-grid" id="testimonials-container">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
     </div>
   </section>
 
@@ -833,6 +903,14 @@ EMPIEZA AQUÍ</h1>
     </div>
   </section>
 
+  <section id="redes">
+    <h2 class="section-title">Redes Sociales</h2>
+    <div class="social-grid" id="social-container">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+    </div>
+  </section>
+
   <div class="floating-actions">
     <div class="floating-list" id="floating-list">
       <a class="floating-link whatsapp-btn" id="floating-whatsapp" href="https://wa.me/13237932528" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WA</a>
@@ -863,6 +941,9 @@ EMPIEZA AQUÍ</h1>
       mostrar_banner: false,
       banner_texto: "",
       mostrar_precios: true,
+      mostrar_testimonios: false,
+      instagram_url: "",
+      facebook_url: "",
       ubicacion_texto: "4716 Lomita St, Los Angeles, CA 90019",
       ubicacion_mapa_query: "4716 Lomita St, Los Angeles, CA 90019",
       contacto_titulo: "Agenda tu cita",
@@ -870,6 +951,7 @@ EMPIEZA AQUÍ</h1>
       servicios: [],
       horarios: [],
       planes: [],
+      testimonios: [],
       videos: [],
       fotos: []
     };
@@ -978,6 +1060,32 @@ EMPIEZA AQUÍ</h1>
       ocultarSiVacio("planes", true);
     }
 
+    function renderTestimonios(testimonios, mostrarTestimonios) {
+      const contenedor = document.getElementById("testimonials-container");
+
+      if (!mostrarTestimonios || !Array.isArray(testimonios) || testimonios.length === 0) {
+        ocultarSiVacio("testimonios", false);
+        return;
+      }
+
+      contenedor.innerHTML = testimonios.map(item => {
+        const nombre = item?.nombre || "Cliente";
+        const comentario = item?.comentario || "";
+        const estrellas = Number(item?.estrellas || 5);
+        const estrellasTexto = "★".repeat(Math.max(1, Math.min(estrellas, 5)));
+
+        return `
+          <div class="testimonial-card" data-aos="fade-up">
+            <div class="testimonial-stars">${estrellasTexto}</div>
+            <p class="testimonial-text">${comentario}</p>
+            <div class="testimonial-author">${nombre}</div>
+          </div>
+        `;
+      }).join("");
+
+      ocultarSiVacio("testimonios", true);
+    }
+
     function renderFotos(fotos, tituloSpa) {
       const contenedor = document.getElementById("photo-container");
 
@@ -1052,6 +1160,43 @@ EMPIEZA AQUÍ</h1>
       ocultarSiVacio("videos", contenedor.innerHTML.trim() !== "");
     }
 
+    function renderRedes(instagramUrl, facebookUrl) {
+      const contenedor = document.getElementById("social-container");
+      const cards = [];
+
+      if (instagramUrl && instagramUrl.trim()) {
+        cards.push(`
+          <div class="social-card" data-aos="fade-up">
+            <h3>Instagram</h3>
+            <p>${instagramUrl}</p>
+            <a class="btn" href="${instagramUrl}" target="_blank" rel="noopener noreferrer">
+              Ver Instagram
+            </a>
+          </div>
+        `);
+      }
+
+      if (facebookUrl && facebookUrl.trim()) {
+        cards.push(`
+          <div class="social-card" data-aos="fade-up">
+            <h3>Facebook</h3>
+            <p>${facebookUrl}</p>
+            <a class="btn" href="${facebookUrl}" target="_blank" rel="noopener noreferrer">
+              Ver Facebook
+            </a>
+          </div>
+        `);
+      }
+
+      if (cards.length === 0) {
+        ocultarSiVacio("redes", false);
+        return;
+      }
+
+      contenedor.innerHTML = cards.join("");
+      ocultarSiVacio("redes", true);
+    }
+
     function aplicarContenido(data) {
       const contenido = { ...FALLBACK_DATA, ...data };
       const year = new Date().getFullYear();
@@ -1109,8 +1254,10 @@ EMPIEZA AQUÍ</h1>
       renderHorarios(contenido.horarios);
       renderServicios(contenido.servicios);
       renderPlanes(contenido.planes, contenido.whatsapp, contenido.mostrar_precios !== false);
+      renderTestimonios(contenido.testimonios, contenido.mostrar_testimonios === true);
       renderVideos(contenido.videos);
       renderFotos(contenido.fotos, contenido.titulo);
+      renderRedes(contenido.instagram_url, contenido.facebook_url);
 
       AOS.refresh();
     }
