@@ -1,91 +1,208 @@
 {
-  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
-  "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
-  "instagram_url": "https://instagram.com/tu_cuenta",
-  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-  "contacto_titulo": "Agenda tu cita",
-  "mostrar_banner": true,
-  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-  "mostrar_precios": false,
-  "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
-  "fotos": [],
-  "horarios": [
+  "general": {
+    "business_name": "Sobadora Tradicional Erika De Jesus",
+    "hero_eyebrow_es": "Los Angeles, California",
+    "hero_eyebrow_en": "Los Angeles, California",
+    "hero_title_es": "Tu bienestar empieza aquí",
+    "hero_title_en": "Traditional Sobadora Therapy",
+    "hero_subtitle_es": "Terapia física, masajes terapéuticos y atención personalizada.",
+    "hero_subtitle_en": "Physical therapy, therapeutic massage and personalized care.",
+    "hero_badges_es": [
+      "Con cita previa",
+      "Los Angeles",
+      "Bienestar integral"
+    ],
+    "hero_badges_en": [
+      "By appointment",
+      "Los Angeles",
+      "Holistic wellness"
+    ],
+    "about_subtitle_es": "Conoce un poco más sobre mi atención y enfoque de trabajo.",
+    "about_subtitle_en": "Learn more about my care approach and work style.",
+    "about_heading_es": "Atención cercana y personalizada",
+    "about_heading_en": "Personalized and attentive care",
+    "about_text_es": "Soy Erika y me especializo en terapia física, masajes terapéuticos y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
+    "about_text_en": "I'm Erika and I specialize in physical therapy, therapeutic massage, and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
+    "hero_image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
+    "about_image": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80"
+  },
+  "seo": {
+    "title_es": "Sobadora Tradicional en Los Angeles | Terapia Física y Masajes",
+    "title_en": "Traditional Sobadora Therapy in Los Angeles | Physical Therapy & Massage",
+    "description_es": "Sobadora tradicional en Los Angeles. Terapia física, masajes terapéuticos y bienestar integral con atención personalizada.",
+    "description_en": "Traditional sobadora therapy in Los Angeles. Physical therapy, therapeutic massage and holistic wellness with personalized care."
+  },
+  "banner": {
+    "show": true,
+    "text_es": "Citas disponibles esta semana. Reserva por WhatsApp.",
+    "text_en": "Appointments available this week. Book on WhatsApp."
+  },
+  "contact": {
+    "whatsapp": "13106291978",
+    "phone": "13106291978",
+    "contact_heading_es": "Agenda tu cita",
+    "contact_heading_en": "Schedule your appointment",
+    "contact_text_es": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
+    "contact_text_en": "Message me for more information about availability, services, and personalized care.",
+    "address_text_es": "4716 Lomita St, Los Angeles, CA 90019",
+    "address_text_en": "4716 Lomita St, Los Angeles, CA 90019",
+    "map_query": "4716 Lomita St, Los Angeles, CA 90019"
+  },
+  "options": {
+    "show_prices": false,
+    "show_testimonials": true
+  },
+  "conditions": [
     {
-      "dia": "Lunes a viernes",
-      "horario": "9:00 AM - 7:00 PM"
+      "title_es": "Estrés",
+      "title_en": "Stress",
+      "description_es": "Atención orientada al bienestar físico y relajación muscular.",
+      "description_en": "Care focused on physical wellness and muscular relaxation."
     },
     {
-      "dia": "Sábado",
-      "horario": "10:00 AM - 5:00 PM"
+      "title_es": "Nervio ciático",
+      "title_en": "Sciatic nerve discomfort",
+      "description_es": "Trabajo corporal orientado al alivio de molestias y tensión.",
+      "description_en": "Bodywork focused on relieving discomfort and tension."
     },
     {
-      "dia": "Domingo",
-      "horario": "Solo con cita previa"
+      "title_es": "Torceduras",
+      "title_en": "Sprains",
+      "description_es": "Apoyo terapéutico y seguimiento según cada caso.",
+      "description_en": "Therapeutic support and follow-up according to each case."
+    },
+    {
+      "title_es": "Dolores musculares",
+      "title_en": "Muscle pain",
+      "description_es": "Atención personalizada para zonas de tensión y sobrecarga.",
+      "description_en": "Personalized care for tension and overworked areas."
+    },
+    {
+      "title_es": "Terapia con ventosas",
+      "title_en": "Cupping therapy",
+      "description_es": "Complemento terapéutico según necesidad.",
+      "description_en": "Therapeutic complement according to your needs."
+    },
+    {
+      "title_es": "Matriz caída",
+      "title_en": "Postpartum / pelvic support",
+      "description_es": "Atención tradicional y bienestar integral.",
+      "description_en": "Traditional care and holistic wellness."
+    },
+    {
+      "title_es": "Fibromialgia",
+      "title_en": "Fibromyalgia",
+      "description_es": "Sesiones enfocadas en alivio y bienestar.",
+      "description_en": "Sessions focused on relief and wellness."
+    },
+    {
+      "title_es": "Fascitis plantar",
+      "title_en": "Plantar fasciitis",
+      "description_es": "Trabajo orientado a aliviar molestias físicas.",
+      "description_en": "Work focused on relieving physical discomfort."
+    },
+    {
+      "title_es": "Empachos",
+      "title_en": "Digestive discomfort",
+      "description_es": "Atención tradicional según cada caso.",
+      "description_en": "Traditional care depending on each case."
     }
   ],
-  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
-  "whatsapp": "13237932528",
-  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
-  "telefono": "13237932528",
-  "hero_subtitulo": "Atención profesional y personalizada",
-  "facebook_url": "https://facebook.com/tu_pagina",
-  "planes": [
+  "schedule": [
     {
-      "titulo": "Masaje terapéutico",
-      "precio": 90,
-      "duracion": "60 minutos",
-      "descripcion": "Atención personalizada enfocada en aliviar tensión muscular y molestias físicas.",
-      "texto_boton": "Reservar"
+      "day_es": "Lunes a viernes",
+      "day_en": "Monday to Friday",
+      "hours_es": "9:00 AM - 7:00 PM",
+      "hours_en": "9:00 AM - 7:00 PM"
     },
     {
-      "titulo": "Masaje profundo",
-      "precio": 0,
-      "duracion": "90 minutos",
-      "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
-      "texto_boton": "Consultar"
+      "day_es": "Sábado",
+      "day_en": "Saturday",
+      "hours_es": "10:00 AM - 5:00 PM",
+      "hours_en": "10:00 AM - 5:00 PM"
+    },
+    {
+      "day_es": "Domingo",
+      "day_en": "Sunday",
+      "hours_es": "Solo con cita previa",
+      "hours_en": "By appointment only"
     }
   ],
-  "testimonios": [
+  "services": [
     {
-      "nombre": "María",
-      "comentario": "Excelente atención, muy profesional y amable. Me sentí mucho mejor después de la sesión.",
-      "estrellas": 5
+      "title_es": "Masaje terapéutico",
+      "title_en": "Therapeutic massage",
+      "description_es": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado.",
+      "description_en": "Focused on relieving muscle tension, discomfort and accumulated stress."
     },
     {
-      "nombre": "Ana",
-      "comentario": "Muy buena experiencia. El masaje me ayudó bastante con la tensión muscular.",
-      "estrellas": 5
+      "title_es": "Masaje profundo",
+      "title_en": "Deep tissue massage",
+      "description_es": "Aplicado con mayor intensidad para trabajar zonas con carga muscular.",
+      "description_en": "Applied with greater intensity to work on heavily loaded muscle areas."
     },
     {
-      "nombre": "Luisa",
-      "comentario": "Lugar tranquilo y atención muy dedicada. Lo recomiendo.",
-      "estrellas": 4
+      "title_es": "Terapia física",
+      "title_en": "Physical therapy",
+      "description_es": "Acompañamiento orientado al movimiento, alivio y recuperación.",
+      "description_en": "Support focused on movement, relief, and recovery."
     }
   ],
-  "videos": [
+  "plans": [
     {
-      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
+      "title_es": "Sesión básica",
+      "title_en": "Basic session",
+      "price": 0,
+      "duration": "60 min",
+      "description_es": "Atención personalizada orientada al alivio de tensión y molestias físicas.",
+      "description_en": "Personalized care focused on relieving tension and physical discomfort.",
+      "button_text_es": "Reservar",
+      "button_text_en": "Book now"
     },
     {
-      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+      "title_es": "Sesión extendida",
+      "title_en": "Extended session",
+      "price": 0,
+      "duration": "90 min",
+      "description_es": "Sesión más amplia para trabajar zonas específicas con mayor detalle.",
+      "description_en": "A longer session to work on specific areas with greater detail.",
+      "button_text_es": "Reservar",
+      "button_text_en": "Book now"
     }
   ],
-  "mostrar_testimonios": false,
-  "titulo": "Sobadora",
-  "servicios": [
+  "testimonials": [
     {
-      "titulo": "Masaje terapéutico",
-      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado."
+      "name": "María",
+      "comment_es": "Excelente atención, muy profesional y amable. Me sentí mucho mejor después de la sesión.",
+      "comment_en": "Excellent care, very professional and kind. I felt much better after the session.",
+      "stars": 5
     },
     {
-      "titulo": "Masaje profundo",
-      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular."
+      "name": "Ana",
+      "comment_es": "Muy buena experiencia. El masaje me ayudó bastante con la tensión muscular.",
+      "comment_en": "Very good experience. The massage helped me a lot with muscle tension.",
+      "stars": 5
     },
     {
-      "titulo": "Acomodación de matriz",
-      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
+      "name": "Luisa",
+      "comment_es": "Lugar tranquilo y atención muy dedicada. Lo recomiendo.",
+      "comment_en": "Calm place and very dedicated care. I recommend it.",
+      "stars": 4
     }
   ],
-  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ"
+  "gallery": {
+    "photos": [],
+    "videos": [
+      {
+        "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
+      },
+      {
+        "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+      }
+    ]
+  },
+  "social": {
+    "instagram_url": "https://instagram.com/tu_cuenta",
+    "facebook_url": "https://facebook.com/tu_pagina"
+  }
 }
