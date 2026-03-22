@@ -1,38 +1,117 @@
 {
-  "titulo": "SOBADORA TRADICIONAL ERIKA DE JESUS",
-  "titulo_en": "TRADITIONAL SOBADORA ERIKA DE JESUS",
-  "meta_descripcion": "Sobadora tradicional en Los Angeles. Terapia física, sobada de matriz, ventosas y masajes terapéuticos con atención personalizada.",
-  "meta_descripcion_en": "Traditional sobadora therapy in Los Angeles. Physical therapy, womb massage, cupping therapy and therapeutic massage with personalized care.",
-  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
-  "hero_titulo_en": "YOUR WELL-BEING\nSTARTS HERE",
-  "hero_subtitulo": "Atención profesional y personalizada",
-  "hero_subtitulo_en": "Professional and personalized care",
-  "whatsapp": "13106291978",
-  "telefono": "13106291978",
-  "sobre_mi": "Soy Erika y me especializo en terapia física, sobadas terapéuticas, sobada de matriz y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
-  "sobre_mi_en": "I'm Erika and I specialize in physical therapy, therapeutic sobadas, womb massage, and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
-  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-
-  "mostrar_banner": true,
-  "banner_texto": "Citas disponibles. Reserva por WhatsApp.",
-  "banner_texto_en": "Appointments available. Book on WhatsApp.",
-
-  "mostrar_precios": true,
-  "mostrar_testimonios": true,
-
-  "instagram_url": "https://instagram.com/tu_cuenta",
-  "facebook_url": "https://facebook.com/tu_pagina",
-
   "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
+  "sobre_mi": "Soy Erika y me especializo en terapia física, sobadas terapéuticas, sobada de matriz y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
+  "instagram_url": "https://instagram.com/tu_cuenta",
+  "sobre_mi_en": "I'm Erika and I specialize in physical therapy, therapeutic sobadas, womb massage, and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
   "ubicacion_texto_en": "4716 Lomita St, Los Angeles, CA 90019",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-
+  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
   "contacto_titulo": "AGENDA TU CITA",
-  "contacto_titulo_en": "BOOK YOUR APPOINTMENT",
+  "hero_titulo_en": "YOUR WELL-BEING\nSTARTS HERE",
+  "mostrar_banner": true,
+  "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
+  "mostrar_precios": true,
+  "banner_texto": "Citas disponibles. Reserva por WhatsApp.",
+  "titulo_en": "Traditional Dough Sheeter",
+  "fotos": [],
+  "horarios": [
+    {
+      "dia": "Lunes a viernes",
+      "dia_en": "Monday to Friday",
+      "horario": "9:00 AM - 7:00 PM",
+      "horario_en": "9:00 AM - 7:00 PM"
+    },
+    {
+      "dia": "Sábado",
+      "dia_en": "Saturday",
+      "horario": "10:00 AM - 5:00 PM",
+      "horario_en": "10:00 AM - 5:00 PM"
+    },
+    {
+      "dia": "Domingo",
+      "dia_en": "Sunday",
+      "horario": "Solo con cita previa",
+      "horario_en": "By appointment only"
+    }
+  ],
   "contacto_texto": "Escríbeme para más información sobre disponibilidad, tratamientos y atención personalizada.",
+  "whatsapp": "13106291978",
+  "meta_descripcion": "Sobadora tradicional en Los Angeles. Terapia física, sobada de matriz, ventosas y masajes terapéuticos con atención personalizada.",
+  "hero_subtitulo_en": "Professional and personalized care",
+  "telefono": "13106291978",
+  "hero_subtitulo": "Atención profesional y personalizada",
+  "meta_descripcion_en": "Traditional sobadora therapy in Los Angeles. Physical therapy, womb massage, cupping therapy and therapeutic massage with personalized care.",
+  "facebook_url": "https://facebook.com/tu_pagina",
   "contacto_texto_en": "Message me for more information about availability, treatments, and personalized care.",
-
+  "planes": [
+    {
+      "titulo": "Sobada Terapéutica",
+      "titulo_en": "Therapeutic Sobada",
+      "precio": 90,
+      "duracion": "60 MIN",
+      "descripcion": "Tratamiento para nervio ciático, dolor muscular, espalda, cuello, cintura y lumbar.\nEspolón y fascitis plantar.\nDolor de rodillas, manos y articulaciones.",
+      "descripcion_en": "Treatment for sciatic nerve discomfort, muscle pain, back, neck, waist and lower back.\nHeel spur and plantar fasciitis.\nPain in knees, hands and joints.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    },
+    {
+      "titulo": "Sobada de Matriz",
+      "titulo_en": "Womb Massage Therapy",
+      "precio": 120,
+      "duracion": "60 MIN",
+      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
+      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    },
+    {
+      "titulo": "Ventosa Terapia",
+      "titulo_en": "Cupping Therapy",
+      "precio": 100,
+      "duracion": "60 MIN",
+      "descripcion": "Incluye una hora de masaje focalizado en su molestia o relajante.\nVentosas.\nPiedras calientes.",
+      "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    }
+  ],
+  "testimonios": [
+    {
+      "nombre": "María",
+      "comentario": "Excelente atención, muy profesional y amable. Me sentí mucho mejor después de la sesión.",
+      "comentario_en": "Excellent care, very professional and kind. I felt much better after the session.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Ana",
+      "comentario": "Muy buena experiencia. El masaje me ayudó bastante con la tensión muscular.",
+      "comentario_en": "Very good experience. The massage helped me a lot with muscle tension.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Luisa",
+      "comentario": "Lugar tranquilo y atención muy dedicada. Lo recomiendo.",
+      "comentario_en": "Calm place and very dedicated care. I recommend it.",
+      "estrellas": 4
+    }
+  ],
+  "videos": [
+    {
+      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
+    },
+    {
+      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
+    },
+    {
+      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+    },
+    {
+      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
+    }
+  ],
+  "banner_texto_en": "Appointments available. Book on WhatsApp.",
+  "mostrar_testimonios": true,
+  "titulo": "SOBADORA TRADICIONAL ",
   "condiciones": [
     {
       "titulo": "Estrés",
@@ -71,40 +150,18 @@
       "descripcion_en": "Care focused on pain and mobility."
     }
   ],
-
-  "horarios": [
-    {
-      "dia": "Lunes a viernes",
-      "dia_en": "Monday to Friday",
-      "horario": "9:00 AM - 7:00 PM",
-      "horario_en": "9:00 AM - 7:00 PM"
-    },
-    {
-      "dia": "Sábado",
-      "dia_en": "Saturday",
-      "horario": "10:00 AM - 5:00 PM",
-      "horario_en": "10:00 AM - 5:00 PM"
-    },
-    {
-      "dia": "Domingo",
-      "dia_en": "Sunday",
-      "horario": "Solo con cita previa",
-      "horario_en": "By appointment only"
-    }
-  ],
-
   "servicios": [
-    {
-      "titulo": "Sobada de Matriz",
-      "titulo_en": "Womb Massage Therapy",
-      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
-      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance."
-    },
     {
       "titulo": "Sobada Terapéutica",
       "titulo_en": "Therapeutic Sobada",
       "descripcion": "Tratamiento para nervio ciático, dolor muscular, espalda, cuello, cintura, lumbar, espolón, fascitis plantar y articulaciones.",
       "descripcion_en": "Treatment for sciatic nerve discomfort, muscle pain, back, neck, waist, lower back, heel spur, plantar fasciitis and joints."
+    },
+    {
+      "titulo": "Sobada de Matriz",
+      "titulo_en": "Womb Massage Therapy",
+      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
+      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance."
     },
     {
       "titulo": "Ventosa Terapia",
@@ -113,75 +170,6 @@
       "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones."
     }
   ],
-
-  "planes": [
-    {
-      "titulo": "Sobada de Matriz",
-      "titulo_en": "Womb Massage Therapy",
-      "precio": 120,
-      "duracion": "60 MIN",
-      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
-      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance.",
-      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
-      "texto_boton_en": "BOOK THIS TREATMENT"
-    },
-    {
-      "titulo": "Sobada Terapéutica",
-      "titulo_en": "Therapeutic Sobada",
-      "precio": 90,
-      "duracion": "60 MIN",
-      "descripcion": "Tratamiento para nervio ciático, dolor muscular, espalda, cuello, cintura y lumbar.\nEspolón y fascitis plantar.\nDolor de rodillas, manos y articulaciones.",
-      "descripcion_en": "Treatment for sciatic nerve discomfort, muscle pain, back, neck, waist and lower back.\nHeel spur and plantar fasciitis.\nPain in knees, hands and joints.",
-      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
-      "texto_boton_en": "BOOK THIS TREATMENT"
-    },
-    {
-      "titulo": "Ventosa Terapia",
-      "titulo_en": "Cupping Therapy",
-      "precio": 100,
-      "duracion": "60 MIN",
-      "descripcion": "Incluye una hora de masaje focalizado en su molestia o relajante.\nVentosas.\nPiedras calientes.",
-      "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones.",
-      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
-      "texto_boton_en": "BOOK THIS TREATMENT"
-    }
-  ],
-
-  "testimonios": [
-    {
-      "nombre": "María",
-      "comentario": "Excelente atención, muy profesional y amable. Me sentí mucho mejor después de la sesión.",
-      "comentario_en": "Excellent care, very professional and kind. I felt much better after the session.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Ana",
-      "comentario": "Muy buena experiencia. El masaje me ayudó bastante con la tensión muscular.",
-      "comentario_en": "Very good experience. The massage helped me a lot with muscle tension.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Luisa",
-      "comentario": "Lugar tranquilo y atención muy dedicada. Lo recomiendo.",
-      "comentario_en": "Calm place and very dedicated care. I recommend it.",
-      "estrellas": 4
-    }
-  ],
-
-  "videos": [
-    {
-      "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
-    },
-    {
-      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
-    },
-    {
-      "video": "https://vt.tiktok.com/ZSuaU2KUH/"
-    },
-    {
-      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
-    }
-  ],
-
-  "fotos": []
+  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
+  "contacto_titulo_en": "BOOK YOUR APPOINTMENT"
 }
