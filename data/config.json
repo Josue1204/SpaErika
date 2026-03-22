@@ -28,6 +28,13 @@
       "duracion": "90 minutos",
       "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
       "texto_boton": "Consultar"
+    },
+    {
+      "titulo": "Acomodación de matriz",
+      "precio": 0,
+      "duracion": "60 minutos",
+      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal.",
+      "texto_boton": "Más información"
     }
   ],
 
@@ -85,7 +92,13 @@
       "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
     },
     {
+      "video": "https://youtu.be/hmbmoabUvPI?si=xHMF_JwcziCe0TxL"
+    },
+    {
       "video": "https://vt.tiktok.com/ZSuaU2KUH/"
+    },
+    {
+      "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
     }
   ],
 
