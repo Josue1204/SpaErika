@@ -8,7 +8,9 @@
   "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
   "mostrar_precios": true,
   "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp oh llamada.",
-  "fotos": [],
+  "fotos": [
+    "/images/mc_mdemc_marriott_medellin_spa_1920x1080.jpg"
+  ],
   "horarios": [
     {
       "dia": "Lunes-Viernes",
