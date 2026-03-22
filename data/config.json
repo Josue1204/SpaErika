@@ -1,19 +1,77 @@
 {
-  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
-  "sobre_mi": "Soy Erika y me especializo en terapia física, masajes terapéuticos y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
-  "instagram_url": "https://instagram.com/tu_cuenta",
-  "sobre_mi_en": "I'm Erika and I specialize in physical therapy, therapeutic massage and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
-  "ubicacion_texto_en": "4716 Lomita St, Los Angeles, CA 90019",
-  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
-  "contacto_titulo": "AGENDA TU CITA",
+  "titulo": "SOBADORA TRADICIONAL ERIKA DE JESUS",
+  "titulo_en": "TRADITIONAL SOBADORA ERIKA DE JESUS",
+  "meta_descripcion": "Sobadora tradicional en Los Angeles. Terapia física, sobada de matriz, ventosas y masajes terapéuticos con atención personalizada.",
+  "meta_descripcion_en": "Traditional sobadora therapy in Los Angeles. Physical therapy, womb massage, cupping therapy and therapeutic massage with personalized care.",
+  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
   "hero_titulo_en": "YOUR WELL-BEING\nSTARTS HERE",
-  "mostrar_banner": true,
+  "hero_subtitulo": "Atención profesional y personalizada",
+  "hero_subtitulo_en": "Professional and personalized care",
+  "whatsapp": "13106291978",
+  "telefono": "13106291978",
+  "sobre_mi": "Soy Erika y me especializo en terapia física, sobadas terapéuticas, sobada de matriz y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
+  "sobre_mi_en": "I'm Erika and I specialize in physical therapy, therapeutic sobadas, womb massage, and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
+  "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
   "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
+
+  "mostrar_banner": true,
+  "banner_texto": "Citas disponibles. Reserva por WhatsApp.",
+  "banner_texto_en": "Appointments available. Book on WhatsApp.",
+
   "mostrar_precios": true,
-  "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
-  "titulo_en": "SOBADORA",
-  "fotos": [],
+  "mostrar_testimonios": true,
+
+  "instagram_url": "https://instagram.com/tu_cuenta",
+  "facebook_url": "https://facebook.com/tu_pagina",
+
+  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
+  "ubicacion_texto_en": "4716 Lomita St, Los Angeles, CA 90019",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
+
+  "contacto_titulo": "AGENDA TU CITA",
+  "contacto_titulo_en": "BOOK YOUR APPOINTMENT",
+  "contacto_texto": "Escríbeme para más información sobre disponibilidad, tratamientos y atención personalizada.",
+  "contacto_texto_en": "Message me for more information about availability, treatments, and personalized care.",
+
+  "condiciones": [
+    {
+      "titulo": "Estrés",
+      "titulo_en": "Stress",
+      "descripcion": "Atención orientada al bienestar físico y relajación muscular.",
+      "descripcion_en": "Care focused on physical wellness and muscle relaxation."
+    },
+    {
+      "titulo": "Nervio ciático",
+      "titulo_en": "Sciatic nerve discomfort",
+      "descripcion": "Trabajo corporal orientado al alivio de molestias y tensión.",
+      "descripcion_en": "Bodywork focused on relieving discomfort and tension."
+    },
+    {
+      "titulo": "Dolor muscular",
+      "titulo_en": "Muscle pain",
+      "descripcion": "Atención personalizada para zonas de tensión y sobrecarga.",
+      "descripcion_en": "Personalized care for tension and overworked areas."
+    },
+    {
+      "titulo": "Espalda y cuello",
+      "titulo_en": "Back and neck pain",
+      "descripcion": "Apoyo terapéutico para zonas con carga muscular.",
+      "descripcion_en": "Therapeutic support for areas with muscular tension."
+    },
+    {
+      "titulo": "Fascitis plantar",
+      "titulo_en": "Plantar fasciitis",
+      "descripcion": "Trabajo orientado a aliviar molestias físicas.",
+      "descripcion_en": "Work focused on relieving physical discomfort."
+    },
+    {
+      "titulo": "Rodillas y articulaciones",
+      "titulo_en": "Knees and joints",
+      "descripcion": "Atención enfocada en dolor y movilidad.",
+      "descripcion_en": "Care focused on pain and mobility."
+    }
+  ],
+
   "horarios": [
     {
       "dia": "Lunes a viernes",
@@ -34,47 +92,61 @@
       "horario_en": "By appointment only"
     }
   ],
-  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
-  "whatsapp": "13106291978",
-  "meta_descripcion": "Sobadora tradicional en Los Angeles. Terapia física, masajes terapéuticos y bienestar integral con atención personalizada.",
-  "hero_subtitulo_en": "Professional and personalized care",
-  "telefono": "13106291978",
-  "hero_subtitulo": "Atención profesional y personalizada",
-  "meta_descripcion_en": "Traditional sobadora therapy in Los Angeles. Physical therapy, therapeutic massage and holistic wellness with personalized care.",
-  "facebook_url": "https://facebook.com/tu_pagina",
-  "contacto_texto_en": "Message me for more information about availability, services, and personalized care.",
-  "planes": [
+
+  "servicios": [
     {
-      "titulo": "Sesión básica",
-      "titulo_en": "Basic session",
-      "precio": 90,
-      "duracion": "60 MIN",
-      "descripcion": "Atención personalizada orientada al alivio de tensión y molestias físicas.",
-      "descripcion_en": "Personalized care focused on relieving tension and physical discomfort.",
-      "texto_boton": "RESERVAR",
-      "texto_boton_en": "BOOK NOW"
+      "titulo": "Sobada de Matriz",
+      "titulo_en": "Womb Massage Therapy",
+      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
+      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance."
     },
     {
-      "titulo": "Sesión extendida",
-      "titulo_en": "Extended session",
-      "precio": 120,
-      "duracion": "90 MIN",
-      "descripcion": "Sesión más amplia para trabajar zonas específicas con mayor detalle.",
-      "descripcion_en": "A longer session to work on specific areas with greater detail.",
-      "texto_boton": "RESERVAR",
-      "texto_boton_en": "BOOK NOW"
+      "titulo": "Sobada Terapéutica",
+      "titulo_en": "Therapeutic Sobada",
+      "descripcion": "Tratamiento para nervio ciático, dolor muscular, espalda, cuello, cintura, lumbar, espolón, fascitis plantar y articulaciones.",
+      "descripcion_en": "Treatment for sciatic nerve discomfort, muscle pain, back, neck, waist, lower back, heel spur, plantar fasciitis and joints."
     },
     {
-      "duracion": "60 MIN",
-      "texto_boton": "RESERVAR",
-      "texto_boton_en": "BOOK NOW",
-      "titulo": "Acomodación de matriz(Especial para ella)",
-      "titulo_en": "Matrix Accommodation (Especially for Her)",
-      "precio": 125,
-      "descripcion": "Masaje terapéutico suave enfocado en el abdomen y la zona pélvica para mejorar la circulación, liberar tensión emocional y física. Se utiliza para aliviar dolores menstruales, mejorar la fertilidad y reducir el estrés.",
-      "descripcion_en": "A gentle therapeutic massage focused on the abdomen and pelvic area to improve circulation and release emotional and physical tension. It is used to alleviate menstrual pain, enhance fertility, and reduce stress."
+      "titulo": "Ventosa Terapia",
+      "titulo_en": "Cupping Therapy",
+      "descripcion": "Incluye una hora de masaje focalizado en su molestia o relajante.\nVentosas.\nPiedras calientes.",
+      "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones."
     }
   ],
+
+  "planes": [
+    {
+      "titulo": "Sobada de Matriz",
+      "titulo_en": "Womb Massage Therapy",
+      "precio": 120,
+      "duracion": "60 MIN",
+      "descripcion": "Sobada de matriz para fertilidad.\nLibera la tensión del abdomen.\nMejora la circulación hacia los órganos reproductores.\nDesintoxicación.\nMejora el equilibrio hormonal.",
+      "descripcion_en": "Womb massage for fertility.\nReleases abdominal tension.\nImproves circulation to reproductive organs.\nDetox support.\nHelps hormonal balance.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    },
+    {
+      "titulo": "Sobada Terapéutica",
+      "titulo_en": "Therapeutic Sobada",
+      "precio": 90,
+      "duracion": "60 MIN",
+      "descripcion": "Tratamiento para nervio ciático, dolor muscular, espalda, cuello, cintura y lumbar.\nEspolón y fascitis plantar.\nDolor de rodillas, manos y articulaciones.",
+      "descripcion_en": "Treatment for sciatic nerve discomfort, muscle pain, back, neck, waist and lower back.\nHeel spur and plantar fasciitis.\nPain in knees, hands and joints.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    },
+    {
+      "titulo": "Ventosa Terapia",
+      "titulo_en": "Cupping Therapy",
+      "precio": 100,
+      "duracion": "60 MIN",
+      "descripcion": "Incluye una hora de masaje focalizado en su molestia o relajante.\nVentosas.\nPiedras calientes.",
+      "descripcion_en": "Includes one hour of massage focused on your discomfort or relaxation.\nCupping.\nHot stones.",
+      "texto_boton": "RESERVAR ESTE TRATAMIENTO",
+      "texto_boton_en": "BOOK THIS TREATMENT"
+    }
+  ],
+
   "testimonios": [
     {
       "nombre": "María",
@@ -95,6 +167,7 @@
       "estrellas": 4
     }
   ],
+
   "videos": [
     {
       "video": "https://youtu.be/fjdr-ni0x-o?si=Zb9ruXGFVhAIszIN"
@@ -109,55 +182,6 @@
       "video": "https://youtu.be/BPEHLOoWiEY?si=E7UUfW1DJrFM5hqW"
     }
   ],
-  "banner_texto_en": "Appointments available this week. Book on WhatsApp.",
-  "mostrar_testimonios": true,
-  "titulo": "SOBADORA",
-  "condiciones": [
-    {
-      "titulo": "Estrés",
-      "titulo_en": "Stress",
-      "descripcion": "Atención orientada al bienestar físico y relajación muscular.",
-      "descripcion_en": "Care focused on physical wellness and muscle relaxation."
-    },
-    {
-      "titulo": "Nervio ciático",
-      "titulo_en": "Sciatic nerve discomfort",
-      "descripcion": "Trabajo corporal orientado al alivio de molestias y tensión.",
-      "descripcion_en": "Bodywork focused on relieving discomfort and tension."
-    },
-    {
-      "titulo": "Torceduras",
-      "titulo_en": "Sprains",
-      "descripcion": "Apoyo terapéutico y seguimiento según cada caso.",
-      "descripcion_en": "Therapeutic support and follow-up depending on each case."
-    },
-    {
-      "titulo": "Dolores musculares",
-      "titulo_en": "Muscle pain",
-      "descripcion": "Atención personalizada para zonas de tensión y sobrecarga.",
-      "descripcion_en": "Personalized care for tension and overworked areas."
-    }
-  ],
-  "servicios": [
-    {
-      "titulo": "Masaje terapéutico",
-      "titulo_en": "Therapeutic massage",
-      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado.",
-      "descripcion_en": "Focused on relieving muscle tension, discomfort, and accumulated stress."
-    },
-    {
-      "titulo": "Masaje profundo",
-      "titulo_en": "Deep tissue massage",
-      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular.",
-      "descripcion_en": "Applied with greater intensity to work on heavily loaded muscle areas."
-    },
-    {
-      "titulo": "Acomodación de matriz",
-      "titulo_en": "Matrix Accommodation",
-      "descripcion": "Masaje terapéutico suave enfocado en el abdomen y la zona pélvica para mejorar la circulación, liberar tensión emocional y física. Se utiliza para aliviar dolores menstruales, mejorar la fertilidad y reducir el estrés.",
-      "descripcion_en": "A gentle therapeutic massage focused on the abdomen and pelvic area to improve circulation and release emotional and physical tension. It is used to alleviate menstrual pain, enhance fertility, and reduce stress."
-    }
-  ],
-  "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
-  "contacto_titulo_en": "BOOK YOUR APPOINTMENT"
+
+  "fotos": []
 }
