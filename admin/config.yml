@@ -46,7 +46,7 @@ collections:
 
           - { label: "📍 Texto ubicación ES", name: "ubicacion_texto", widget: "string", required: false }
           - { label: "📍 Location text EN", name: "ubicacion_texto_en", widget: "string", required: false }
-          - { label: "🗺️ Query Google Maps", name: "ubicacion_mapa_query", widget: "string", required: false, hint: "Ejemplo: 4716 Lomita St, Los Angeles, CA 90019" }
+          - { label: "🗺️ Query Google Maps", name: "ubicacion_mapa_query", widget: "string", required: false }
 
           - { label: "🧾 Título contacto ES", name: "contacto_titulo", widget: "string", required: false }
           - { label: "🧾 Contact title EN", name: "contacto_titulo_en", widget: "string", required: false }
@@ -96,8 +96,8 @@ collections:
               - { label: "Duración", name: "duracion", widget: "string", required: false, default: "60 MIN" }
               - { label: "Descripción ES", name: "descripcion", widget: "text", required: false }
               - { label: "Description EN", name: "descripcion_en", widget: "text", required: false }
-              - { label: "Texto botón ES", name: "texto_boton", widget: "string", required: false, default: "RESERVAR" }
-              - { label: "Button text EN", name: "texto_boton_en", widget: "string", required: false, default: "BOOK NOW" }
+              - { label: "Texto botón ES", name: "texto_boton", widget: "string", required: false, default: "RESERVAR ESTE TRATAMIENTO" }
+              - { label: "Button text EN", name: "texto_boton_en", widget: "string", required: false, default: "BOOK THIS TREATMENT" }
 
           - label: "⭐ Testimonios"
             name: "testimonios"
@@ -126,5 +126,5 @@ collections:
               - { label: "Alt ES", name: "alt_es", widget: "string", required: false }
               - { label: "Alt EN", name: "alt_en", widget: "string", required: false }
 
-          - { label: "📷 Link de Instagram", name: "instagram_url", widget: "string", required: false, hint: "Ejemplo: https://instagram.com/tu_cuenta" }
-          - { label: "📘 Link de Facebook", name: "facebook_url", widget: "string", required: false, hint: "Ejemplo: https://facebook.com/tu_pagina" }
+          - { label: "📷 Link de Instagram", name: "instagram_url", widget: "string", required: false }
+          - { label: "📘 Link de Facebook", name: "facebook_url", widget: "string", required: false }
