@@ -1,88 +1,147 @@
 {
-  "titulo": "Sobadora",
-  "meta_descripcion": "Especialista en masajes terapéuticos y bienestar integral. Reserva tu cita por WhatsApp.",
+  "titulo": "SOBADORA",
+  "titulo_en": "SOBADORA",
+  "meta_descripcion": "Sobadora tradicional en Los Angeles. Terapia física, masajes terapéuticos y bienestar integral con atención personalizada.",
+  "meta_descripcion_en": "Traditional sobadora therapy in Los Angeles. Physical therapy, therapeutic massage and holistic wellness with personalized care.",
   "hero_titulo": "TU BIENESTAR\nEMPIEZA AQUÍ",
+  "hero_titulo_en": "YOUR WELL-BEING\nSTARTS HERE",
   "hero_subtitulo": "Atención profesional y personalizada",
-  "whatsapp": "13237932528",
-  "telefono": "13237932528",
-  "sobre_mi": "Soy Erika, especialista en masajes terapéuticos.\n\nCon técnicas que van desde el masaje profundo hasta la acomodación de matriz, busco ayudar a cada persona a encontrar su equilibrio natural.",
+  "hero_subtitulo_en": "Professional and personalized care",
+  "whatsapp": "13106291978",
+  "telefono": "13106291978",
+  "sobre_mi": "Soy Erika y me especializo en terapia física, masajes terapéuticos y bienestar integral.\n\nBusco ayudar a cada persona con atención personalizada, acompañando su proceso con cuidado y experiencia.",
+  "sobre_mi_en": "I'm Erika and I specialize in physical therapy, therapeutic massage and holistic wellness.\n\nMy goal is to help each person through personalized care, guiding their process with attention and experience.",
   "imagen_hero": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80",
   "imagen_sobre_mi": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&q=80",
 
   "mostrar_banner": true,
   "banner_texto": "Citas disponibles esta semana. Reserva por WhatsApp.",
+  "banner_texto_en": "Appointments available this week. Book on WhatsApp.",
 
   "mostrar_precios": false,
+  "mostrar_testimonios": true,
 
-  "planes": [
-    {
-      "titulo": "Masaje terapéutico",
-      "precio": 0,
-      "duracion": "60 minutos",
-      "descripcion": "Atención personalizada enfocada en aliviar tensión muscular y molestias físicas.",
-      "texto_boton": "Reservar"
-    },
-    {
-      "titulo": "Masaje profundo",
-      "precio": 0,
-      "duracion": "90 minutos",
-      "descripcion": "Sesión más extensa para trabajar zonas con mayor carga muscular y tensión acumulada.",
-      "texto_boton": "Consultar"
-    },
-    {
-      "titulo": "Acomodación de matriz",
-      "precio": 0,
-      "duracion": "60 minutos",
-      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal.",
-      "texto_boton": "Más información"
-    }
-  ],
+  "instagram_url": "https://instagram.com/tu_cuenta",
+  "facebook_url": "https://facebook.com/tu_pagina",
 
-  "servicios": [
+  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
+  "ubicacion_texto_en": "4716 Lomita St, Los Angeles, CA 90019",
+  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
+
+  "contacto_titulo": "AGENDA TU CITA",
+  "contacto_titulo_en": "BOOK YOUR APPOINTMENT",
+  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
+  "contacto_texto_en": "Message me for more information about availability, services, and personalized care.",
+
+  "condiciones": [
     {
-      "titulo": "Masaje terapéutico",
-      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado."
+      "titulo": "Estrés",
+      "titulo_en": "Stress",
+      "descripcion": "Atención orientada al bienestar físico y relajación muscular.",
+      "descripcion_en": "Care focused on physical wellness and muscle relaxation."
     },
     {
-      "titulo": "Masaje profundo",
-      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular."
+      "titulo": "Nervio ciático",
+      "titulo_en": "Sciatic nerve discomfort",
+      "descripcion": "Trabajo corporal orientado al alivio de molestias y tensión.",
+      "descripcion_en": "Bodywork focused on relieving discomfort and tension."
     },
     {
-      "titulo": "Acomodación de matriz",
-      "descripcion": "Técnica orientada al bienestar integral y equilibrio corporal."
+      "titulo": "Torceduras",
+      "titulo_en": "Sprains",
+      "descripcion": "Apoyo terapéutico y seguimiento según cada caso.",
+      "descripcion_en": "Therapeutic support and follow-up depending on each case."
+    },
+    {
+      "titulo": "Dolores musculares",
+      "titulo_en": "Muscle pain",
+      "descripcion": "Atención personalizada para zonas de tensión y sobrecarga.",
+      "descripcion_en": "Personalized care for tension and overworked areas."
     }
   ],
 
   "horarios": [
     {
       "dia": "Lunes a viernes",
-      "horario": "9:00 AM - 7:00 PM"
+      "dia_en": "Monday to Friday",
+      "horario": "9:00 AM - 7:00 PM",
+      "horario_en": "9:00 AM - 7:00 PM"
     },
     {
       "dia": "Sábado",
-      "horario": "10:00 AM - 5:00 PM"
+      "dia_en": "Saturday",
+      "horario": "10:00 AM - 5:00 PM",
+      "horario_en": "10:00 AM - 5:00 PM"
     },
     {
       "dia": "Domingo",
-      "horario": "Solo con cita previa"
+      "dia_en": "Sunday",
+      "horario": "Solo con cita previa",
+      "horario_en": "By appointment only"
     }
   ],
 
-  "mostrar_testimonios": true,
+  "servicios": [
+    {
+      "titulo": "Masaje terapéutico",
+      "titulo_en": "Therapeutic massage",
+      "descripcion": "Enfocado en aliviar tensión muscular, molestias y estrés acumulado.",
+      "descripcion_en": "Focused on relieving muscle tension, discomfort, and accumulated stress."
+    },
+    {
+      "titulo": "Masaje profundo",
+      "titulo_en": "Deep tissue massage",
+      "descripcion": "Aplicado con mayor intensidad para trabajar zonas con carga muscular.",
+      "descripcion_en": "Applied with greater intensity to work on heavily loaded muscle areas."
+    },
+    {
+      "titulo": "Terapia física",
+      "titulo_en": "Physical therapy",
+      "descripcion": "Acompañamiento orientado al movimiento, alivio y recuperación.",
+      "descripcion_en": "Support focused on movement, relief, and recovery."
+    }
+  ],
+
+  "planes": [
+    {
+      "titulo": "Sesión básica",
+      "titulo_en": "Basic session",
+      "precio": 0,
+      "duracion": "60 MIN",
+      "descripcion": "Atención personalizada orientada al alivio de tensión y molestias físicas.",
+      "descripcion_en": "Personalized care focused on relieving tension and physical discomfort.",
+      "texto_boton": "RESERVAR",
+      "texto_boton_en": "BOOK NOW"
+    },
+    {
+      "titulo": "Sesión extendida",
+      "titulo_en": "Extended session",
+      "precio": 0,
+      "duracion": "90 MIN",
+      "descripcion": "Sesión más amplia para trabajar zonas específicas con mayor detalle.",
+      "descripcion_en": "A longer session to work on specific areas with greater detail.",
+      "texto_boton": "RESERVAR",
+      "texto_boton_en": "BOOK NOW"
+    }
+  ],
+
   "testimonios": [
     {
       "nombre": "María",
       "comentario": "Excelente atención, muy profesional y amable. Me sentí mucho mejor después de la sesión.",
+      "comentario_en": "Excellent care, very professional and kind. I felt much better after the session.",
       "estrellas": 5
     },
     {
       "nombre": "Ana",
       "comentario": "Muy buena experiencia. El masaje me ayudó bastante con la tensión muscular.",
+      "comentario_en": "Very good experience. The massage helped me a lot with muscle tension.",
       "estrellas": 5
     },
     {
       "nombre": "Luisa",
       "comentario": "Lugar tranquilo y atención muy dedicada. Lo recomiendo.",
+      "comentario_en": "Calm place and very dedicated care. I recommend it.",
       "estrellas": 4
     }
   ],
@@ -102,14 +161,5 @@
     }
   ],
 
-  "fotos": [],
-
-  "contacto_titulo": "Agenda tu cita",
-  "contacto_texto": "Escríbeme para más información sobre disponibilidad, servicios y atención personalizada.",
-
-  "ubicacion_texto": "4716 Lomita St, Los Angeles, CA 90019",
-  "ubicacion_mapa_query": "4716 Lomita St, Los Angeles, CA 90019",
-
-  "instagram_url": "https://instagram.com/tu_cuenta",
-  "facebook_url": "https://facebook.com/tu_pagina"
+  "fotos": []
 }
