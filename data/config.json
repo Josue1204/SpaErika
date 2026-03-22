@@ -33,7 +33,7 @@
   "planes": [
     {
       "titulo": "Masaje terapéutico",
-      "precio": 0,
+      "precio": 90,
       "duracion": "60 minutos",
       "descripcion": "Atención personalizada enfocada en aliviar tensión muscular y molestias físicas.",
       "texto_boton": "Reservar"
