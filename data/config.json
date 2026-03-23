@@ -13,7 +13,14 @@
   "mostrar_precios": true,
   "banner_texto": "Citas disponibles. Reserva por WhatsApp.",
   "titulo_en": "Traditional Dough Sheeter",
-  "fotos": [],
+  "fotos": [
+    {
+      "imagen": "/images/mc_mdemc_marriott_medellin_spa_1920x1080.jpg"
+    },
+    {
+      "imagen": "https://image.freepik.com/free-vector/social-icon-vector-redes-sociales_23-2147667843.jpg"
+    }
+  ],
   "horarios": [
     {
       "dia": "Lunes a viernes",
